@@ -1,10 +1,14 @@
+
+
+/**  DOCUMENT-WIDE  **/
+
 :root {
     --dark-blue: #234163;
     --bluish-white: #ddddff;
-    --mid-blue: #e4f4fc;
+    --faint-blue: #eeeeff;
     --brown: #3d3021;
     --orange-white: #ffddcc;
-    --dark-grey: #101010;
+    --grey: #888888;
     --seethrough-grey: #101010CD;
     --background-table: white;
 }
@@ -18,22 +22,20 @@
     font-style: normal;
    }
 
-.container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
+html {
+    box-sizing: border-box;
   }
 
-.text-box {
-    height: 100%;
-    max-width: 100%;
-    padding: 4% 3%;
-}
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+/**  HEADER  **/
 
 header {
     width: 100%;
-    top:0;
+    top: 0;
     z-index: 1;
     position: absolute;
 }
@@ -43,33 +45,55 @@ header {
     justify-content: space-between;
     align-items: center;
     border-width: 1px solid var(--border-black);
-    height: 30px;
-    padding: 0 15px;
+    height: 70px;
+    padding: 0 20px;
 }
 
-nav > .logo {
-    width: 120px;
-    margin-top: 80px;
-    margin-left: 10px;
+.logo {
+    width: 140px;
+    height: auto;
+    margin-top: 0px;
+    margin-left: -15px;
 }
+
+
+
+/**  MAIN BODY SECTIONS  **/
+
+.container {
+    display: inline-block;
+    width: 100%;
+  }
+
+.text-box {
+    padding: 4% 3%;
+}
+
+
+/** IMAGES **/
 
 #main-image::before {
     content: "";
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: var(--seethrough-grey);
   }
 
-.image > img {
-    display: block;
-    width: 100%;
+#main-image > img {
     height: 100vh;
+}
+
+.image, .image > img {
+    width: 100%;
     overflow: hidden;
     object-fit: cover;
+}
+
+.image {
+    margin-bottom: -10px;
 }
 
 .image-text {
@@ -93,6 +117,9 @@ nav > .logo {
     right: -20px;
 }
 
+
+/**  HEADINGS  **/
+
 h1 {
     font-size: 30px;
 }
@@ -111,20 +138,38 @@ h1, h2, h3 {
     color: var(--bluish-white);
 }
 
-/** TABLE DESIGN **/
 
-table {
+/**  BUTTONS  **/
+
+.button-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+
+.button-box > button{
+    width: calc(80px + 15vw);
+    height: calc(140px + 10vw);
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+/**  SERVICES TABLE  **/
+
+.services {
     margin: 25px auto 0 auto;
 }
 
-th, td{
+th, td { /**/
     padding: 10px;
     border: 1px solid black;
     text-align: center;
+
 }
 
-
-th, td:first-child {
+th, td:first-child { /**/
     background-color: var(--bluish-white);
     color: black;
 }
@@ -136,18 +181,18 @@ th:first-child {
 }
 
 th:nth-child(2), tr:nth-child(2) td:first-child {
-    border-radius: 10px 0 0 0;
+    border-radius: 10px 0 0 0; /**/
 }
 
 th:last-child {
     border-radius: 0 10px 0 0;
 }
 
-tr:last-child td:first-child {
+tr:last-child td:first-child { /**/
     border-radius: 0 0 0 10px;
 }
 
-td {
+td { /**/
     background-color: var(--background-table);
     color: black;
 }
@@ -155,6 +200,7 @@ td {
 colgroup {
     width: 250px;
 }
+
 
 /**  FORM DESIGN  **/
 
@@ -186,12 +232,23 @@ form > :not(:first-child) {
     padding: 0 15px 15px 15px;  
 }
 
-form > div > b {
+form > section > b {
     color: var(--dark-blue);
     font-size: 30px;
 }
 
-/**  CLASSES FOR COLOUR SCHEMES  **/
+
+/** FOOTER **/
+
+footer {
+    min-width: 100%;
+    min-height: 15vh;
+    background-color: var(--grey);
+    color: var(--bluish-white)
+}
+
+
+/**  COLOUR SCHEMES  **/
 
 .bluish-white {
     background-color: var(--bluish-white);
@@ -205,23 +262,21 @@ form > div > b {
     text-align: left;
 }
 
+.faint-blue {
+    background-color: var(--faint-blue);
+    color: var(--dark-blue);
+    text-align: left;
+}
+
 .orange-white {
     background-color: var(--orange-white);
     color: var(--brown);
     text-align: right;
 }
 
-.beige {
-    background-color: var(--brown);
-    color: var(--orange-white);
+.white {
+    background-color: white;
+    color: var(--dark-blue);
     text-align: left;
 }
 
-/** FOOTER **/
-
-footer {
-    min-width: 100%;
-    min-height: 15vh;
-    background-color: var(--dark-grey);
-    color: var(--bluish-white)
-}
