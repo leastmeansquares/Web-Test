@@ -11,8 +11,10 @@
     --orange-white: #ffddcc;
     --faint-orange: #ffeedd;
     --grey: #222222;
-    --seethrough-grey: #101010CD;
+    --grey2: #101010;
+    --seethrough-grey: linear-gradient(180deg, #101010CD 90%, var(--grey2));
     --background-table: white;
+    --gradient: linear-gradient(180deg, var(--grey2), var(--darkest-blue) 10%, var(--bluish-white) 70%, var(--orange-white));
 }
 
 * { 
@@ -46,9 +48,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-width: 1px solid var(--border-black);
-    height: 70px;
     padding: 0 20px;
+    height: 70px;
 }
 
 .logo {
@@ -71,6 +72,57 @@ header {
     padding: 4% 3%;
 }
 
+.navlink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 40px;
+    padding: 10px 0 0 0;
+}
+
+.navlink * {
+    width: 24.55%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+#tab-container {
+
+    width: 100%;
+    background-image: var(--gradient);
+    padding: 20px;
+}
+
+#tab-container > * {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#tab-container > section {
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 30px;
+
+}
+
+.rounded {
+    border-radius: 25px 25px 0 0;
+}
+
+#welcome::before {
+    display: block;
+  }
+
+#welcome, #lettings, #maintenance, #services {
+    display: none;
+  }
+
+#welcome:target, #lettings:target, #maintenance:target, #services:target {
+    display: block;
+  }
+
 
 /** IMAGES **/
 
@@ -82,11 +134,12 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--seethrough-grey);
+    background: var(--seethrough-grey);
   }
 
 #main-image img {
     height: 100vh;
+
 }
 
 .image, .image img {
@@ -118,6 +171,10 @@ header {
 .right {
     top: 4vh;
     right: -20px;
+}
+
+.shift-up {
+    margin-bottom: -50px;
 }
 
 
@@ -173,12 +230,12 @@ button {
     color: black;
 }
 
-.button-box.blue-style button:hover{
+.blue-style button:hover {
     background-color: var(--dark-blue);
     color: white;
 }
 
-.button-box.orange-style button:hover{
+.orange-style button:hover {
     background-color: var(--dark-orange);
     color: white;
 }
@@ -234,7 +291,7 @@ button {
 
 form {
     height: 500px;
-    width: 100%;
+    width: 40%;
     text-align: left;
     color: white;
 }
@@ -247,6 +304,10 @@ form input:not(#privacy), textarea {
     background-color: var(--dark);
     padding: 10px 15px;
     margin: 5px 0 10px 0;
+}
+
+textarea {
+    resize: none;
 }
 
 #privacy {
@@ -262,6 +323,12 @@ form button {
     height: 35px;
     border-radius: 10px;
     font-size: 17px;
+    transition-duration: 0.4s;
+}
+
+form button:hover {
+    background-color: white;
+    color: var(--dark-blue)
 }
 
 /** FOOTER **/
@@ -295,42 +362,40 @@ footer > :nth-child(2) {
 .bluish-white {
     background-color: var(--bluish-white);
     color: var(--dark-blue);
-    text-align: left;
 }
 
 .dark-blue {
     background: var(--dark-blue);
     color: var(--bluish-white);
-    text-align: left;
 }
 
 .darkest-blue {
     background: var(--darkest-blue);
     color: var(--bluish-white);
-    text-align: left;
 }
 
 .faint-blue {
     background-color: var(--faint-blue);
     color: var(--dark-blue);
-    text-align: left;
 }
 
 .orange-white {
     background-color: var(--orange-white);
     color: var(--dark-orange);
-    text-align: left;
 }
 
 .faint-orange {
     background-color: var(--faint-orange);
     color: var(--dark-orange);
-    text-align: left;
 }
 
 .white {
-    background-color: #aaaaaa;
+    background-color: #ffffff;
     color: black;
-    text-align: left;
+}
+
+.grey {
+    background-color: #fafafa;
+    color: black;
 }
 
