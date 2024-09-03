@@ -56,12 +56,14 @@ html {
 
   .circle {
     height: 100px;
+    line-height: 90px;
     width: 100px;
     border: 2px solid var(--bluish-white);
     background-color: white;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
+    color: var(--grey2);
     font-size: 50px;
   }
 
@@ -435,4 +437,10 @@ footer > :nth-child(2) {
     background-color: var(--grey);
     color: black;
 }
+
+.darkest-grey {
+    background-color: var(--grey2);
+    color: white;
+}
+
 
