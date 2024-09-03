@@ -34,26 +34,6 @@ html {
     box-sizing: inherit;
   }
 
-  .arrow1 {
-    border: solid black;
-    border-width: 3px 0 0 0;
-    display: inline-block;
-    padding: 3px 5px;
-    position: relative;
-    top: 3px;
-    right: -40px;
-}
-
-  .arrow2 {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(-45deg);
-    position: relative;
-    right: -34px;
-  }
-
   .circle {
     height: 100px;
     line-height: 100px;
@@ -70,6 +50,45 @@ html {
   .hide {
     display: none !important;
   }
+
+
+  /**  HEADINGS AND FONTS  **/
+
+h1, h2 {
+    padding-bottom: 3%;
+    color: var(--bluish-white);
+}
+
+h1 {  /**  MAIN TITLE  **/
+    font-size: 40px;
+}
+
+h2 {  /**  MAIN TITLE SMALL TEXT  **/
+    font-size: 18px;
+}
+
+h3 {  /**  MAJOR SUBTITLE  **/
+    font-weight: 500;
+    font-size: 35px;
+    padding: 1% 0 3% 0;
+    color: var(--darkest-blue);
+}
+
+h4 {  /**  STANDARD SUBTITLE  **/
+    font-size: 30px;
+    padding-bottom: 3%;
+}
+
+h5 {  /**  MINOR TITLE  **/
+    font-weight: 500;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+h6 {  /**  BUTTON TITLE **/
+    font-weight: 500;
+    font-size: 16px;
+}
 
 
 /**  HEADER  **/
@@ -183,49 +202,6 @@ header {
 
 .shift-up {
     margin-bottom: -50px;
-}
-
-
-/**  HEADINGS  **/
-
-h1, h2, h3 {
-    padding-bottom: 3%;
-    color: var(--bluish-white);
-}
-
-h1 {
-    font-size: 40px;
-}
-
-h2 {
-    font-size: 18px;
-}
-
-h3 {
-    font-size: 22px;
-}
-
-h4 {
-    font-weight: 500;
-    font-size: 35px;
-    padding: 1% 0 3% 0;
-    color: var(--darkest-blue);
-}
-
-h5 {
-    font-size: 30px;
-    padding-bottom: 3%;
-    color: var(--darkest-blue);
-}
-
-h6 {
-    font-size: 30px;
-    padding-bottom: 3%;
-    color: var(--bluish-white);
-}
-
-strong {
-    font-weight: 500;
 }
 
 
@@ -440,7 +416,7 @@ footer > :nth-child(2) {
 
 .darkest-grey {
     background-color: var(--grey2);
-    color: white;
+    color: var(--bluish-white);
 }
 
 
