@@ -10,11 +10,11 @@
     --dark-orange: #634d24;
     --orange-white: #ffddcc;
     --faint-orange: #ffeedd;
-    --grey: #222222;
-    --grey2: #101010;
-    --seethrough-grey: linear-gradient(180deg, #101010CD 90%, var(--grey2));
+    --grey: #eeeeee;
+    --grey2: #222222;
+    --grey3: #eaeaea;
+    --seethrough-grey: #101010CD;
     --background-table: white;
-    --gradient: linear-gradient(180deg, var(--grey2), var(--darkest-blue) 10%, var(--bluish-white) 70%, var(--orange-white));
 }
 
 * { 
@@ -32,6 +32,29 @@ html {
 
   *, *:before, *:after {
     box-sizing: inherit;
+  }
+
+  .arrow1 {
+    border: solid black;
+    border-width: 3px 0 0 0;
+    display: inline-block;
+    padding: 3px 5px;
+    position: relative;
+    top: 3px;
+    right: -40px;
+}
+  .arrow2 {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    position: relative;
+    right: -34px;
+  }
+
+  .hide {
+    display: none !important;
   }
 
 
@@ -68,10 +91,12 @@ header {
     width: 100%;
   }
 
-.text-box {
+.text-box, .button-box {
     padding: 4% 3%;
+    text-align: left;
 }
 
+/**
 .navlink {
     display: flex;
     justify-content: space-between;
@@ -79,49 +104,19 @@ header {
     text-align: center;
     height: 40px;
     padding: 10px 0 0 0;
+    display: none;
 }
 
 .navlink * {
     width: 24.55%;
     height: 100%;
     border-radius: 10px 10px 0 0;
-    display: block;
-}
-
-#tab-container {
-
-    width: 100%;
-    background-image: var(--gradient);
-    padding: 20px;
-}
-
-#tab-container > * {
-    width: 95%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-}
-
-#tab-container > section {
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 30px;
-
-}
+    display: none;
+}**/
 
 .rounded {
     border-radius: 25px 25px 0 0;
 }
-
-#welcome::before {
-    display: block;
-  }
-
-#welcome, #lettings, #maintenance, #services {
-    display: none;
-  }
-
-#welcome:target, #lettings:target, #maintenance:target, #services:target {
-    display: block;
-  }
 
 
 /** IMAGES **/
@@ -197,14 +192,27 @@ h3 {
     font-size: 22px;
 }
 
-h4, h5 {
-    font-size: 30px;
-    padding-bottom: 3%;
+h4 {
+    font-weight: 500;
+    font-size: 35px;
+    padding: 1% 0 3% 0;
+    color: var(--darkest-blue);
 }
 
-h4 {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
+h5 {
+    font-size: 30px;
+    padding-bottom: 3%;
+    color: var(--darkest-blue);
+}
+
+h6 {
+    font-size: 30px;
+    padding-bottom: 3%;
+    color: var(--bluish-white);
+}
+
+strong {
+    font-weight: 500;
 }
 
 
@@ -214,32 +222,44 @@ button {
     cursor: pointer;
 }
 
-.button-box {
+.button-box > div {
     display: flex;
-    align-items: center;
+    align-content: center;
     justify-content: space-around;
-    padding: 30px;
 }
 
 .button-box button {
-    width: calc(80px + 15vw);
-    height: calc(140px + 10vw);
-    border: 1px solid black;
-    background-color: white;
+    width: calc(140px + 10vw);
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: var(--grey3);
     transition-duration: 0.4s;
     color: black;
+    border: none;
+    margin: 30px;
 }
 
 .blue-style button:hover {
-    background-color: var(--dark-blue);
-    color: white;
+    border: 1px solid var(--dark-blue);
+    background-color: var(--bluish-white);
+    text-shadow: white;
 }
 
 .orange-style button:hover {
-    background-color: var(--dark-orange);
-    color: white;
+    border: 1px solid var(--dark-orange);
+    background-color: var(--orange-white);
+    text-shadow: white;
 }
 
+.divider {
+    height: 80%;
+    width: 1px;
+    background-color: var(--darkest-blue);
+}
+
+.mini-box {
+    width: 30%;
+}
 
 /**  SERVICES TABLE  **/
 
@@ -348,7 +368,7 @@ footer > :nth-child(2) {
     min-width: 100%;
     height: 35vh;
     min-height: 200px;
-    background-color: var(--grey);
+    background-color: var(--grey2);
     color: var(--bluish-white);
     display: flex;
     justify-content: space-between;
@@ -395,7 +415,12 @@ footer > :nth-child(2) {
 }
 
 .grey {
-    background-color: #fafafa;
+    background-color: var(--grey3);
+    color: black;
+}
+
+.dark-grey {
+    background-color: var(--grey);
     color: black;
 }
 
