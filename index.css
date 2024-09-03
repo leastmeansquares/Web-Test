@@ -43,6 +43,7 @@ html {
     top: 3px;
     right: -40px;
 }
+
   .arrow2 {
     border: solid black;
     border-width: 0 3px 3px 0;
@@ -51,6 +52,15 @@ html {
     transform: rotate(-45deg);
     position: relative;
     right: -34px;
+  }
+
+  .circle {
+    height: 100px;
+    width: 100px;
+    border: 2px solid var(--bluish-white);
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
   }
 
   .hide {
@@ -96,26 +106,14 @@ header {
     text-align: left;
 }
 
-/**
-.navlink {
+.align {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    height: 40px;
-    padding: 10px 0 0 0;
-    display: none;
+    justify-content: space-around;
 }
 
-.navlink * {
-    width: 24.55%;
-    height: 100%;
-    border-radius: 10px 10px 0 0;
-    display: none;
-}**/
-
 .rounded {
-    border-radius: 25px 25px 0 0;
+    border-radius: 30px 30px 0 0;
 }
 
 
@@ -123,8 +121,8 @@ header {
 
 #main-image::before {
     content: "";
-    position: absolute;
-    z-index: 0;
+    position: fixed;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
@@ -134,7 +132,13 @@ header {
 
 #main-image img {
     height: 100vh;
+    position: fixed;
+    z-index: -2;
+}
 
+#main-image {
+    width: 100%;
+    height: 101vh;
 }
 
 .image, .image img {
@@ -145,6 +149,11 @@ header {
 
 .image {
     margin-bottom: -10px;
+}
+
+.small-image {
+    width: 40vw;
+    height: auto;
 }
 
 .image-text {
@@ -228,7 +237,7 @@ button {
     justify-content: space-around;
 }
 
-.button-box button {
+.button-box button, .image-text button {
     width: calc(140px + 10vw);
     height: 60px;
     border-radius: 10px;
@@ -260,10 +269,11 @@ button {
 .mini-box {
     width: 30%;
 }
+    
 
-/**  SERVICES TABLE  **/
+/** TABLES **/
 
-.services {
+.services{
     margin: 25px auto 0 auto;
 }
 
