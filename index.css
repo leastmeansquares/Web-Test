@@ -56,7 +56,7 @@ html {
 
   .circle {
     height: 100px;
-    line-height: 90px;
+    line-height: 100px;
     width: 100px;
     border: 2px solid var(--bluish-white);
     background-color: var(--bluish-white);
