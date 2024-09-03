@@ -59,7 +59,7 @@ html {
     line-height: 90px;
     width: 100px;
     border: 2px solid var(--bluish-white);
-    background-color: white;
+    background-color: var(--bluish-white);
     border-radius: 50%;
     display: inline-block;
     text-align: center;
