@@ -109,6 +109,13 @@ const serviceBtnHTML = (idNumber) => {
 
 const serviceBtnClick = (btnNumber) => {
 
+    serviceBtn1.classList.remove("pressed");
+    serviceBtn2.classList.remove("pressed");
+    serviceBtn3.classList.remove("pressed");
+    serviceBtn4.classList.remove("pressed");
+    serviceBtn5.classList.remove("pressed");
+    serviceBtn6.classList.remove("pressed");
+
     if (btnNumber !== infoBox.last){
         btnHTML = serviceBtnHTML(btnNumber);
         infoBox.innerHTML = btnHTML;
@@ -117,12 +124,6 @@ const serviceBtnClick = (btnNumber) => {
     else {
         infoBox.innerText = "";
         infoBox.last = -1;
-        serviceBtn1.classList.remove("pressed");
-        serviceBtn2.classList.remove("pressed");
-        serviceBtn3.classList.remove("pressed");
-        serviceBtn4.classList.remove("pressed");
-        serviceBtn5.classList.remove("pressed");
-        serviceBtn6.classList.remove("pressed");
     }
 
 }
