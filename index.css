@@ -49,7 +49,7 @@ h1, h2 {
 }
 
 h1 {  /**  MAIN TITLE  **/
-    font-size: 3.25rem;
+    font-size: 3.5rem;
     color: var(--logo-teal);
     text-shadow: 1px 1px 1px var(--dark-orange);
 }
@@ -151,7 +151,7 @@ header {
 
 .image-text {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -30%);
     text-align: center;
   }
 
@@ -224,7 +224,7 @@ header {
 }
 
 .circle-box.tss {
-    height: calc(280px);
+    height: calc(250px);
 }
 
 .circle {
@@ -246,6 +246,15 @@ header {
     position: relative;
     top: calc(29px - 1.5dvw);
   }
+
+.tss-box {
+    border: 2px solid var(--logo-teal);
+    border-radius: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 
   .small {
     border-radius: 30px;
