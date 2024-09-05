@@ -305,6 +305,8 @@ button:hover.index-button > img, .pressed.index-button > img {
     width: calc(140px + 10dvw);
     height: auto;
     border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .alt-button {
