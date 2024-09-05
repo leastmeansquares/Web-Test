@@ -231,16 +231,20 @@ header {
     width: 50%;
     height: 0;
     padding-bottom: 50%;
-    line-height: 50%;
-    border: 2px solid var(--bluish-white);
     background-color: var(--bluish-white);
     border-radius: 50%;
     display: inline-block;
     text-align: center;
+    vertical-align: middle;
     color: var(--grey5);
     margin-bottom: 20px;
     vertical-align: top;
     font-size: 5dvw;
+  }
+
+  .circle > i {
+    position: relative;
+    top: calc(29px - 1.5dvw);
   }
 
   .small {
