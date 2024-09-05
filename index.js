@@ -252,9 +252,9 @@ const serviceBtnClick = (btnNumber) => {
 }
 
 mainBtn.addEventListener("click", mainBtnClick);
-serviceBtn1.addEventListener("click", ()=>{serviceBtnClick(1)});
-serviceBtn2.addEventListener("click", ()=>{serviceBtnClick(2)});
-serviceBtn3.addEventListener("click", ()=>{serviceBtnClick(3)});
-serviceBtn4.addEventListener("click", ()=>{serviceBtnClick(4)});
-serviceBtn5.addEventListener("click", ()=>{serviceBtnClick(5)});
-serviceBtn6.addEventListener("click", ()=>{serviceBtnClick(6)});
+serviceBtn1.addEventListener("click", ()=>serviceBtnClick(1));
+serviceBtn2.addEventListener("click", ()=>serviceBtnClick(2));
+serviceBtn3.addEventListener("click", ()=>serviceBtnClick(3));
+serviceBtn4.addEventListener("click", ()=>serviceBtnClick(4));
+serviceBtn5.addEventListener("click", ()=>serviceBtnClick(5));
+serviceBtn6.addEventListener("click", ()=>serviceBtnClick(6));
