@@ -8,8 +8,44 @@ serviceBtn6 = document.getElementById("service-btn-6");
 infoBox = document.getElementById("info-box");
 infoBox.last = -1;
 
+
+
 const serviceBtnHTML = (idNumber) => {
-    if (idNumber === 1){
+    
+    if (idNumber === 0){
+        return(`<section class="container outer-form">
+            <form class="darkest-blue">
+                <h4>CONTACT US</h4>
+                <label for="name">NAME</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="phone-number">PHONE NUMBER</label><br>
+                <input type="tel" id="phone-number" name="phone-number" required><br>
+                <label for="email">EMAIL ADDRESS</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="address">FIRST LINE OF ADDRESS</label><br>
+                <input type="address" id="address" name="address" required><br>
+                <label for="postcode">POSTCODE</label><br>
+                <input type="text" pattern="[A-Z0-9]{4}\s?[A-Z0-9]{3}" name="postcode" required/>
+                <label for="subject">SUBJECT</label><br>
+                <select name="subject" id="subject" required>
+                    <option>Please select a subject</option>
+                    <option value="subject-a">Subject A</option>
+                    <option value="subject-b">Subject B</option>
+                    <option value="subject-c">Subject C</option>
+                    <option value="subject-d">Subject D</option>
+                    <option value="subject-e">Subject E</option>
+                    <option value="other">Other (Please Specify)</option>
+                </select><br>
+                <label for="message">MESSAGE</label><br>
+                <textarea id="message" name="message" required></textarea><br>
+                <input type="checkbox" id="privacy" name="privacy" class="checkbox" required >
+                <label for="privacy">I ACCEPT THE PRIVACY POLICY</label><br>             
+                <button type="submit" id="submit-btn">SUBMIT FORM</button>
+            </form>
+        </section>`);
+    }
+
+    else if (idNumber === 1){
         serviceBtn1.classList.add("pressed");
 
         return(`<section class="text-box align bluish-white">
@@ -189,6 +225,11 @@ Services</h4>
 }
 }
 
+const mainBtnClick = () => {
+    if (popups.innerHTML){popups.innerHTML = "";}
+    else {popups.innerHTML = serviceBtnHTML(0);}
+}
+
 const serviceBtnClick = (btnNumber) => {
 
     serviceBtn1.classList.remove("pressed");
@@ -210,6 +251,7 @@ const serviceBtnClick = (btnNumber) => {
 
 }
 
+mainBtn.addEventListener("click", mainBtnClick);
 serviceBtn1.addEventListener("click", ()=>{serviceBtnClick(1)});
 serviceBtn2.addEventListener("click", ()=>{serviceBtnClick(2)});
 serviceBtn3.addEventListener("click", ()=>{serviceBtnClick(3)});

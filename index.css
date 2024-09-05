@@ -69,12 +69,12 @@ h4 {  /**  STANDARD SUBTITLE  **/
 
 h5 {  /**  MINOR TITLE  **/
     font-weight: 700;
-    font-size: calc(0.6875rem + 0.625vw);
+    font-size: calc(0.6875rem + 0.625dvw);
     color: var(--bluish-white);
 }
 
 .circle-box p {
-    font-size: calc(0.5rem + 0.625vw);
+    font-size: calc(0.5rem + 0.625dvw);
     color: var(--grey4);
 }
 
@@ -117,10 +117,10 @@ h5 {  /**  MINOR TITLE  **/
 .circle-box {
     padding-top: 50px;
     text-align: center;
-    width: 22vw;
+    width: 22dvw;
     min-width: 160px;
     max-width: 320px;
-    height: calc(420px + 5vw);
+    height: calc(420px + 5dvw);
     vertical-align: top;
 }
 
@@ -128,8 +128,8 @@ h5 {  /**  MINOR TITLE  **/
     width: 50%;
     height: 0;
     padding-bottom: 50%;
-    line-height: 9vw;
-    font-size: 5vw;
+    line-height: 9dvw;
+    font-size: 5dvw;
     border: 2px solid var(--bluish-white);
     background-color: var(--bluish-white);
     border-radius: 50%;
@@ -162,7 +162,7 @@ button:hover.index-button {
 }
 
 .main-button {
-    width: calc(140px + 10vw);
+    width: calc(140px + 10dvw);
     height: 60px;
     border-radius: 10px;
     box-shadow: var(--grey2);
@@ -180,7 +180,7 @@ button:hover.index-button {
 }
 
 .index-button > div {
-    width: calc(140px + 10vw);
+    width: calc(140px + 10dvw);
     height: 40px;
     margin-top: -5px;
     border-radius: 0 0 10px 10px;
@@ -191,7 +191,7 @@ button:hover.index-button {
 }
 
 .button-image {
-    width: calc(140px + 10vw);
+    width: calc(140px + 10dvw);
     height: auto;
     border-radius: 5px 5px 0 0;
 }
@@ -214,10 +214,10 @@ button:hover.white-style, .pressed.white-style {
 }
 
 button:hover.blue-style, .pressed.blue-style {
-    /*border: 1px solid var(--dark-blue);
+    border: 1px solid var(--dark-blue);
     background-color: var(--bluish-white);
     text-shadow: white;
-    box-shadow: 2px 2px 3px var(--dark-blue);*/
+    box-shadow: 2px 2px 3px var(--dark-blue);
 }
 
 button:hover.orange-style, .pressed.orange-style {
@@ -279,19 +279,19 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background: var(--seethrough-grey);
   }
 
 #main-image img {
-    height: 100vh;
+    height: 100dvh;
     position: fixed;
     z-index: -2;
 }
 
 #main-image {
     width: 100%;
-    height: 101vh;
+    height: 101dvh;
 }
 
 .image, .image img {
@@ -305,7 +305,7 @@ header {
 }
 
 .small-image {
-    width: 40vw;
+    width: 40dvw;
     height: auto;
 }
 
@@ -316,17 +316,17 @@ header {
   }
 
 .center {
-    top: 40vh;
-    left: 50vw;
+    top: 40dvh;
+    left: 50dvw;
 }
 
 .bottom {
-    top: 95vh;
-    left: 50vw;
+    top: 95dvh;
+    left: 50dvw;
 }
 
 .right {
-    top: 4vh;
+    top: 4dvh;
     right: -20px;
 }
 
@@ -383,17 +383,21 @@ header {
 
 /**  FORM DESIGN  **/
 
-form {
-    height: 700px;
-    width: 40%;
+form, .form-text {
+    height: 100dvh;
+    min-height: 800px;
+    width: 80dvw;
     text-align: left;
     color: white;
+    margin: 30px auto;
+    padding: 20px 30px;
+    border-radius: 20px;
 }
 
-form input:not(#privacy), textarea, select{
+form input:not(#privacy), textarea, select {
     color: white;
     border-radius: 5px;
-    width: 98%;
+    width: 100%;
     border: 2px solid white;
     background-color: var(--darkest-blue);
     padding: 10px 15px;
@@ -402,14 +406,15 @@ form input:not(#privacy), textarea, select{
 
 textarea {
     resize: none;
+    height: 200px;
 }
 
 #privacy {
     accent-color: var(--dark-blue);
 }
 
-form button {
-    margin-top: 20px;
+#submit-btn {
+    margin: 20px auto;
     border: 2px solid white;
     background-color: var(--darkest-blue);
     color: white;
@@ -419,8 +424,7 @@ form button {
     font-size: 1rem;
     transition-duration: 0.4s;
 }
-
-form button:hover {
+#submit-btn:hover {
     background-color: white;
     color: var(--dark-blue)
 }
@@ -430,16 +434,8 @@ form button:hover {
 
 footer {
     width: 100%;
-    min-height: 300px;
-    border-top: 2px solid black;
-}
-
-.footer-align {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    min-height: 200px;
     background-color: var(--grey5);
-    height: 100px;
 }
 
 

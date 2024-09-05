@@ -33,7 +33,7 @@
                 <div class="image-text center">
                     <h1>PRO PROPERTY CARE</h1>
                     <h2>PROFESSIONAL ONLINE LETTING AGENT WITH A HANDS-ON APPROACH TO MAINTENANCE</h2>
-                    <button class="main-button white-style white" id="mainbtn">BOOK A FREE RENTAL VALUATION</button>
+                    <button class="main-button white-style white" id="main-btn" onClick="document.getElementById(`form-section`).scrollIntoView()">BOOK A FREE RENTAL VALUATION</button>
                 </div>
             </section> 
                 <section class="container dark-grey text-box rounded">
@@ -108,7 +108,18 @@
                     </div>  
                     </div> 
                     <div class="align">      
-                </section>       
+                </section>
+                <section class="text-box align-b grey">                    
+                    <div>
+                        <h4>OUR MAINTENANCE WORK</h4>
+                        <p>Lorem ipsum odor amet, consectetuer adipiscing elit.<br> Massa porta nisl varius posuere feugiat placerat facilisi.<br><br>
+                            Class congue lacinia nec sit eu habitant lacus posuere.<br> Volutpat risus praesent litora litora per suspendisse.<br>
+                            Adipiscing cursus ultrices conubia sodales est ultrices.<br> Nisl orci enim fames habitasse torquent semper. Ultrices<br>
+                             aliquam parturient conubia molestie magnis platea aliquam<br> mattis. Cubilia eleifend in id maecenas feugiat malesuada<br>venenatis.</p>
+                        <button class="alt-button white-style white">onthemarket.com</button>
+                    </div>
+                    <img src="images\Backgrounds\pexels-heyho-6957083.jpg" class="small-image">
+                </section>        
                     <section class="container grey text-box">        
                         <section class="container bluish-white text-box small align">        
                             <div>
@@ -227,9 +238,9 @@
         </main>
 
         <footer>
-            <section class="container darkest-blue text-box">
-                <h4>CONTACT US</h4>
-                <form>
+            <section class="container darkest-blue text-box align" id="form-section">
+                <form class>
+                    <h4>CONTACT US</h4>
                     <label for="name">NAME</label><br>
                     <input type="text" id="name" name="name" required><br>
                     <label for="address">ADDRESS</label><br>
@@ -254,16 +265,9 @@
                     <label for="privacy">I ACCEPT THE PRIVACY POLICY</label><br>             
                     <button type="submit" id="submit-form">SUBMIT FORM</button>
                 </form>
+                <p class="form-text">Getting the service you want is quick and easy - just fill in the contact form and press submit.<br>
+                    You can also get in touch with us at our email or at our FaceBook page.
             </section>
-            <section class="footer-align">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
-            <section></section>
         </footer>
 
         <script src="index.js" async defer></script>
