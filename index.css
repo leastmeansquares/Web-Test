@@ -1,3 +1,6 @@
+
+
+
 /**  DOCUMENT-WIDE  **/
 
 :root {
@@ -51,11 +54,12 @@ h1, h2 {
 h1 {  /**  MAIN TITLE  **/
     font-size: 3.5rem;
     color: var(--logo-teal);
-    text-shadow: 1px 1px 1px var(--dark-orange);
+    text-shadow: 1px 1px 1px black;
 }
 
 h2 {  /**  MAIN TITLE SMALL TEXT  **/
     font-size: 1.125rem;
+    text-shadow: 1px 1px 1px black;
 }
 
 h3 {  /**  MAJOR SUBTITLE  **/
@@ -74,11 +78,6 @@ h5 {  /**  MINOR TITLE  **/
     font-weight: 700;
     font-size: calc(0.6875rem + 0.625dvw);
     color: var(--bluish-white);
-}
-
-.circle-box p {
-    font-size: calc(0.5rem + 0.625dvw);
-    color: var(--grey4);
 }
 
 
@@ -100,6 +99,11 @@ header {
     align-items: center;
     padding: 0 20px;
     height: 70px;
+}
+
+nav > h1 {
+    position: relative;
+    top: -5px;
 }
 
 .logo {
@@ -247,6 +251,11 @@ header {
     top: calc(29px - 1.5dvw);
   }
 
+  .circle-box p {
+    font-size: calc(0.5rem + 0.625dvw);
+    color: var(--grey4);
+}
+
 .tss-box {
     border: 2px solid var(--logo-teal);
     border-radius: 100px;
@@ -261,10 +270,14 @@ header {
     border: 1px solid var(--dark-blue);
   }
 
+  .reviews {
+    height: 400px;
+  }
+
 
 /**  BUTTONS  **/
 
-button {
+button, #header-btn {
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -419,29 +432,83 @@ button:hover.grey-style, .pressed.grey-style {
 
 /**  FORM DESIGN  **/
 
-form, .form-text {
+#form-section-outer {
+    background: var(--seethrough-grey);
+    opacity: 60%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
     height: 100dvh;
-    min-height: 800px;
-    width: 80dvw;
-    text-align: left;
-    color: white;
-    margin: 30px auto;
-    padding: 20px 30px 0 30px;
-    border-radius: 20px;
+    z-index: 7;
 }
 
-form {
-    border: 2px solid white;
+#main-form {
+    height: 50%;
+    width: 80%;
+    position: fixed;
+    top: calc(20% + 35px);
+    left: 10%;
+    z-index: 8;
+    overflow: auto;
+    background: var(--grey1);
+    border-radius: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 2px;
+    border: 4px solid var(--logo-teal-dark);
+}
+
+fieldset {
+    height: 100%;
+    width: 50%;
+    padding: 2%;
+    border: none;
+    color: var(--logo-teal-dark);
+}
+
+form > :nth-child(2){
+    background-color: var(--grey2);
+}
+
+#x-btn {
+    background: none;
+    border: none;
+    font-size: 1.125rem;
+    line-height: 120%;
+    color: white;
+    width: 24px;
+    height: 0;
+    padding-bottom: 24px;
+    background-color: var(--logo-teal-dark);
+    border-radius: 50%;
+    position: relative;
+    left: calc(99% - 10px);
+    top: -25%;
+    opacity: 25%;
+    margin-bottom: 30px;
+}
+
+#x-btn:hover {
+    opacity: 35%;
+}
+
+.form-head {
+    height: 10%;
 }
 
 form input:not(#privacy), textarea, select {
-    color: white;
+    color: var(--logo-teal-dark);
     border-radius: 5px;
     width: 100%;
-    border: 2px solid white;
-    background-color: var(--darkest-blue);
-    padding: 10px 15px;
-    margin: 5px 0 10px 0;
+    border: 1px solid var(--logo-teal-dark);
+    background-color: none;
+    padding: 0 6px;
+    margin: 1px 0 5px 0;
+    font-size: 1rem;
 }
 
 textarea {
@@ -450,11 +517,11 @@ textarea {
 }
 
 #privacy {
-    accent-color: var(--dark-blue);
+    accent-color: var(--logo-teal-dark);
+    margin-bottom: 20px;
 }
 
 #submit-btn {
-    margin: 20px auto;
     border: 2px solid white;
     background-color: var(--darkest-blue);
     color: white;
@@ -470,12 +537,45 @@ textarea {
 }
 
 
+/** HEADER FUNCTIONALITY**/
+
+#header-display {
+    background: var(--seethrough-grey);
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 60dvw;
+    height: 35dvh;
+    left: 40dvw;
+    z-index: 7;
+}
+
+#header-display > div {
+    border-bottom: 1px solid var(--bluish-white);
+    border-left: 1px solid var(--bluish-white);
+    height: 3.5dvh;
+    z-index: 8;
+}
+
+#header-display > :first-child {
+    border-top: 1px solid var(--bluish-white);
+}
+
+
 /** FOOTER **/
 
 footer {
     width: 100%;
     min-height: 200px;
     background-color: var(--grey5);
+}
+
+footer > :last-child {
+    font-size: 0.75rem;
+    color: var(--grey4);
+    padding: 10px;
+    background-color: var(--seethrough-grey);
 }
 
 
@@ -522,13 +622,7 @@ footer {
 }
 
 .grey-alt {
-    background-color: var(--grey2);
-    color: black;
-}
-
-.dark-grey {
-    background-color: var(--grey1);
-    color: black;
+    background-color: var(--grey3);
 }
 
 .darkest-grey {
@@ -537,3 +631,25 @@ footer {
 }
 
 
+/**  TEST  **/
+
+.test {
+    width: 80vw;
+    margin: 0 10vw -40px 10vw;
+    position: relative;
+    z-index: 1;
+
+}
+
+.test2 {
+    width: 78vw;
+    z-index: 2;
+    position: relative;
+    margin: 0 11vw;
+    border-radius: 40px;
+}
+
+.test3 {
+    border-radius: 40px;
+    border: 2px solid black;
+}

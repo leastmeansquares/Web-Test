@@ -1,14 +1,3 @@
-mainBtn = document.getElementById("main-btn");
-serviceBtn1 = document.getElementById("service-btn-1");
-serviceBtn2 = document.getElementById("service-btn-2");
-serviceBtn3 = document.getElementById("service-btn-3");
-serviceBtn4 = document.getElementById("service-btn-4");
-serviceBtn5 = document.getElementById("service-btn-5");
-serviceBtn6 = document.getElementById("service-btn-6");
-infoBox = document.getElementById("info-box");
-infoBox.last = -1;
-
-
 
 const serviceBtnHTML = (idNumber) => {
     
@@ -251,7 +240,55 @@ const serviceBtnClick = (btnNumber) => {
 
 }
 
-mainBtn.addEventListener("click", mainBtnClick);
+
+const contactUsClick = () => {
+
+    if (mainForm.style.display){
+        mainForm.style.display = "";
+        outerForm.style.display = "";
+    }
+    else {
+        mainForm.style.display = "flex";
+        outerForm.style.display = "block";
+    }
+}
+
+const headerClick = () => {
+
+    if (headerDisplay.style.display){
+        headerDisplay.style.display = "";
+    }
+    else {
+        headerDisplay.style.display = "block";
+    }
+}
+
+
+
+mainBtn = document.getElementById("main-btn");
+xBtn = document.getElementById("x-btn");
+mainForm = document.getElementById("main-form");
+outerForm = document.getElementById("form-section-outer");
+
+serviceBtn1 = document.getElementById("service-btn-1");
+serviceBtn2 = document.getElementById("service-btn-2");
+serviceBtn3 = document.getElementById("service-btn-3");
+serviceBtn4 = document.getElementById("service-btn-4");
+serviceBtn5 = document.getElementById("service-btn-5");
+serviceBtn6 = document.getElementById("service-btn-6");
+infoBox = document.getElementById("info-box");
+infoBox.last = -1;
+
+headerBtn = document.getElementById("header-btn");
+headerDisplay = document.getElementById("header-display");
+
+
+
+mainBtn.addEventListener("click", contactUsClick);
+xBtn.addEventListener("click", contactUsClick);
+
+headerBtn.addEventListener("click", headerClick);
+
 serviceBtn1.addEventListener("click", ()=>serviceBtnClick(1));
 serviceBtn2.addEventListener("click", ()=>serviceBtnClick(2));
 serviceBtn3.addEventListener("click", ()=>serviceBtnClick(3));
