@@ -1,245 +1,31 @@
 
-const serviceBtnHTML = (idNumber) => {
-    
-    if (idNumber === 0){
-        return(`<section class="container outer-form">
-            <form class="darkest-blue">
-                <h4>CONTACT US</h4>
-                <label for="name">NAME</label><br>
-                <input type="text" id="name" name="name" required><br>
-                <label for="phone-number">PHONE NUMBER</label><br>
-                <input type="tel" id="phone-number" name="phone-number" required><br>
-                <label for="email">EMAIL ADDRESS</label><br>
-                <input type="email" id="email" name="email" required><br>
-                <label for="address">FIRST LINE OF ADDRESS</label><br>
-                <input type="address" id="address" name="address" required><br>
-                <label for="postcode">POSTCODE</label><br>
-                <input type="text" pattern="[A-Z0-9]{4}\s?[A-Z0-9]{3}" name="postcode" required/>
-                <label for="subject">SUBJECT</label><br>
-                <select name="subject" id="subject" required>
-                    <option>Please select a subject</option>
-                    <option value="subject-a">Subject A</option>
-                    <option value="subject-b">Subject B</option>
-                    <option value="subject-c">Subject C</option>
-                    <option value="subject-d">Subject D</option>
-                    <option value="subject-e">Subject E</option>
-                    <option value="other">Other (Please Specify)</option>
-                </select><br>
-                <label for="message">MESSAGE</label><br>
-                <textarea id="message" name="message" required></textarea><br>
-                <input type="checkbox" id="privacy" name="privacy" class="checkbox" required >
-                <label for="privacy">I ACCEPT THE PRIVACY POLICY</label><br>             
-                <button type="submit" id="submit-btn">SUBMIT FORM</button>
-            </form>
-        </section>`);
-    }
 
-    else if (idNumber === 1){
-        serviceBtn1.classList.add("pressed");
 
-        return(`<section class="text-box align bluish-white">
-                    <img src="images\\Backgrounds\\pexels-heyho-6238614.jpg" class="small-image">
-                    <div>
-                        <h4>Let Only Service</h4>
-                        <p>For the landlords who simply want the agent to find a good quality tenant, complete
-the necessary checks and make the transition as smooth as possible for them to
-manage the property themselves.
-Rent Collection &amp; Bond Registration
-Similar to the Let-Only service above but this includes an Inventory &amp; Property
-Condition Report which goes hand-in-hand with registering the security deposit.
-Once the tenancy commences, we then continue to collect the rent and provide
-monthly statements and support for the landlord. Generally, this is for landlords who
-prefer to be involved directly with the day-to-day running of the property but who
-have a back-up with the agent for the financial and legal aspects of the tenancy.
-You can upgrade at any time to Full-Management.
-Full Management
-This is the most popular choice for landlords, managing the tenants,
-maintenance/safety checks, rent collection and dealing with any issues. The agent
-takes over the full running of the property and keeps the landlord updated on an
-ongoing basis.
-A landlord would only normally go to the property in between tenancies for their
-own peace of mind.
-Full Management (PLUS MV-Plan)
-In addition to the Full-Management of your property, we also include the MV-Plan
-service (as below) which aims to reduce the number of call-out charges for non-
-specialist, small maintenance jobs which the agent may be able to undertake ie.
-tightening screws, battery replacement, small repairs (although material costs may
-still apply).
-                        </p>
-                        <button class="alt-button white-style white">More Info</button>
-                    </div>
-                </section>`)
-    }
-    else if (idNumber === 2){
-        serviceBtn2.classList.add("pressed");
+// INDEX PAGE
 
-        return(`
-            <section class="container dark-blue text-box table-box">
-                <h4>SERVICE LEVELS AND PRICING</h4>
-                <table class="services">
-                    <colgroup>
-                        <col>
-                        <col>
-                        <col>
-                        <col>
-                        <col>
-                        <col>
-                    </colgroup>
-                    <tr>
-                        <th></th>
-                        <th>Plan 1</th>
-                        <th>Plan 2</th>
-                        <th>Plan 3</th>
-                        <th>Plan 4</th>
-                        <th>Plan 5</th>
-                    </tr>
-                    <tr>
-                        <td>Service 1</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                    <tr>
-                        <td>Service 2</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                    <tr>
-                        <td>Service 3</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                    <tr>
-                        <td>Service 4</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                    <tr>
-                        <td>Service 5</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                    <tr>
-                        <td>Service 6</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                    <tr>
-                        <td>Service 7</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                    <tr>
-                        <td>Service 8</td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                        <td><p>&#10006</p></td>
-                        <td><p>&#10004</p></td>
-                    </tr>
-                </table>
+const indexPage = () => {
 
-            </section>`)    }
 
-    else if (idNumber === 3){
-        serviceBtn3.classList.add("pressed");
 
-        return(`<section class="text-box align faint-blue">
-                    <img src="images\\Backgrounds\\pexels-heyho-6238614.jpg" class="small-image">
-                    <div>
-                        <h4>Properties</h4>
-                        <p>onthemarket</p>
-                        <button class="alt-button white-style white">More Info</button>
-                    </div>
-                </section>`)
-    }
-    else if (idNumber === 4){
-        serviceBtn4.classList.add("pressed");
+const mainBtn = document.getElementById("main-btn");
+const xBtn = document.getElementById("x-btn");
+const mainForm = document.getElementById("main-form");
+const outerForm = document.getElementById("form-section-outer");
 
-        return(`<section class="text-box align grey">
-                    <img src="images\\Backgrounds\\pexels-heyho-6238614.jpg" class="small-image">
-                    <div>
-                        <h4>Property maintenance</h4>
-                        <p>Description.</p>
-                        <button class="alt-button white-style white">More Info</button>
-                    </div>
-                </section>`)
-    }
-    else if (idNumber === 5){
-        serviceBtn5.classList.add("pressed");
+const pageBtn1 = document.getElementById("page-button-1");
+const pageBtn2 = document.getElementById("page-button-2");
+const pageBtn3 = document.getElementById("page-button-3");
 
-        return(`<section class="text-box align grey">
-            <img src="images\\Backgrounds\\pexels-heyho-6238614.jpg" class="small-image">
-            <div>
-                <h4>Fencing &amp;
-Landscaping</h4>
-                <p>Description.</p>
-                <button class="alt-button white-style white">More Info</button>
-            </div>
-        </section>`)
-}
-    else if (idNumber === 6){
-        serviceBtn6.classList.add("pressed");
+const imagePicker = document.getElementById("image-picker");
 
-        return(`<section class="text-box align grey">
-            <img src="images\\Backgrounds\\pexels-heyho-6238614.jpg" class="small-image">
-            <div>
-                <h4>Additional
-Property
-Services</h4>
-                <p>Description.</p>
-                <button class="alt-button white-style white">More Info</button>
-            </div>
-        </section>`)
-}
-}
+const default1 = pageBtn1.innerHTML;
+const default2 = pageBtn2.innerHTML;
+const default3 = pageBtn3.innerHTML;
 
 const mainBtnClick = () => {
     if (popups.innerHTML){popups.innerHTML = "";}
     else {popups.innerHTML = serviceBtnHTML(0);}
 }
-
-const serviceBtnClick = (btnNumber) => {
-
-    serviceBtn1.classList.remove("pressed");
-    serviceBtn2.classList.remove("pressed");
-    serviceBtn3.classList.remove("pressed");
-    serviceBtn4.classList.remove("pressed");
-    serviceBtn5.classList.remove("pressed");
-    serviceBtn6.classList.remove("pressed");
-
-    if (btnNumber !== infoBox.last){
-        btnHTML = serviceBtnHTML(btnNumber);
-        infoBox.innerHTML = btnHTML;
-        infoBox.last = btnNumber;
-    }
-    else {
-        infoBox.innerText = "";
-        infoBox.last = -1;
-    }
-
-}
-
 
 const contactUsClick = () => {
 
@@ -253,6 +39,106 @@ const contactUsClick = () => {
     }
 }
 
+const pageBtnClick = (referenceNum) => {
+
+    if (referenceNum === 1){
+        pageBtn1.innerHTML = default1 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
+                            we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
+                            that you're always kept in the loop.
+                        </div>  `;
+        pageBtn2.innerHTML = default2;
+        pageBtn3.innerHTML = default3;
+        imagePicker.src = `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`;
+        pageBtn1.classList.add("pressed");
+        pageBtn2.classList.remove("pressed");
+        pageBtn3.classList.remove("pressed");
+    }   
+
+    else if (referenceNum === 2){
+        pageBtn1.innerHTML = default1;
+        pageBtn2.innerHTML = default2 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
+                            we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
+                            that you're always kept in the loop.
+                        </div>  `;
+        pageBtn3.innerHTML = default3;
+        imagePicker.src = `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`;
+        pageBtn2.classList.add("pressed");
+        pageBtn1.classList.remove("pressed");
+        pageBtn3.classList.remove("pressed");
+    } 
+
+    if (referenceNum === 3){
+        pageBtn1.innerHTML = default1;
+        pageBtn2.innerHTML = default2;
+        pageBtn3.innerHTML = default3 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
+                            we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
+                            that you're always kept in the loop.
+                        </div>  `;
+        imagePicker.src = `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`;
+        pageBtn3.classList.add("pressed");
+        pageBtn1.classList.remove("pressed");
+        pageBtn2.classList.remove("pressed");
+    }
+
+}
+
+
+mainBtn.addEventListener("click", contactUsClick);
+xBtn.addEventListener("click", contactUsClick);
+
+pageBtn1.addEventListener("click", ()=>pageBtnClick(1));
+pageBtn2.addEventListener("click", ()=>pageBtnClick(2));
+pageBtn3.addEventListener("click", ()=>pageBtnClick(3));
+
+pageBtnClick(1);
+
+}
+
+
+// LETTINGS PAGE
+
+
+const lettingsPage = () => {
+
+const lettingsBtn1 = document.getElementById("lettings-button-1");
+const lettingsBtn2 = document.getElementById("lettings-button-2");
+const lettingsBtn3 = document.getElementById("lettings-button-3");
+const lettingsBtn4 = document.getElementById("lettings-button-4");
+const lettingsBtn5 = document.getElementById("lettings-button-5");
+
+const textDisplay = document.getElementById("text-display");
+
+const textList = [
+    "For the landlords who simply want the agent to find a good quality tenant, complete the necessary checks and make the transition as smooth as possible for them to manage the property themselves.",
+    "Similar to the Let-Only service above but this includes an Inventory &amp; Property Condition Report which goes hand-in-hand with registering the security deposit. Once the tenancy commences, we then continue to collect the rent and provide monthly statements and support for the landlord. Generally, this is for landlords who prefer to be involved directly with the day-to-day running of the property but who have a back-up with the agent for the financial and legal aspects of the tenancy. You can upgrade at any time to Full-Management.",
+    "This is the most popular choice for landlords, managing the tenants, maintenance/safety checks, rent collection and dealing with any issues. The agent takes over the full running of the property and keeps the landlord updated on an ongoing basis. A landlord would only normally go to the property in between tenancies for their own peace of mind.",
+    "In addition to the Full-Management of your property, we also include the MV-Plan service (as below) which aims to reduce the number of call-out charges for non- specialist, small maintenance jobs which the agent may be able to undertake ie. tightening screws, battery replacement, small repairs (although material costs may still apply).",
+    "The maintenance Visit Plan (MV-Plan) is best described as “A Letting Agent with basic maintenance/handyman included”. The MV-Plan can be selected as a stand-alone service or taken as an upgrade to a Management Plan for a small increase on monthly commission. This type of plan would benefit a landlord who doesn’t have time to spend at the property for maintenance/handyman visits and checks but with the added advantage of the feedback of the letting agent. See separate document for more information."
+]
+
+const lettingsBtnClick = (referenceBtn, referenceNum) => {
+
+    textDisplay.innerHTML = `${textList[referenceNum-1]}`;
+    lettingsBtn1.classList.remove("pressed");
+    lettingsBtn2.classList.remove("pressed");
+    lettingsBtn3.classList.remove("pressed");
+    lettingsBtn4.classList.remove("pressed");
+    lettingsBtn5.classList.remove("pressed");
+    referenceBtn.classList.add("pressed");
+
+}
+
+lettingsBtn1.addEventListener("click", ()=>lettingsBtnClick(lettingsBtn1,1));
+lettingsBtn2.addEventListener("click", ()=>lettingsBtnClick(lettingsBtn2,2));
+lettingsBtn3.addEventListener("click", ()=>lettingsBtnClick(lettingsBtn3,3));
+lettingsBtn4.addEventListener("click", ()=>lettingsBtnClick(lettingsBtn4,4));
+lettingsBtn5.addEventListener("click", ()=>lettingsBtnClick(lettingsBtn5,5));
+lettingsBtnClick(lettingsBtn1,1);
+}
+
+
+// UNIVERSAL FEATURES
+
 const headerClick = () => {
 
     if (headerDisplay.style.display){
@@ -263,35 +149,24 @@ const headerClick = () => {
     }
 }
 
-
-
-mainBtn = document.getElementById("main-btn");
-xBtn = document.getElementById("x-btn");
-mainForm = document.getElementById("main-form");
-outerForm = document.getElementById("form-section-outer");
-
-serviceBtn1 = document.getElementById("service-btn-1");
-serviceBtn2 = document.getElementById("service-btn-2");
-serviceBtn3 = document.getElementById("service-btn-3");
-serviceBtn4 = document.getElementById("service-btn-4");
-serviceBtn5 = document.getElementById("service-btn-5");
-serviceBtn6 = document.getElementById("service-btn-6");
-infoBox = document.getElementById("info-box");
-infoBox.last = -1;
-
-headerBtn = document.getElementById("header-btn");
-headerDisplay = document.getElementById("header-display");
-
-
-
-mainBtn.addEventListener("click", contactUsClick);
-xBtn.addEventListener("click", contactUsClick);
+const headerBtn = document.getElementById("header-btn");
+const headerDisplay = document.getElementById("header-display");
 
 headerBtn.addEventListener("click", headerClick);
 
-serviceBtn1.addEventListener("click", ()=>serviceBtnClick(1));
-serviceBtn2.addEventListener("click", ()=>serviceBtnClick(2));
-serviceBtn3.addEventListener("click", ()=>serviceBtnClick(3));
-serviceBtn4.addEventListener("click", ()=>serviceBtnClick(4));
-serviceBtn5.addEventListener("click", ()=>serviceBtnClick(5));
-serviceBtn6.addEventListener("click", ()=>serviceBtnClick(6));
+
+
+
+if (location.pathname === "/index.html"){
+    indexPage();
+}
+
+else if (location.pathname === "/lettings.html"){
+    lettingsPage();
+}
+else if (location.pathname === "/maintenance.html"){
+    lettingsPage();
+}
+else {
+    alert("No location found for JS");
+}
