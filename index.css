@@ -1,22 +1,21 @@
 /**  DOCUMENT-WIDE  **/
 
 :root  {  
-    --dark-blue: #234163;
-    --darkest-blue:#122133;
-    --bluish-white: #ddddff;
-    --faint-blue: #eeeeff;
-    --dark-orange: #634d24;
-    --orange-white: #ffddcc;
-    --faint-orange: #ffeedd;
-    --grey1: #eaeaea;
-    --grey2: #e0e0e0;
-    --grey3: #cccccc;
-    --grey4: #999999;
-    --grey5: #222222;
-    --seethrough-grey: #0a131d;
-    --logo-teal: #cae9e9;
-    --logo-teal-light2: #7FBFC0;
-    --logo-teal-dark: #0a6566;
+    --dark-blue:#122133; /* General purpose dark blue */
+    --light-blue: #d1dffa; /* Light blue, for contrasting with main shades */
+    --logo-teal: hsl(180, 60%, 80%); /* Main teal used throughout site */
+    --dark-teal: #0a6566; /* Dark teal, mostly used for accents */
+    --faint-blue: #f0f0ff; /* Very light blue only used for backgrounds, currently unused */
+    --logo-orange: #F76115; /* The orange from the original PPC website, use for maintenance */
+    --light-orange: #ffddcc; /* Lighter orange for general maintenance purposes */
+    --faint-orange: #ffeedd; /* Very light orange, mostly for backgrounds */
+    --grey1: #eaeaea; /* Buttons and some backgrounds*/
+    --grey2: #e0e0e0; /* Main form only */
+    --grey3: #cccccc; /* Alt grey for buttons and backgrounds */
+    --grey4: #999999; /* Used for low-contrast text */
+    --grey5: #222222; /* Very dark grey for footer / creating contrast */
+    --header-blue: #0a131d; /* Used for header, footer, main image*/
+
 }
 
 
@@ -48,9 +47,8 @@ html  {
 
   /**  HEADINGS AND FONTS  **/
 
-h1, h2  { 
+h1, h2 { 
     padding-bottom: 3%;
-    color: var(--bluish-white);
 }
 
 
@@ -64,6 +62,7 @@ h1  {   /**  MAIN TITLE  **/
 h2  {   /**  MAIN TITLE SMALL TEXT  **/
     font-size: 1.125rem;
     text-shadow: 1px 1px 1px black;
+    color: var(--light-blue);
 }
 
 
@@ -71,7 +70,7 @@ h3  {   /**  MAJOR SUBTITLE  **/
     font-weight: 500;
     font-size: 2.25rem;
     padding: 1% 0 2% 0;
-    color: var(--darkest-blue);
+    color: var(--dark-blue);
 }
 
 
@@ -84,7 +83,7 @@ h4  {   /**  STANDARD SUBTITLE  **/
 h5  {   /**  MINOR TITLE  **/
     font-weight: 700;
     font-size: calc(0.6875rem + 0.625dvw);
-    color: var(--bluish-white);
+    color: var(--light-blue);
 }
 
 
@@ -98,7 +97,6 @@ header  {
     position: absolute;
     transition-duration: 0.4s;
     position: sticky;
-    background: var(--seethrough-grey);
 }
 
 
@@ -123,6 +121,31 @@ nav > h1  {
     margin-left: -15px;
 }
 
+#header-display  { 
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 60dvw;
+    height: 35dvh;
+    left: 40dvw;
+    z-index: 7;
+}
+
+
+#header-display > div  { 
+    border-bottom: 1px solid var(--light-blue);
+    border-left: 1px solid var(--light-blue);
+    height: 3.5dvh;
+    z-index: 8;
+}
+
+
+#header-display > :first-child  { 
+    border-top: 1px solid var(--light-blue);
+}
+
+
 
 
 /** IMAGES **/
@@ -135,7 +158,7 @@ nav > h1  {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--seethrough-grey);
+    background: linear-gradient(135deg, var(--header-blue) 60%, #0a131d00);
     opacity: 60%;
   }
 
@@ -267,7 +290,7 @@ nav > h1  {
     width: 50%;
     height: 0;
     padding-bottom: 50%;
-    background-color: var(--bluish-white);
+    background-color: var(--light-blue);
     border-radius: 50%;
     display: inline-block;
     text-align: center;
@@ -291,13 +314,20 @@ nav > h1  {
 }
 
 
-.tss-box  { 
-    border: 2px solid var(--logo-teal);
+.tss-box, .tss-box-o  { 
     border-radius: 100px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.tss-box{
+    border: 2px solid var(--logo-teal);
+}
+
+.tss-box-o{
+    border: 2px solid var(--light-orange);
 }
 
 
@@ -320,8 +350,7 @@ button, #header-btn, a  {
     transition-duration: 0.2s;
 }
 
-
-button:hover:not(.index-button):not(.lettings-button)  { 
+button:hover:not(.index-button):not(.lettings-button):not(.page-button)  { 
     transform: scale(1.05);
 }
 
@@ -332,12 +361,12 @@ button:hover.index-button  {
 
 
 button:hover.index-button > div, .pressed.index-button > div { 
-    box-shadow: 2px 2px 3px var(--logo-teal-dark);
+    box-shadow: 2px 2px 3px var(--dark-teal);
 }
 
 
 button:hover.index-button > img, .pressed.index-button > img  { 
-    box-shadow: 2px -2px 3px var(--logo-teal-dark);
+    box-shadow: 2px -2px 3px var(--dark-teal);
 }
 
 
@@ -394,21 +423,21 @@ button:hover.index-button > img, .pressed.index-button > img  {
 
 button:hover.white-style, .pressed.white-style  { 
     background-color: var(--logo-teal);
-    box-shadow: 2px 2px 3px var(--logo-teal-dark);
+    box-shadow: 2px 2px 3px var(--dark-teal);
 }
 
 
 button:hover.blue-style, .pressed.blue-style  { 
     border: 1px solid var(--dark-blue);
-    background-color: var(--bluish-white);
+    background-color: var(--light-blue);
     box-shadow: 2px 2px 3px var(--dark-blue);
 }
 
 
 button:hover.orange-style, .pressed.orange-style  { 
-    border: 1px solid var(--dark-orange);
-    background-color: var(--orange-white);
-    box-shadow: 2px 2px 3px var(--dark-orange);
+    border: 1px solid var(--logo-orange);
+    background-color: var(--light-orange);
+    box-shadow: 2px 2px 3px var(--logo-orange);
 }
 
 
@@ -417,14 +446,6 @@ button:hover.grey-style, .pressed.grey-style  {
     background-color: var(--grey3);
     box-shadow: 2px 2px 3px var(--grey4);
 }
-
-
-.divider  { 
-    height: 80%;
-    width: 1px;
-    background-color: var(--darkest-blue);
-}
-
 
 .mini-box  { 
     width: 30%;
@@ -435,57 +456,67 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .arrangement-box   { 
     width: 45vw;
-    height: 60vh;
+    height: 80vh;
 }
-
-.arrangement-box-2 { 
-    width: 70dvw;
-    height: 60vh;
-    margin-bottom: 40px;
-}
-
 
 .page-button  { 
     width: 100%;
-    height: 20%;
-    border-radius: 10px;
-    color: black;
+    height: 25%;
+    border-radius: 10px 0 0 10px;
     border: none;
     margin: 0;
     font-weight: 500;
     font-size: 1rem;
     color: var(--grey4);
     background-color: var(--grey1);
+    text-align: left;
 }
-
 
 .page-button.pressed  { 
-    background-color: var(--logo-teal);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.625rem;
     height: 50%;
-    color: var(--darkest-blue);
+    color: var(--dark-blue);
+    border: 1px dotted black;
 }
 
+.page-button.pressed:nth-of-type(1)  { 
+    background-color: var(--logo-teal);
+}
+
+.page-button.pressed:nth-of-type(2)  { 
+    background-color: var(--light-blue);
+}
+
+.page-button.pressed:nth-of-type(3)  { 
+    background-color: var(--faint-orange);
+}
 
 .page-button.pressed > div  { 
-    font-size: 1.25rem;
+    font-size: 1.125rem;
 }
 
 #image-picker  { 
     width: 100%;
     height: 100%;
-    padding-left: 8%;
+    /**margin-left: 8%;**/
     border-radius: 0 30px 30px 0;
     overflow: hidden;
     object-fit: cover;
+    border: 1px dotted black;
 }
+
 
 .lettings-top {
     width: 95vw;
-    height: 10vh;
-    padding-bottom: 80px;
-    margin-top: 40px;
+    height: 7vw;
+    padding: 5px 0;
+}
+
+.arrangement-box-2 { 
+    width: 70dvw;
+    height: 60vh;
+    margin-bottom: 40px;
 }
 
 .tall-box {
@@ -514,7 +545,7 @@ button:hover.grey-style, .pressed.grey-style  {
     background-color: var(--logo-teal);
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--darkest-blue);
+    color: var(--dark-blue);
 }
     
 
@@ -525,7 +556,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
-.services th, .services td  {  /**/
+.services th, .services td  { 
     padding: 10px;
     border: 1px solid black;
     text-align: center;
@@ -533,8 +564,8 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
-.services th, .services td:first-child  {  /**/
-    background-color: var(--bluish-white);
+.services th, .services td:first-child  { 
+    background-color: var(--light-blue);
     color: black;
 }
 
@@ -547,7 +578,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 
 .services th:nth-child(2), .services tr:nth-child(2) td:first-child  { 
-    border-radius: 10px 0 0 0; /**/
+    border-radius: 10px 0 0 0;
 }
 
 
@@ -556,12 +587,12 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
-.services tr:last-child td:first-child  {  /**/
+.services tr:last-child td:first-child  { 
     border-radius: 0 0 0 10px;
 }
 
 
-.services td  {  /**/
+.services td  { 
     background-color: white;
     color: black;
 }
@@ -573,10 +604,11 @@ button:hover.grey-style, .pressed.grey-style  {
 
 
 
+
 /**  FORM DESIGN  **/
 
 #form-section-outer  { 
-    background: var(--seethrough-grey);
+    background: var(--header-blue);
     opacity: 60%;
     display: none;
     position: fixed;
@@ -589,10 +621,10 @@ button:hover.grey-style, .pressed.grey-style  {
 
 
 #main-form  { 
-    height: 50%;
-    width: 80%;
+    height: clamp(50dvh, 50dvw, 70dvh);
+    width: 80dvw;
     position: fixed;
-    top: calc(20% + 35px);
+    top: clamp(calc(20dvh), calc(20dvw + 35px), 20dvh);
     left: 10%;
     z-index: 8;
     overflow: auto;
@@ -603,7 +635,7 @@ button:hover.grey-style, .pressed.grey-style  {
     justify-content: center;
     margin: auto;
     padding-top: 2px;
-    border: 4px solid var(--logo-teal-dark);
+    border: 4px solid var(--dark-teal);
 }
 
 
@@ -612,7 +644,7 @@ fieldset  {
     width: 50%;
     padding: 2%;
     border: none;
-    color: var(--logo-teal-dark);
+    color: var(--dark-teal);
 }
 
 
@@ -630,7 +662,7 @@ form > :nth-child(2) {
     width: 24px;
     height: 0;
     padding-bottom: 24px;
-    background-color: var(--logo-teal-dark);
+    background-color: var(--dark-teal);
     border-radius: 50%;
     position: relative;
     left: calc(99% - 10px);
@@ -651,10 +683,10 @@ form > :nth-child(2) {
 
 
 form input:not(#privacy), textarea, select  { 
-    color: var(--logo-teal-dark);
+    color: var(--dark-teal);
     border-radius: 5px;
     width: 100%;
-    border: 1px solid var(--logo-teal-dark);
+    border: 1px solid var(--dark-teal);
     padding: 0 6px;
     margin: 1px 0 5px 0;
     font-size: 1rem;
@@ -668,14 +700,14 @@ textarea  {
 
 
 #privacy  { 
-    accent-color: var(--logo-teal-dark);
+    accent-color: var(--dark-teal);
     margin-bottom: 20px;
 }
 
 
 #submit-btn  { 
     border: 2px solid white;
-    background-color: var(--darkest-blue);
+    background-color: var(--dark-blue);
     color: white;
     width: 120px;
     height: 35px;
@@ -688,36 +720,6 @@ textarea  {
     background-color: white;
     color: var(--dark-blue)
 }
-
-
-
-/** HEADER FUNCTIONALITY**/
-
-#header-display  { 
-    background: var(--seethrough-grey);
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 60dvw;
-    height: 35dvh;
-    left: 40dvw;
-    z-index: 7;
-}
-
-
-#header-display > div  { 
-    border-bottom: 1px solid var(--bluish-white);
-    border-left: 1px solid var(--bluish-white);
-    height: 3.5dvh;
-    z-index: 8;
-}
-
-
-#header-display > :first-child  { 
-    border-top: 1px solid var(--bluish-white);
-}
-
 
 
 /** FOOTER **/
@@ -733,46 +735,60 @@ footer > :last-child  {
     font-size: 0.75rem;
     color: var(--grey4);
     padding: 10px;
-    background-color: var(--seethrough-grey);
+    background-color: var(--header-blue);
 }
 
 
 
 /**  COLOUR SCHEMES  **/
 
-.bluish-white  { 
-    background-color: var(--bluish-white);
+.light-blue  { 
+    background-color: var(--light-blue);
     color: var(--dark-blue);
 }
 
 
 .dark-blue  { 
     background: var(--dark-blue);
-    color: var(--bluish-white);
+    color: var(--light-blue);
 }
 
 
-.darkest-blue  { 
-    background: var(--darkest-blue);
-    color: var(--bluish-white);
+.dark-blue  { 
+    background: var(--dark-blue);
+    color: var(--light-blue);
 }
-
 
 .faint-blue  { 
     background-color: var(--faint-blue);
     color: var(--dark-blue);
 }
 
-
-.orange-white  { 
-    background-color: var(--orange-white);
-    color: var(--dark-orange);
+.title-blue {
+    background-color: var(--header-blue);
 }
 
+.light-orange  { 
+    background-color: var(--light-orange);
+    color: var(--dark-blue);
+}
 
 .faint-orange  { 
     background-color: var(--faint-orange);
-    color: var(--dark-orange);
+    color: var(--dark-blue);
+}
+
+.logo-orange { 
+    background: var(--logo-orange);
+    color: var(--dark-blue);
+}
+
+.orange-text {
+    color: var(--light-orange);
+}
+
+.orange-text-light {
+    color: var(--faint-orange);
 }
 
 
@@ -787,20 +803,18 @@ footer > :last-child  {
     color: black;
 }
 
-
 .grey-alt  { 
     background-color: var(--grey3);
 }
 
-
 .darkest-grey  { 
     background-color: var(--grey5);
-    color: var(--bluish-white);
+    color: var(--light-blue);
 }
 
 .teal {
     background-color: var(--logo-teal);
-    color: var(--darkest-blue);
+    color: var(--dark-blue);
 }
 
 

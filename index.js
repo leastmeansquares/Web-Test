@@ -1,6 +1,4 @@
 
-
-
 // INDEX PAGE
 
 const indexPage = () => {
@@ -45,7 +43,8 @@ const pageBtnClick = (referenceNum) => {
         pageBtn1.innerHTML = default1 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
                             we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
                             that you're always kept in the loop.
-                        </div>  `;
+                        </div>
+                        <button class="alt-button">SEE MORE</button>  `;
         pageBtn2.innerHTML = default2;
         pageBtn3.innerHTML = default3;
         imagePicker.src = `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`;
@@ -59,7 +58,8 @@ const pageBtnClick = (referenceNum) => {
         pageBtn2.innerHTML = default2 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
                             we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
                             that you're always kept in the loop.
-                        </div>  `;
+                        </div>
+                        <button class="alt-button">SEE MORE</button>`;
         pageBtn3.innerHTML = default3;
         imagePicker.src = `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`;
         pageBtn2.classList.add("pressed");
@@ -73,7 +73,8 @@ const pageBtnClick = (referenceNum) => {
         pageBtn3.innerHTML = default3 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
                             we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
                             that you're always kept in the loop.
-                        </div>  `;
+                        </div> 
+                        <button class="alt-button">SEE MORE</button>`;
         imagePicker.src = `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`;
         pageBtn3.classList.add("pressed");
         pageBtn1.classList.remove("pressed");
@@ -165,7 +166,7 @@ else if (location.pathname === "/lettings.html" || location.pathname === "https:
     lettingsPage();
 }
 else if (location.pathname === "/maintenance.html" || location.pathname === "https://leastmeansquares.github.io/maintenance.html"){
-    lettingsPage();
+    ;
 }
 else {
     try {indexPage()}
