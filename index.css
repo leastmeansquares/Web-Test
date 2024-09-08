@@ -3,7 +3,7 @@
 :root  {  
     --dark-blue:#122133; /* General purpose dark blue */
     --light-blue: #d1dffa; /* Light blue, for contrasting with main shades */
-    --logo-teal: hsl(180, 60%, 80%); /* Main teal used throughout site */
+    --logo-teal: #b3e6e6; /* Main teal used throughout site */
     --dark-teal: #0a6566; /* Dark teal, mostly used for accents */
     --faint-blue: #f0f0ff; /* Very light blue only used for backgrounds, currently unused */
     --logo-orange: #F76115; /* The orange from the original PPC website, use for maintenance */
@@ -23,7 +23,6 @@
     margin: 0; 
     padding: 0;
     font-family: "Oswald", sans-serif;
-    /*font-optical-sizing: auto;*/
     font-weight: 400;
     font-style: normal;
    }
@@ -52,10 +51,13 @@ h1, h2 {
 }
 
 
-h1  {   /**  MAIN TITLE  **/
+h1, #header-btn  {   /**  MAIN TITLE  **/
     font-size: 3.5rem;
-    color: var(--logo-teal);
     text-shadow: 1px 1px 1px black;
+}
+
+h1 {
+    color: var(--logo-teal);
 }
 
 
@@ -109,11 +111,13 @@ header  {
 }
 
 
-nav > h1  { 
+#header-btn {
     position: relative;
     top: -5px;
+    left: -5px;
+    border-width: 0px;
+    background-color: #ffffff00;
 }
-
 
 .logo  { 
     width: 150px;
@@ -368,7 +372,6 @@ button:hover.index-button > div, .pressed.index-button > div {
 button:hover.index-button > img, .pressed.index-button > img  { 
     box-shadow: 2px -2px 3px var(--dark-teal);
 }
-
 
 .main-button  { 
     width: calc(140px + 10dvw);
@@ -753,7 +756,6 @@ footer > :last-child  {
     color: var(--light-blue);
 }
 
-
 .dark-blue  { 
     background: var(--dark-blue);
     color: var(--light-blue);
@@ -766,6 +768,10 @@ footer > :last-child  {
 
 .title-blue {
     background-color: var(--header-blue);
+}
+
+.light-blue-text {
+    color: var(--light-blue);
 }
 
 .light-orange  { 
