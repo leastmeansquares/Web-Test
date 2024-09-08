@@ -10,7 +10,7 @@
     --light-orange: #ffddcc; /* Lighter orange for general maintenance purposes */
     --faint-orange: #ffeedd; /* Very light orange, mostly for backgrounds */
     --grey1: #eaeaea; /* Buttons and some backgrounds*/
-    --grey2: #e0e0e0; /* Main form only */
+    --grey2: #e0e0e0; /* Used for bgs which have low contrast with but are distinct from grey1 backgrounds */
     --grey3: #cccccc; /* Alt grey for buttons and backgrounds */
     --grey4: #999999; /* Used for low-contrast text */
     --grey5: #222222; /* Very dark grey for footer / creating contrast */
@@ -484,11 +484,11 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 .page-button.pressed:nth-of-type(1)  { 
-    background-color: var(--logo-teal);
+    background-color: var(--light-blue);
 }
 
 .page-button.pressed:nth-of-type(2)  { 
-    background-color: var(--light-blue);
+    background-color: var(--grey2);
 }
 
 .page-button.pressed:nth-of-type(3)  { 
