@@ -157,7 +157,7 @@ headerBtn.addEventListener("click", headerClick);
 
 
 
-if (location.pathname === "/index.html" || location.pathname === "https://leastmeansquares.github.io/" || location.pathname === "https://leastmeansquares.github.io/index.html)"){
+if (location.pathname === "/index.html" || location.pathname === "https://leastmeansquares.github.io" || location.pathname === "https://leastmeansquares.github.io/index.html)"){
     indexPage();
     }
 
