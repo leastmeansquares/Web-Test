@@ -157,7 +157,7 @@ headerBtn.addEventListener("click", headerClick);
 
 
 
-if (location.pathname === "/index.html" || location.pathname === "https://leastmeansquares.github.io" || location.pathname === "https://leastmeansquares.github.io/index.html)"){
+if (location.pathname === "/index.html" || location.pathname === "https://leastmeansquares.github.io/" || location.pathname === "https://leastmeansquares.github.io/index.html)"){
     indexPage();
     }
 
@@ -168,5 +168,6 @@ else if (location.pathname === "/maintenance.html" || location.pathname === "htt
     lettingsPage();
 }
 else {
-    alert("Error: Invalid location for JavaScript");
+    try {indexPage()}
+    catch {alert("Error: Invalid location for JavaScript");}
 }
