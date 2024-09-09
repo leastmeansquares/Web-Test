@@ -50,7 +50,7 @@ h1, h2 {
 }
 
 h1, #header-btn  { 
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 4dvw, 3.5rem);
     text-shadow: 1px 1px 1px black;
 }
 
@@ -359,7 +359,7 @@ button, #header-btn, a  {
     transition-duration: 0.2s;
 }
 
-button:hover:not(.index-button):not(.lettings-button):not(.page-button)  { 
+#header-btn:hover, #main-btn:hover, .alt-button:hover  { 
     transform: scale(1.05);
 }
 
@@ -458,15 +458,62 @@ button:hover.grey-style, .pressed.grey-style  {
     width: 30%;
 }
 
-
-/**  SPECIAL BUTTON ARRANGEMENT **/
-
-.arrangement-box   { 
-    width: 45vw;
-    height: 80vh;
+.dropdown-btn {
+    width: 100%;
+    height: 40px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: text-top;
+    padding: 0 1%;
+    margin: 8px 0;
 }
 
-.page-button  { 
+.dropdown-box {
+    margin-top: -8px;
+    border-left: 1px dotted black;
+    border-right: 1px dotted black;
+    border-bottom: 1px dotted black;
+}
+
+.dropdown-box, #discovery-dropdown {
+    display: none;
+}
+
+.dropdown-box.pressed, #discovery-dropdown.pressed {
+    display: block;
+}
+
+#discoveryBtn {
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.down {
+    transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-45deg);
+}
+
+
+/**  SPECIAL BUTTON ARRANGEMENTS **/
+
+.arrangement-box   { 
+    width: 45dvw;
+    height: 80dvh;
+}
+
+.page-btn  { 
     width: 100%;
     height: 25%;
     border-radius: 10px 0 0 10px;
@@ -479,7 +526,7 @@ button:hover.grey-style, .pressed.grey-style  {
     text-align: left;
 }
 
-.page-button.pressed  { 
+.page-btn.pressed  { 
     font-weight: 700;
     font-size: 1.625rem;
     height: 50%;
@@ -487,26 +534,25 @@ button:hover.grey-style, .pressed.grey-style  {
     border: 1px dotted black;
 }
 
-.page-button.pressed:nth-of-type(1)  { 
+.page-btn.pressed:nth-of-type(1)  { 
     background-color: var(--light-blue);
 }
 
-.page-button.pressed:nth-of-type(2)  { 
+.page-btn.pressed:nth-of-type(2)  { 
     background-color: var(--grey2);
 }
 
-.page-button.pressed:nth-of-type(3)  { 
+.page-btn.pressed:nth-of-type(3)  { 
     background-color: var(--faint-orange);
 }
 
-.page-button.pressed > div  { 
+.page-btn.pressed > div  { 
     font-size: 1.125rem;
 }
 
 #image-picker  { 
     width: 100%;
     height: 100%;
-    /**margin-left: 8%;**/
     border-radius: 0 30px 30px 0;
     overflow: hidden;
     object-fit: cover;
@@ -536,7 +582,7 @@ button:hover.grey-style, .pressed.grey-style  {
     border: 1px dotted black;
 }
 
-.lettings-button  { 
+.lettings-btn { 
     width: 100%;
     height: 12vh;
     color: black;
@@ -548,7 +594,7 @@ button:hover.grey-style, .pressed.grey-style  {
     background-color: var(--grey1);
 }
 
-.lettings-button.pressed  { 
+.lettings-btn.pressed  { 
     background-color: var(--logo-teal);
     font-weight: 700;
     font-size: 1.5rem;
@@ -569,7 +615,6 @@ button:hover.grey-style, .pressed.grey-style  {
     text-align: center;
 
 }
-
 
 .services th, .services td:first-child  { 
     background-color: var(--light-blue);
@@ -805,7 +850,6 @@ footer > :last-child  {
     color: black;
 }
 
-
 .grey  { 
     background-color: var(--grey1);
     color: black;
@@ -824,9 +868,20 @@ footer > :last-child  {
     background-color: var(--logo-teal);
     color: var(--dark-blue);
 }
+
+.dark-teal {
+    background-color: var(--dark-teal);
+    color: var(--light-blue);
+}
     
 .bck-image {
     background-image: url("images\\Backgrounds\\pexels-lina-5624177.jpg");
+    overflow: hidden;
+    background-size: cover;
+}
+
+.bck-image-2 {
+    background-image: url("images\\Backgrounds\\pexels-mali-68470.jpg");
     overflow: hidden;
     background-size: cover;
 }

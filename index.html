@@ -37,50 +37,51 @@
                         <h1>PRO PROPERTY CARE</h1>
                         <h2>LOCALLY-RUN LETTING AGENT AND PROPERTY MANAGEMENT COVERING PONTEFRACT, CASTLEFORD, AND SURROUNDING AREAS</h2>
                     </div>
-                    <button class="main-button white-style white" id="main-btn">BOOK A FREE RENTAL VALUATION</button>
+                    <button class="main-button white-style white form-btn" id="main-btn">BOOK A FREE RENTAL VALUATION</button>
                 </div>
             </section> 
-                <section class="container grey text-box rounded">
-                    <h3>DISCOVER THE SERVICE FOR YOU</h3>
-                    <div class="align">
-                        <a href="lettings.html">
-                            <button class="index-button" id="service-btn-1">
-                                <img loading="lazy" src="images\Backgrounds\pexels-heyho-6585598.jpg" class="button-image">  
-                                <div><p>Lettings
-                                    Services</p></div>
-                            </button>
-                        </a>
-                        <a href="lettings.html">
-                            <button class="index-button" id="service-btn-2">
-                                <img loading="lazy" src="images\Backgrounds\pexels-pixabay-262470.jpg" class="button-image">  
-                                <div><p>Pricing Plans</p></div>
-                            </button>
-                        </a>
-                        <a href="lettings.html">
-                            <button class="index-button" id="service-btn-3">
-                                <img loading="lazy" src="images\Backgrounds\pexels-lina-5624177.jpg" class="button-image">  
-                                <div><p>Properties</p></div>
-                            </button>
-                        </a>
-                    </div>
-                    <div class="align">
-                        <a href="maintenance.html">
-                            <button class="index-button" id="service-btn-4">
-                                <img loading="lazy" src="images\Backgrounds\pexels-tima-miroshnichenko-6473975.jpg" class="button-image">  
-                                <div><p>Property Maintenance</p></div>
-                            </button>
-                        </a>
-                        <a href="maintenance.html">
-                            <button class="index-button" id="service-btn-5">
-                                <img loading="lazy" src="images\Backgrounds\pexels-mali-68470.jpg" class="button-image">  
-                                <div><p>Additional Property Services<i class="fa-solid fa-arrow-right"></i></p></div>
-                            </button>
-                        <a href="maintenance.html">
-                            <button class="index-button" id="service-btn-6">
-                                <img loading="lazy" src="images\Backgrounds\pexels-craigmdennis-205421.jpg" class="button-image">  
-                                <div><p>Contact Us<i class="fa-solid fa-arrow-right"></i></p></div>
-                            </button>
-                        </a>
+                <section class="container grey text-box rounded" id="discovery-btn">
+                    <button class="dropdown-btn" id="discoveryBtn"><h3>DISCOVER THE SERVICE FOR YOU</h3><p class="arrow down"></p></button>
+                    <div id="discovery-dropdown">
+                        <div class="align">
+                            <a href="lettings.html">
+                                <button class="index-button" id="service-btn-1">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-heyho-6585598.jpg" class="button-image">  
+                                 <div><p>Lettings Services</p></div>
+                                </button>
+                            </a>
+                            <a href="lettings.html">
+                                <button class="index-button" id="service-btn-2">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-pixabay-262470.jpg" class="button-image">  
+                                    <div><p>Pricing Plans</p></div>
+                                </button>
+                            </a>
+                            <a href="lettings.html">
+                                <button class="index-button" id="service-btn-3">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-lina-5624177.jpg" class="button-image">  
+                                    <div><p>Properties</p></div>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="align">
+                            <a href="maintenance.html">
+                                <button class="index-button" id="service-btn-4">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-tima-miroshnichenko-6473975.jpg" class="button-image">  
+                                    <div><p>Property Maintenance</p></div>
+                                </button>
+                            </a>
+                            <a href="maintenance.html">
+                                <button class="index-button" id="service-btn-5">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-mali-68470.jpg" class="button-image">  
+                                    <div><p>Additional Property Services</p></div>
+                                </button>
+                            <a href="maintenance.html">
+                                <button class="index-button" id="service-btn-6">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-craigmdennis-205421.jpg" class="button-image">  
+                                    <div><p>Contact Us</p></div>
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </section>
                 <section class="container darkest-grey text-box">        
@@ -131,9 +132,9 @@
 
                 <section class="grey container text-box align-c">
                     <div class="arrangement-box">                 
-                        <button class="page-button" id="page-button-1">LETTINGS SERVICES</button>                  
-                        <button class="page-button" id="page-button-2">LET WITH AN AGENT YOU CAN COUNT ON</button>                  
-                        <button class="page-button" id="page-button-3">MAINTENANCE INCLUDED IN YOUR PROPERTY MANAGEMENT</button> 
+                        <button class="page-btn" id="page-btn-1">LETTINGS SERVICES</button>                  
+                        <button class="page-btn" id="page-btn-2">LET WITH AN AGENT YOU CAN COUNT ON</button>                  
+                        <button class="page-btn" id="page-btn-3">MAINTENANCE INCLUDED IN YOUR PROPERTY MANAGEMENT</button> 
                     </div>
                     <div class="arrangement-box align"> 
                         <img loading="lazy" src="images\Backgrounds\pexels-spencphoto-28111458.jpg" id="image-picker">
@@ -213,7 +214,7 @@
                 </fieldset>
                 <fieldset>
                     <div class="form-head">
-                        <button id="x-btn" onsubmit="return false">&#10005</button>
+                        <button id="x-btn" class="form-btn" onsubmit="return false">&#10005</button>
                     </div>
                     <label for="subject">Subject</label><br>
                     <select name="subject" id="subject" required>
