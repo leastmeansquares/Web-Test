@@ -143,7 +143,12 @@ const maintenancePage = () => {
     const maintenanceBoxes = {
         dropdownBtn1: dropdownBox1,
         dropdownBtn2: dropdownBox2,
-        dropdownBtn3: dropdownBox3
+        dropdownBtn3: dropdownBox3,
+        dropdownBtn4: dropdownBox4,
+        dropdownBtn5: dropdownBox5,
+        dropdownBtn6: dropdownBox6,
+        dropdownBtn7: dropdownBox7,
+        dropdownBtn8: dropdownBox8
     }
 
 

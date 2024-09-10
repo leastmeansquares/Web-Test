@@ -3,7 +3,8 @@
 :root  {  
     --dark-blue:#122133; /* General purpose dark blue */
     --light-blue: #d1dffa; /* Light blue, for contrasting with main shades */
-    --logo-teal: #b3e6e6; /* Main teal used throughout site */
+    --light-teal: #b3e6e6; /* Main teal in site */
+    --logo-teal: #218e91; /* Main teal from the logo */
     --dark-teal: #065C5D; /* Dark teal, mostly used for accents #0a6566*/ 
     --faint-blue: #f0f0ff; /* Very light blue only used for backgrounds, currently unused */
     --logo-orange: #F76115; /* The orange from the original PPC website, use for maintenance */
@@ -16,7 +17,6 @@
     --grey5: #222222; /* Very dark grey for footer / creating contrast */
     --header-blue: #0a131d; /* Used for header, footer, main image*/
     --transparent: #0a131d00;
-
 }
 
 *  {  
@@ -46,46 +46,41 @@ html  {
 
   /**  HEADINGS AND FONTS  **/
 
-h1, h2 { 
+#title > h1 { 
     padding-bottom: 3%;
+    font-family: "Podkova", "Oswald", sans-serif;
+    font-weight: 700;
+    color: var(--light-teal);
 }
 
-h1, #header-btn  { 
-    font-size: clamp(2rem, 4dvw, 3.5rem);
+#title > h1, #header-btn  { 
+    font-size: clamp(2rem, 5dvw, 4rem);
     text-shadow: 1px 1px 1px black;
 }
 
-h1 {
-    color: var(--logo-teal);
+#maintenance-title > h1 {
+    font-weight: 450;
+    font-size: clamp(2rem, 4dvw, 3.5rem);
+    color: var(--dark-blue);
 }
 
-h2  { 
+#title > h2  { 
     font-size: 1.125rem;
     text-shadow: 1px 1px 1px black;
     color: var(--light-blue);
 }
 
-
-h3  {
+h3, #maintenance-main h2 {
     font-weight: 500;
     font-size: 2.25rem;
     padding: 1% 0 2% 0;
     color: var(--dark-blue);
 }
 
-
 h4  {
     font-size: 2rem;
     padding-bottom: 3%;
 }
-
-
-h5  {
-    font-weight: 700;
-    font-size: calc(0.6875rem + 0.625dvw);
-    color: var(--light-blue);
-}
-
 
 
 /**  HEADER  **/
@@ -111,6 +106,11 @@ header  {
     height: 70px;
 }
 
+nav p {
+    font-weight: 900;
+    font-size: 1.125rem;
+}
+
 
 #header-btn {
     position: relative;
@@ -118,36 +118,33 @@ header  {
     left: -5px;
     border-width: 0px;
     background-color: var(--transparent);
+    color: var(--logo-teal);
+    font-weight: 500;
 }
 
 .logo  { 
     width: 150px;
     height: auto;
     margin-left: -15px;
+    margin-right: 5px;
 }
 
 #header-display  { 
     display: none;
     position: fixed;
     top: 70px;
-    left: 0;
     width: 60dvw;
-    height: 35dvh;
+    height: calc(80dvh - 70px);
     left: 40dvw;
     z-index: 7;
+    padding-left: 20px;
 }
 
 
 #header-display > div  { 
-    border-bottom: 1px solid var(--light-blue);
-    border-left: 1px solid var(--light-blue);
-    height: 3.5dvh;
+    height: calc((80dvh - 70px) / 9);
     z-index: 8;
-}
-
-
-#header-display > :first-child  { 
-    border-top: 1px solid var(--light-blue);
+    font-size: 1.5rem;
 }
 
 
@@ -164,13 +161,13 @@ header  {
     width: 100dvw;
     max-width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--header-blue) 60%, var(--transparent));
-    opacity: 60%;
+    background: linear-gradient(140deg, var(--header-blue) 35%, var(--transparent));
+    opacity: 70%;
   }
 
 
 #main-image img  { 
-    height: 60dvh;
+    height: 70dvh;
     position: fixed;
     z-index: -2;
 }
@@ -179,7 +176,7 @@ header  {
 #main-image  { 
     width: 100dvw;
     max-width: 100%;
-    height: 60dvh;
+    height: 70dvh;
     overflow: hidden;
     object-fit: cover;
 }
@@ -206,9 +203,9 @@ header  {
 .image-text  { 
     position: absolute;
     text-align: left;
-    top: 15dvh;
-    left: 5dvw;
-    width: 30%;
+    top: 20dvh;
+    left: 3dvw;
+    width: 40%;
   }
 
 .shift-up  { 
@@ -226,7 +223,7 @@ header  {
 
 
 .text-box  { 
-    padding: 4% 3%;
+    padding: 3%;
     text-align: left;
 }
 
@@ -294,15 +291,21 @@ header  {
   }
 
 
-  .circle > i  { 
+.circle > i  { 
     position: relative;
     top: calc(29px - 1.5dvw);
-  }
+}
 
+.circle-box > p:first-of-type { 
+    font-weight: 700;
+    font-size: calc(0.6875rem + 0.625dvw);
+    color: var(--light-blue);
+}
 
-  .circle-box p  { 
+.circle-box > p:last-of-type  { 
     font-size: calc(0.5rem + 0.625dvw);
     color: var(--grey4);
+    font-weight: 600;
 }
 
 
@@ -323,15 +326,19 @@ header  {
 }
 
 
-  .small  { 
+.small { 
     border-radius: 30px;
     border: 1px solid var(--dark-blue);
   }
 
 
-  .reviews  { 
+.reviews  { 
     height: 400px;
   }
+
+#maintenance-title {
+    border: 1px solid var(--logo-orange);
+}
 
 
 
@@ -416,7 +423,7 @@ button:hover.index-button > img {
 }
 
 button:hover.white-style, .pressed.white-style  { 
-    background-color: var(--logo-teal);
+    background-color: var(--light-teal);
     box-shadow: 2px 2px 3px var(--dark-teal);
 }
 
@@ -475,6 +482,7 @@ button:hover.grey-style, .pressed.grey-style  {
 #discoveryBtn {
     background-color: var(--transparent);
     border-color: var(--transparent);
+    padding: 3%;
 }
 
 .arrow {
@@ -482,6 +490,14 @@ button:hover.grey-style, .pressed.grey-style  {
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
+    transform: rotate(225deg);
+  }
+
+.arrow-xl {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
     transform: rotate(225deg);
   }
 
@@ -495,19 +511,24 @@ button:hover.grey-style, .pressed.grey-style  {
 .arrangement-box   { 
     width: 45dvw;
     height: 80dvh;
+    display: flex;
+    vertical-align: text-top;
+    flex-wrap: wrap;
 }
 
 .page-btn  { 
-    width: 100%;
+    min-width: 100%;
     height: 25%;
-    border-radius: 10px 0 0 10px;
     border: none;
     margin: 0;
     font-weight: 500;
     font-size: 1rem;
     color: var(--grey4);
     background-color: var(--grey1);
+    display: flex;
     text-align: left;
+    flex-wrap: wrap;
+    padding: 6% 3%0 3%;
 }
 
 .page-btn.pressed  { 
@@ -515,7 +536,10 @@ button:hover.grey-style, .pressed.grey-style  {
     font-size: 1.625rem;
     height: 50%;
     color: var(--dark-blue);
-    border: 1px dotted black;
+    border: 1px solid black;
+    border-radius: 10px 0 0 10px;
+    padding: 3%;
+    display: flex;
 }
 
 .page-btn.pressed:nth-of-type(1)  { 
@@ -523,7 +547,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 .page-btn.pressed:nth-of-type(2)  { 
-    background-color: var(--grey2);
+    background-color: var(--light-teal);
 }
 
 .page-btn.pressed:nth-of-type(3)  { 
@@ -532,6 +556,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .page-btn.pressed > div  { 
     font-size: 1.125rem;
+    width: 100%;
 }
 
 #image-picker, .box-image { 
@@ -554,6 +579,7 @@ button:hover.grey-style, .pressed.grey-style  {
 .lettings-top {
     height: 7vw;
     padding: 0 0 0 5px;
+    border-radius: 20px 20px 0 0;
 }
 
 .tall-box {
@@ -578,7 +604,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 .lettings-btn.pressed  { 
-    background-color: var(--logo-teal);
+    background-color: var(--light-teal);
     font-weight: 700;
     font-size: 1.25rem;
     color: var(--dark-blue);
@@ -587,6 +613,16 @@ button:hover.grey-style, .pressed.grey-style  {
 .plan-box {
     width: 90vw;
     margin-top: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--header-blue);
+}
+
+.plan-box:first-child {
+    border-radius: 20px 20px 0 0;
+}
+
+.plan-box #text-display {
+    border-radius: 0 0 20px 20px;
 }
     
 
@@ -792,9 +828,8 @@ footer > :last-child  {
     color: var(--light-blue);
 }
 
-.dark-blue  { 
-    background: var(--dark-blue);
-    color: var(--light-blue);
+.dark-blue-text  { 
+    color: var(--dark-blue);
 }
 
 .faint-blue  { 
@@ -852,9 +887,22 @@ footer > :last-child  {
     color: var(--light-blue);
 }
 
+.light-teal {
+    background-color: var(--light-teal);
+    color: var(--dark-blue);
+}
+
+.light-teal-text {
+    color: var(--light-teal);
+}
+
 .teal {
     background-color: var(--logo-teal);
     color: var(--dark-blue);
+}
+
+.teal-text {
+    color: var(--logo-teal);
 }
 
 .dark-teal {
