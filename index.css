@@ -4,7 +4,7 @@
     --dark-blue:#122133; /* General purpose dark blue */
     --light-blue: #d1dffa; /* Light blue, for contrasting with main shades */
     --logo-teal: #b3e6e6; /* Main teal used throughout site */
-    --dark-teal: #0a6566; /* Dark teal, mostly used for accents */
+    --dark-teal: #065C5D; /* Dark teal, mostly used for accents #0a6566*/ 
     --faint-blue: #f0f0ff; /* Very light blue only used for backgrounds, currently unused */
     --logo-orange: #F76115; /* The orange from the original PPC website, use for maintenance */
     --light-orange: #ffddcc; /* Lighter orange for general maintenance purposes */
@@ -15,6 +15,7 @@
     --grey4: #999999; /* Used for low-contrast text */
     --grey5: #222222; /* Very dark grey for footer / creating contrast */
     --header-blue: #0a131d; /* Used for header, footer, main image*/
+    --transparent: #0a131d00;
 
 }
 
@@ -116,7 +117,7 @@ header  {
     top: -5px;
     left: -5px;
     border-width: 0px;
-    background-color: #ffffff00;
+    background-color: var(--transparent);
 }
 
 .logo  { 
@@ -162,14 +163,14 @@ header  {
     left: 0;
     width: 100dvw;
     max-width: 100%;
-    height: 100dvh;
-    background: linear-gradient(135deg, var(--header-blue) 60%, #0a131d00);
+    height: 100%;
+    background: linear-gradient(135deg, var(--header-blue) 60%, var(--transparent));
     opacity: 60%;
   }
 
 
 #main-image img  { 
-    height: 100dvh;
+    height: 60dvh;
     position: fixed;
     z-index: -2;
 }
@@ -178,7 +179,7 @@ header  {
 #main-image  { 
     width: 100dvw;
     max-width: 100%;
-    height: 100dvh;
+    height: 60dvh;
     overflow: hidden;
     object-fit: cover;
 }
@@ -202,31 +203,13 @@ header  {
     height: auto;
 }
 
-
 .image-text  { 
     position: absolute;
-    transform: translate(-50%, -30%);
-    text-align: center;
+    text-align: left;
+    top: 15dvh;
+    left: 5dvw;
+    width: 30%;
   }
-
-
-.center  { 
-    top: 40dvh;
-    left: 50dvw;
-}
-
-
-.bottom  { 
-    top: 95dvh;
-    left: 50dvw;
-}
-
-
-.right  { 
-    top: 4dvh;
-    right: -20px;
-}
-
 
 .shift-up  { 
     margin-bottom: -50px;
@@ -359,6 +342,10 @@ button, #header-btn, a  {
     transition-duration: 0.2s;
 }
 
+a {
+    text-decoration: none;
+}
+
 #header-btn:hover, #main-btn:hover, .alt-button:hover  { 
     transform: scale(1.05);
 }
@@ -384,17 +371,17 @@ button:hover.index-button > img {
     border-radius: 10px;
     color: black;
     border: none;
-    margin: 30px;
+    margin: 30px 0;
     font-weight: 500;
     font-size: 1rem;
 }
-
 
 .index-button  { 
     border: none;
     margin-top: 20px;
     margin-bottom: 20px;
     width: clamp(80px, calc(80px + 15dvw), 30dvw);
+    background-color: var(--transparent);
 }
 
 .index-button > div  { 
@@ -486,8 +473,8 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 #discoveryBtn {
-    background-color: #ffffff00;
-    border-color: #ffffff00;
+    background-color: var(--transparent);
+    border-color: var(--transparent);
 }
 
 .arrow {
@@ -495,14 +482,11 @@ button:hover.grey-style, .pressed.grey-style  {
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
+    transform: rotate(225deg);
   }
 
 .down {
     transform: rotate(45deg);
-}
-
-.up {
-    transform: rotate(-45deg);
 }
 
 
@@ -550,26 +534,26 @@ button:hover.grey-style, .pressed.grey-style  {
     font-size: 1.125rem;
 }
 
-#image-picker  { 
+#image-picker, .box-image { 
     width: 100%;
     height: 100%;
-    border-radius: 0 30px 30px 0;
     overflow: hidden;
-    object-fit: cover;
+    object-fit: cover; 
+}
+
+#image-picker {
+    border-radius: 0 30px 30px 0;
     border: 1px dotted black;
 }
 
-
-.lettings-top {
-    width: 95vw;
-    height: 7vw;
-    padding: 5px 0;
+.box-image {
+    max-height: 50vh;
+    margin-bottom: -5px;
 }
 
-.arrangement-box-2 { 
-    width: 70dvw;
-    height: 60vh;
-    margin-bottom: 40px;
+.lettings-top {
+    height: 7vw;
+    padding: 0 0 0 5px;
 }
 
 .tall-box {
@@ -583,11 +567,10 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 .lettings-btn { 
-    width: 100%;
+    width: 20%;
     height: 12vh;
     color: black;
     border: 1px dotted black;
-    margin: 0;
     font-weight: 500;
     font-size: 1rem;
     color: var(--grey4);
@@ -597,8 +580,13 @@ button:hover.grey-style, .pressed.grey-style  {
 .lettings-btn.pressed  { 
     background-color: var(--logo-teal);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--dark-blue);
+}
+
+.plan-box {
+    width: 90vw;
+    margin-top: 40px;
 }
     
 
@@ -872,6 +860,10 @@ footer > :last-child  {
 .dark-teal {
     background-color: var(--dark-teal);
     color: var(--light-blue);
+}
+
+.dark-teal-text {
+    color: var(--dark-teal);
 }
     
 .bck-image {
