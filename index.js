@@ -36,11 +36,16 @@ const indexPage = () => {
     const pageBtnClick = (btn) => {
 
         if (btn === pageBtn1){
-            pageBtn1.innerHTML = default1 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
-                            we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
-                            that you're always kept in the loop.
+            pageBtn1.innerHTML = default1 + `<div>
+            Pro Property Care management is a more efficient way to manage properties
+            - with additional benefits for both landlords and tenants.
+            We combine a hands-on approach to properties within our local area with online management that speeds up the whole letting process .
+            <button class="alt-button">WHAT WE CAN OFFER LANDLORDS</button>
+            <button class="alt-button">OUR PRICING</button>
+            <button class="alt-button">CONTACT US</button>
+
                             </div>
-                            <button class="alt-button">SEE MORE</button>  `;
+                            <button class="alt-button">SEE MORE</button>`;
             pageBtn2.innerHTML = default2;
             pageBtn3.innerHTML = default3;
             imagePicker.src = `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`;
@@ -51,11 +56,14 @@ const indexPage = () => {
 
         else if (btn === pageBtn2){
             pageBtn1.innerHTML = default1;
-            pageBtn2.innerHTML = default2 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
-                            we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
-                            that you're always kept in the loop.
-                            </div>
-                            <button class="alt-button">SEE MORE</button>`;
+            pageBtn2.innerHTML = default2 + `<div>
+We offer a quick, simple, but dynamic approach to letting properties.
+<br><br>
+Add more text here.</div>
+<button class="alt-button">TENANT INFORMATION</button>
+<button class="alt-button">SEE OUR PROPERTY LISTINGS</button>
+<button class="alt-button">BOOK A VIEWING</button>
+`;
             pageBtn3.innerHTML = default3;
             imagePicker.src = `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`;
             pageBtn2.classList.add("pressed");
@@ -66,11 +74,12 @@ const indexPage = () => {
         if (btn === pageBtn3){
             pageBtn1.innerHTML = default1;
             pageBtn2.innerHTML = default2;
-            pageBtn3.innerHTML = default3 + `<div>From initial viewing, to check-in, through the ongoing visits, and any maintenance issues,
-                            we'll be there in person to assess and resolve with the best course of action and our real-time updates will ensure
-                            that you're always kept in the loop.
+            pageBtn3.innerHTML = default3 + `<div>As well as providing some additional maintenance services for property management, we
+also operate other types of maintenance including Landscaping &amp; Fencing.
                             </div> 
-                            <button class="alt-button">SEE MORE</button>`;
+                            <button class="alt-button">OUR MV-PLAN</button>
+                            <button class="alt-button">OUR MV-PLAN</button>
+                            <button class="alt-button">CONTACT US</button>`;
             imagePicker.src = `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`;
             pageBtn3.classList.add("pressed");
             pageBtn1.classList.remove("pressed");
@@ -129,8 +138,6 @@ const lettingsPage = () => {
         dropdownBtn2: dropdownBox2,
         dropdownBtn3: dropdownBox3,
         dropdownBtn4: dropdownBox4,
-        dropdownBtn5: dropdownBox5,
-        dropdownBtn6: dropdownBox6
     }
 
    dropDownBtnAdd(lettingBoxes);
@@ -148,7 +155,10 @@ const maintenancePage = () => {
         dropdownBtn5: dropdownBox5,
         dropdownBtn6: dropdownBox6,
         dropdownBtn7: dropdownBox7,
-        dropdownBtn8: dropdownBox8
+        dropdownBtn8: dropdownBox8,
+        dropdownBtn9: dropdownBox9,
+        dropdownBtn10: dropdownBox10,
+        dropdownBtn11: dropdownBox11
     }
 
 
