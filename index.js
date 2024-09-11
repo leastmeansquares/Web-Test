@@ -144,6 +144,8 @@ const lettingsPage = () => {
 }
 
 
+// MAINTENANCE PAGE
+
 
 const maintenancePage = () => {
 

@@ -43,14 +43,16 @@ html  {
   }
 
 
-
   /**  HEADINGS AND FONTS  **/
+
+h1 {
+    font-weight: 700;
+  }
 
 #title > h1 { 
     padding-bottom: 3%;
-    font-family: "Podkova", "Oswald", sans-serif;
-    font-weight: 700;
     color: var(--light-teal);
+    font-family: "Podkova", "Oswald", sans-serif;
 }
 
 #title > h1, #header-btn  { 
@@ -58,10 +60,11 @@ html  {
     text-shadow: 1px 1px 1px black;
 }
 
-#maintenance-title > h1 {
-    font-weight: 450;
-    font-size: clamp(2rem, 4dvw, 3.5rem);
+:not(#title) > h1 {
+    font-weight: 600;
+    font-size: clamp(3rem, 4dvw, 4rem);
     color: var(--header-blue);
+    font-family: "Podkova", "Oswald", sans-serif;
 }
 
 #title > h2  { 
@@ -70,14 +73,14 @@ html  {
     color: var(--light-blue);
 }
 
-h3, #maintenance-main h2 {
+#index-page h3, :not(#title) > h2 {
     font-weight: 500;
     font-size: 2.25rem;
     padding: 1% 0 2% 0;
     color: var(--dark-blue);
 }
 
-h4  {
+h4, :not(#index-page) h3 {
     font-size: 2rem;
     padding-bottom: 3%;
 }
@@ -688,7 +691,21 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
-/**  TESTIMONIALS  **/
+/**  IMAGE BOX AND TESTIMONIALS  **/
+
+#our-work {
+    height: clamp(650px, 45dvw, 100dvw);
+    width: 60dvw;
+    margin-left: 20px;
+}
+
+#our-work img {
+    width: 100%;
+}
+
+#our-work > div {
+    width: 100%;
+}
 
 .testimonial-box {
     height: 500px;
@@ -701,17 +718,52 @@ button:hover.grey-style, .pressed.grey-style  {
     margin: 20px auto;
 }
 
-aside.testimonials {
-    width: 50dvw;
-    height: 600px;
-    overflow-y: scroll;
+aside {
+    width: 35dvw;
+    margin: 20px;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 10px;
 }
 
-aside.testimonials > div {
+aside > div:first-of-type {
+    border-bottom: 1px solid var(--header-blue);
+    margin-bottom: 20px;
+}
+
+#scroll-box {
+    width: 30dvw;
+    height: 600px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    border-bottom: 1px solid var(--header-blue);
+    border-top: 1px solid var(--header-blue);
+}
+
+#scroll-box > div {
     width: 100%;
     border-radius: 10px;
-    margin: 10px 0;
+    margin: 0 auto;
+    border-left: 1px solid var(--header-blue);
+    border-right: 1px solid var(--header-blue);
+    z-index: 1;
 }
+
+#scroll-box > div:not(:first-of-type) {
+    margin-top: 10px;
+    border-top: 1px solid var(--header-blue);
+}
+
+#scroll-box > div:not(:last-of-type) {
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--header-blue);
+
+}
+
+aside > .testimonials::-webkit-scrollbar {
+    width: 0;
+  }
+
 
 
 /**  FORM DESIGN  **/
