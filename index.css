@@ -45,17 +45,20 @@ html  {
 
   /**  HEADINGS AND FONTS  **/
 
-h1 {
+h1, footer span  {
     font-weight: 700;
   }
 
-#title > h1 { 
-    padding-bottom: 3%;
-    color: var(--light-teal);
+#title > h1 {
     font-family: "Podkova", "Oswald", sans-serif;
 }
 
-#title > h1, #header-btn  { 
+#title > h1, footer span { 
+    padding-bottom: 3%;
+    color: var(--light-teal);
+}
+
+#title > h1, footer span, #header-btn  { 
     font-size: clamp(2rem, 5dvw, 4rem);
     text-shadow: 1px 1px 1px black;
 }
@@ -223,6 +226,19 @@ nav p {
 }
 
 
+/**  WELCOME  **/
+
+#welcome > :first-child {
+    width: 60%;
+    margin-right: 5%;
+}
+
+#welcome > :nth-child(2) {
+    width: 35%;
+    border: 1px dotted var(--header-blue);
+}
+
+
 
 /**  MAIN BODY SECTIONS  **/
 
@@ -338,7 +354,7 @@ nav p {
 }
 
 
-.small { 
+.border-box { 
     border-radius: 30px;
     border: 1px solid var(--dark-blue);
   }
@@ -644,51 +660,44 @@ button:hover.grey-style, .pressed.grey-style  {
     margin: 25px auto 0 auto;
 }
 
-
 .services th, .services td  { 
-    padding: 10px;
-    border: 1px solid black;
+    padding: 5px 0;
+    border: 1px dotted var(--grey4);
+    color: var(--header-blue);
     text-align: center;
-
 }
 
-.services th, .services td:first-child  { 
-    background-color: var(--light-blue);
-    color: black;
+.services th {
+    border-top: none;
+    padding: 5px;
 }
 
-
-.services th:first-child  { 
-    background-color: var(--dark-blue);
-    color: black;
-    border: none;
+.services td:first-child, .services th:first-child { 
+    border-left: none;
+    padding: 5px;
 }
 
-
-.services th:nth-child(2), .services tr:nth-child(2) td:first-child  { 
-    border-radius: 10px 0 0 0;
+.services tr:last-of-type td {
+    border-bottom: none;
 }
 
-
-.services th:last-child  { 
-    border-radius: 0 10px 0 0;
+.services td:last-child, .services th:last-child  { 
+    border-right: none;
 }
 
-
-.services tr:last-child td:first-child  { 
-    border-radius: 0 0 0 10px;
+.services colgroup > col:first-of-type {
+    width: clamp(0, 48dvw, 1000px);
 }
 
+.services colgroup > col:not(first-of-type) {
+    width: clamp(0, 13dvw, 20%);
+}
 
-.services td  { 
-    background-color: white;
-    color: black;
+.services tr > col:nth-of-type(2) {
+    width: 40dvw;
 }
 
 
-.services colgroup  { 
-    width: 250px;
-}
 
 
 /**  IMAGE BOX AND TESTIMONIALS  **/
@@ -762,6 +771,10 @@ aside > div:first-of-type {
 
 aside > .testimonials::-webkit-scrollbar {
     width: 0;
+  }
+
+  #ppc-maintenance {
+    border-top: 1px solid black;
   }
 
 
