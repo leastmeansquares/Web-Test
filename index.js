@@ -6,21 +6,6 @@ const indexPage = () => {
     const mainForm = document.getElementById("main-form");
     const outerForm = document.getElementById("form-section-outer");
 
-    const pageBtn1 = document.getElementById("page-btn-1");
-    const pageBtn2 = document.getElementById("page-btn-2");
-    const pageBtn3 = document.getElementById("page-btn-3");
-
-    const imagePicker = document.getElementById("image-picker");
-
-    const default1 = pageBtn1.innerHTML;
-    const default2 = pageBtn2.innerHTML;
-    const default3 = pageBtn3.innerHTML;
-
-    const mainBtnClick = () => {
-        if (popups.innerHTML){popups.innerHTML = "";}
-        else {popups.innerHTML = serviceBtnHTML(0);}
-    }
-
     const contactUsClick = () => {
 
         if (mainForm.style.display){
@@ -33,19 +18,32 @@ const indexPage = () => {
         }
     }
 
+    document.body.querySelectorAll(".form-btn").forEach((btn) => 
+        btn.addEventListener("click", contactUsClick)
+    )
+
+
+
+    const pageBtn1 = document.getElementById("page-btn-1");
+    const pageBtn2 = document.getElementById("page-btn-2");
+    const pageBtn3 = document.getElementById("page-btn-3");
+
+    const imagePicker = document.getElementById("image-picker");
+
+    const default1 = pageBtn1.innerHTML;
+    const default2 = pageBtn2.innerHTML;
+    const default3 = pageBtn3.innerHTML;
+
     const pageBtnClick = (btn) => {
 
         if (btn === pageBtn1){
             pageBtn1.innerHTML = default1 + `<div>
-            Pro Property Care management is a more efficient way to manage properties
-            - with additional benefits for both landlords and tenants.
-            We combine a hands-on approach to properties within our local area with online management that speeds up the whole letting process .
-            <button class="alt-button">WHAT WE CAN OFFER LANDLORDS</button>
-            <button class="alt-button">OUR PRICING</button>
-            <button class="alt-button">CONTACT US</button>
-
-                            </div>
-                            <button class="alt-button">SEE MORE</button>`;
+                                                Pro Property Care management is a more efficient way to manage properties
+                                                - with additional benefits for both landlords and tenants.
+                                                We combine a hands-on approach to properties within our local area with online management that speeds up the whole letting process .
+                                                <br>
+                                                <a href="lettings.html">Read More...</a>
+                                            </div>`;
             pageBtn2.innerHTML = default2;
             pageBtn3.innerHTML = default3;
             imagePicker.src = `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`;
@@ -57,12 +55,13 @@ const indexPage = () => {
         else if (btn === pageBtn2){
             pageBtn1.innerHTML = default1;
             pageBtn2.innerHTML = default2 + `<div>
-We offer a quick, simple, but dynamic approach to letting properties.
-<br><br>
-Add more text here.</div>
-<button class="alt-button">TENANT INFORMATION</button>
-<button class="alt-button">SEE OUR PROPERTY LISTINGS</button>
-<button class="alt-button">BOOK A VIEWING</button>
+                                                We offer a quick, simple, but dynamic approach to letting properties.
+                                                <br><br>
+                                                Add more text here.
+                                                <br>
+                                                <a href="index.html">Read More...</a>
+                                                <button class="alt-button">SEE OUR PROPERTY LISTINGS</button>
+                                            </div>
 `;
             pageBtn3.innerHTML = default3;
             imagePicker.src = `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`;
@@ -74,12 +73,12 @@ Add more text here.</div>
         if (btn === pageBtn3){
             pageBtn1.innerHTML = default1;
             pageBtn2.innerHTML = default2;
-            pageBtn3.innerHTML = default3 + `<div>As well as providing some additional maintenance services for property management, we
-also operate other types of maintenance including Landscaping &amp; Fencing.
-                            </div> 
-                            <button class="alt-button">OUR MV-PLAN</button>
-                            <button class="alt-button">OUR MV-PLAN</button>
-                            <button class="alt-button">CONTACT US</button>`;
+            pageBtn3.innerHTML = default3 + `<div>
+                                                As well as providing some additional maintenance services for property management, we
+                                                also operate other types of maintenance including Landscaping &amp; Fencing.
+                                                <br>
+                                                <a href="maintenance.html">Read More...</a>
+                                            </div>`;
             imagePicker.src = `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`;
             pageBtn3.classList.add("pressed");
             pageBtn1.classList.remove("pressed");
@@ -87,15 +86,60 @@ also operate other types of maintenance including Landscaping &amp; Fencing.
         }
     }
 
-    document.body.querySelectorAll(".form-btn").forEach((btn) => 
-        btn.addEventListener("click", contactUsClick)
-    )
-
     document.body.querySelectorAll(".page-btn").forEach((btn) => 
         btn.addEventListener("click", ()=>pageBtnClick(btn))
     )
 
     pageBtnClick(pageBtn1);
+
+
+    
+
+    let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
+    testimonials.left = testimonials.getBoundingClientRect().left;
+    let lastBox = document.getElementById("last-box");
+    let maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
+
+    addEventListener("resize", () => {
+        testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
+        testimonials.left = testimonials.getBoundingClientRect().left;
+        lastBox = document.getElementById("last-box");
+        maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
+    })
+
+    const horizontalScroll = (event) => {
+
+        event.preventDefault();
+
+        if (!event.deltaY) {
+            return;
+          }
+
+        event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
+
+        const endPoint = lastBox.getBoundingClientRect().left;
+
+        if (testimonials.left >= endPoint && event.deltaY + event.deltaX > 0){
+            event.currentTarget.scrollLeft = 0;
+            event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
+        }
+
+        else if (event.currentTarget.scrollLeft <= 0 && event.deltaY + event.deltaX < 0){
+            event.currentTarget.scrollLeft = maxScroll;
+            while (event.currentTarget.scrollLeft > endPoint){
+                event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
+            }
+            event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
+        }
+
+      }
+
+     
+
+
+    testimonials.addEventListener("wheel", horizontalScroll);
+
+    
 
 }
 
@@ -163,9 +207,80 @@ const maintenancePage = () => {
         dropdownBtn11: dropdownBox11
     }
 
+    const workBtn = document.getElementById("our-work");
+    const workImage = document.getElementById("work-image");
+
+
+    const imageSRCs = [
+        "https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/305628803_496311505834695_124968227498160094_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=yef2DyjsJ5cQ7kNvgFpwsY7&_nc_ht=scontent-man2-1.xx&oh=00_AYDGyiN8GX2cCrGlUNlteC3xTdEhuEISpd15xtgFj6SZsw&oe=66E7899F",
+        "https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/242374780_2036677616488805_1787738942320670183_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=tKxlIm4KgJ4Q7kNvgFRQl8S&_nc_ht=scontent-man2-1.xx&oh=00_AYBYeRZxNPSykMu76i3AVw-VRZ21FZ3lEq_GJg3HmPlnsw&oe=66E8B55B",
+        "https://scontent-man2-1.xx.fbcdn.net/v/t1.6435-9/56915071_1256680144488560_3391909478092767232_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=IKghqTh-vfEQ7kNvgFRp374&_nc_ht=scontent-man2-1.xx&oh=00_AYCFMSt7ON8FEXPGeHqxJuwxZha3W5XqumkClRMatzCyOg&oe=670A746C"
+    ]
+
+    const cycleImage = () => {
+
+        let oldSRC = "";
+        
+        for (src of imageSRCs){
+            if (oldSRC === workImage.src){
+                workImage.src = src;
+                return;
+            }
+            else {
+                oldSRC = src;
+            }
+        }
+        workImage.src = imageSRCs[0];
+    }
+
+
+    workBtn.addEventListener("click", cycleImage);
 
     dropDownBtnAdd(maintenanceBoxes);
-    
+
+
+
+    let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
+    testimonials.top = testimonials.getBoundingClientRect().top;
+    let lastBox = document.getElementById("last-box");
+    let maxScroll = testimonials.scrollHeight - testimonials.clientHeight;
+
+    addEventListener("resize", () => {
+        testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
+        testimonials.top = testimonials.getBoundingClientRect().top;
+        lastBox = document.getElementById("last-box");
+        maxScroll = testimonials.scrollHeight - testimonials.clientHeight;
+    })
+
+    const verticalScroll = (event) => {
+
+        event.preventDefault();
+
+        if (!event.deltaY) {
+            return;
+          }
+
+        event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
+
+        const endPoint = lastBox.getBoundingClientRect().top;
+
+        if (testimonials.top >= endPoint && event.deltaY + event.deltaX > 0){
+            event.currentTarget.scrollTop = 0;
+            event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
+        }
+
+        else if (event.currentTarget.scrollTop <= 0 && event.deltaY + event.deltaX < 0){
+            event.currentTarget.scrollTop = maxScroll;
+            while (event.currentTarget.scrollTop > endPoint){
+                event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
+            }
+            event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
+        }
+
+      }
+
+     
+    testimonials.addEventListener("wheel", verticalScroll);
 }
 
 
