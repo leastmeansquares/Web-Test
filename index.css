@@ -164,21 +164,27 @@ nav p {
     display: none;
     position: fixed;
     top: 70px;
-    width: 60dvw;
-    height: calc(80dvh - 70px);
-    left: 40dvw;
+    left: clamp(calc(100dvw - 600px), 50dvw, calc(100dvw - 300px));
+    width: clamp(300px, 50dvw, 600px);
+    height: clamp(20dvh, 400px, calc(100dvh - 85px));
     z-index: 7;
-    padding-left: 20px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: -3px 0px 5px var(--dark-teal);
 }
 
 
 #header-display > div  { 
-    height: calc((80dvh - 70px) / 9);
+    height: clamp(2dvh, 50px, calc(100dvh - 85px));
     z-index: 8;
     font-size: 1.5rem;
+    padding-left: 20px;
+    cursor: pointer;
+    transition-duration: 0;
 }
 
-
+#header-display > div:hover { 
+    box-shadow: -3px 0px 5px var(--dark-teal);
+}
 
 
 /** IMAGES **/
@@ -425,9 +431,21 @@ nav p {
 
 /**  BUTTONS  **/
 
-button, #header-btn, a  { 
+button, #header-btn, a { 
     cursor: pointer;
     transition-duration: 0.2s;
+}
+
+#nav-button {
+    position: relative;
+    top: 0px;
+    left: calc(20vw - 120px);
+    background-color: var(--transparent);
+    border: 2px solid var(--dark-teal);
+    border-radius: 15px;
+    color: var(--logo-teal);
+    font-weight: 500;
+    width: clamp(60px, 120px, 15dvw); 
 }
 
 a {

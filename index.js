@@ -100,31 +100,31 @@ const indexPage = () => {
     let lastBox = document.getElementById("last-box");
     let maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
 
-    addEventListener("resize", () => {
+    const horizontalScroll = (event) => {
+
         testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
         testimonials.left = testimonials.getBoundingClientRect().left;
         lastBox = document.getElementById("last-box");
         maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
-    })
-
-    const horizontalScroll = (event) => {
 
         event.preventDefault();
+
+        
 
         if (!event.deltaY) {
             return;
           }
-
+          
         event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
 
-        const endPoint = lastBox.getBoundingClientRect().left;
 
-        if (testimonials.left >= endPoint && event.deltaY + event.deltaX > 0){
+        const endPoint = lastBox.getBoundingClientRect().right;
+
+        if (testimonials.left >= endPoint - 1000 && event.deltaY + event.deltaX > 0){
             event.currentTarget.scrollLeft = 0;
             event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
         }
-
-        else if (event.currentTarget.scrollLeft <= 0 && event.deltaY + event.deltaX < 0){
+        else if (event.currentTarget.scrollLeft <= 1000 && event.deltaY + event.deltaX < 0){
             event.currentTarget.scrollLeft = maxScroll;
             while (event.currentTarget.scrollLeft > endPoint){
                 event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
@@ -210,19 +210,37 @@ const maintenancePage = () => {
     const workBtn = document.getElementById("our-work");
     const workImage = document.getElementById("work-image");
 
+    workImage.textsrc = workImage.src;
+
 
     const imageSRCs = [
-        "https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/305628803_496311505834695_124968227498160094_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=yef2DyjsJ5cQ7kNvgFpwsY7&_nc_ht=scontent-man2-1.xx&oh=00_AYDGyiN8GX2cCrGlUNlteC3xTdEhuEISpd15xtgFj6SZsw&oe=66E7899F",
-        "https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/242374780_2036677616488805_1787738942320670183_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=tKxlIm4KgJ4Q7kNvgFRQl8S&_nc_ht=scontent-man2-1.xx&oh=00_AYBYeRZxNPSykMu76i3AVw-VRZ21FZ3lEq_GJg3HmPlnsw&oe=66E8B55B",
-        "https://scontent-man2-1.xx.fbcdn.net/v/t1.6435-9/56915071_1256680144488560_3391909478092767232_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=IKghqTh-vfEQ7kNvgFRp374&_nc_ht=scontent-man2-1.xx&oh=00_AYCFMSt7ON8FEXPGeHqxJuwxZha3W5XqumkClRMatzCyOg&oe=670A746C"
+        "images\\Maintenance\\305628803_496311505834695_124968227498160094_n.jpg",
+        "images\\Maintenance\\20200808_205124.jpg",
+        "images\\Maintenance\\20210512_172327.jpg",
+        "images\\Maintenance\\20210608_162955.jpg",
+        "images\\Maintenance\\20220722_134337.jpg",
+        "images\\Maintenance\\20220722_135623.jpg",
+        "images\\Maintenance\\20230209_133627.jpg",
+        "images\\Maintenance\\20240205_124911.jpg",
+        "images\\Maintenance\\20240308_230154.jpg",
+        "images\\Maintenance\\20240503_144151.jpg",
+        "images\\Maintenance\\20240912_160815.jpg",
+        "images\\Maintenance\\20240912_162945.jpg",
+        "images\\Maintenance\\IMG-20230409-WA0003.jpg",
+        "images\\Maintenance\\IMG-20230409-WA0004.jpg",
+        "images\\Maintenance\\IMG-20230409-WA0005.jpg",
+        "images\\Maintenance\\IMG-20230409-WA0006.jpg",
     ]
+
 
     const cycleImage = () => {
 
         let oldSRC = "";
         
         for (src of imageSRCs){
-            if (oldSRC === workImage.src){
+            
+            if (oldSRC == workImage.textsrc){
+                workImage.textsrc = src;
                 workImage.src = src;
                 return;
             }
@@ -231,28 +249,28 @@ const maintenancePage = () => {
             }
         }
         workImage.src = imageSRCs[0];
+        workImage.textsrc = imageSRCs[0];
     }
 
 
     workBtn.addEventListener("click", cycleImage);
 
+    cycleImage();
+
     dropDownBtnAdd(maintenanceBoxes);
-
-
 
     let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
     testimonials.top = testimonials.getBoundingClientRect().top;
     let lastBox = document.getElementById("last-box");
     let maxScroll = testimonials.scrollHeight - testimonials.clientHeight;
 
-    addEventListener("resize", () => {
+
+    const verticalScroll = (event) => {
+
         testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
         testimonials.top = testimonials.getBoundingClientRect().top;
         lastBox = document.getElementById("last-box");
         maxScroll = testimonials.scrollHeight - testimonials.clientHeight;
-    })
-
-    const verticalScroll = (event) => {
 
         event.preventDefault();
 
@@ -260,7 +278,8 @@ const maintenancePage = () => {
             return;
           }
 
-        event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
+
+        event.currentTarget.scrollTop += 0.5 * event.deltaY;
 
         const endPoint = lastBox.getBoundingClientRect().top;
 
@@ -334,6 +353,9 @@ if (location.pathname === "/lettings.html" || location.pathname === "https://lea
 }
 else if (location.pathname === "/maintenance.html" || location.pathname === "https://leastmeansquares.github.io/maintenance.html"){
     maintenancePage();
+}
+else if (location.pathname === "/tenants.html" || location.pathname === "https://leastmeansquares.github.io/tenants.html"){
+    ;
 }
 else {
     try {indexPage()}
