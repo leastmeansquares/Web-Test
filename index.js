@@ -23,87 +23,58 @@ const indexPage = () => {
     )
 
 
+    let pageBtn = ["","","","","",""];
 
-    const pageBtn1 = document.getElementById("page-btn-1");
-    const pageBtn2 = document.getElementById("page-btn-2");
-    const pageBtn3 = document.getElementById("page-btn-3");
+
+    for (let i = 0; i < 6; i++){
+        pageBtn[i] = document.getElementById(`page-btn-${i}`);
+    }
 
     const imagePicker = document.getElementById("image-picker");
 
-    const default1 = pageBtn1.innerHTML;
-    const default2 = pageBtn2.innerHTML;
-    const default3 = pageBtn3.innerHTML;
+    const imageLinks = [
+        `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`,
+        `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`,
+        `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`,
+        `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`,
+        `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`,
+        `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`
+    ]
 
     const pageBtnClick = (btn) => {
 
-        if (btn === pageBtn1){
-            pageBtn1.innerHTML = default1 + `<div>
-                                                Pro Property Care management is a more efficient way to manage properties
-                                                - with additional benefits for both landlords and tenants.
-                                                We combine a hands-on approach to properties within our local area with online management that speeds up the whole letting process .
-                                                <br>
-                                                <a href="lettings.html">Read More...</a>
-                                            </div>`;
-            pageBtn2.innerHTML = default2;
-            pageBtn3.innerHTML = default3;
-            imagePicker.src = `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`;
-            pageBtn1.classList.add("pressed");
-            pageBtn2.classList.remove("pressed");
-            pageBtn3.classList.remove("pressed");
-        }   
+        let foundButton;
 
-        else if (btn === pageBtn2){
-            pageBtn1.innerHTML = default1;
-            pageBtn2.innerHTML = default2 + `<div>
-                                                We offer a quick, simple, but dynamic approach to letting properties.
-                                                <br><br>
-                                                Add more text here.
-                                                <br>
-                                                <a href="index.html">Read More...</a>
-                                                <button class="alt-button">SEE OUR PROPERTY LISTINGS</button>
-                                            </div>
-`;
-            pageBtn3.innerHTML = default3;
-            imagePicker.src = `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`;
-            pageBtn2.classList.add("pressed");
-            pageBtn1.classList.remove("pressed");
-            pageBtn3.classList.remove("pressed");
-        } 
-
-        if (btn === pageBtn3){
-            pageBtn1.innerHTML = default1;
-            pageBtn2.innerHTML = default2;
-            pageBtn3.innerHTML = default3 + `<div>
-                                                As well as providing some additional maintenance services for property management, we
-                                                also operate other types of maintenance including Landscaping &amp; Fencing.
-                                                <br>
-                                                <a href="maintenance.html">Read More...</a>
-                                            </div>`;
-            imagePicker.src = `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`;
-            pageBtn3.classList.add("pressed");
-            pageBtn1.classList.remove("pressed");
-            pageBtn2.classList.remove("pressed");
+        for (i = 0; i < 6; i++){
+            if (btn === pageBtn[i]){
+                foundButton = i;
+                pageBtn[i].classList.add("pressed");
+            }
+            else {
+                pageBtn[i].classList.remove("pressed");
+            }
         }
+
+        imagePicker.src = imageLinks[foundButton];
     }
 
     document.body.querySelectorAll(".page-btn").forEach((btn) => 
         btn.addEventListener("click", ()=>pageBtnClick(btn))
     )
 
-    pageBtnClick(pageBtn1);
+    pageBtnClick(pageBtn[0]);
 
 
-    
 
     let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
-    testimonials.left = testimonials.getBoundingClientRect().left;
+    let firstBox = document.getElementById("first-box");
     let lastBox = document.getElementById("last-box");
     let maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
 
     const horizontalScroll = (event) => {
 
         testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
-        testimonials.left = testimonials.getBoundingClientRect().left;
+        firstBox = document.getElementById("first-box");
         lastBox = document.getElementById("last-box");
         maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
 
@@ -117,19 +88,17 @@ const indexPage = () => {
           
         event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
 
+        
 
-        const endPoint = lastBox.getBoundingClientRect().right;
-
-        if (testimonials.left >= endPoint - 1000 && event.deltaY + event.deltaX > 0){
+        if (testimonials.getBoundingClientRect().right >= lastBox.getBoundingClientRect().right && event.deltaY + event.deltaX > 0){
             event.currentTarget.scrollLeft = 0;
             event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
         }
-        else if (event.currentTarget.scrollLeft <= 1000 && event.deltaY + event.deltaX < 0){
-            event.currentTarget.scrollLeft = maxScroll;
-            while (event.currentTarget.scrollLeft > endPoint){
-                event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
-            }
-            event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
+
+
+        else if (testimonials.getBoundingClientRect().left <= firstBox.getBoundingClientRect().left && event.deltaY + event.deltaX < 0){
+            lastBox.scrollIntoView({ behavior: "instant", block: "nearest", inline: "start" });
+            event.currentTarget.scrollLeft += (event.deltaY + event.deltaX);
         }
 
       }
@@ -138,7 +107,6 @@ const indexPage = () => {
 
 
     testimonials.addEventListener("wheel", horizontalScroll);
-
     
 
 }

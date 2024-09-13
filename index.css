@@ -439,13 +439,20 @@ button, #header-btn, a {
 #nav-button {
     position: relative;
     top: 0px;
-    left: calc(20vw - 120px);
+    left: calc(20vw - 130px);
     background-color: var(--transparent);
     border: 2px solid var(--dark-teal);
     border-radius: 15px;
     color: var(--logo-teal);
     font-weight: 500;
     width: clamp(60px, 120px, 15dvw); 
+    height: 35px;
+    font-size: 1rem;
+}
+
+#nav-button:hover {
+    transition-duration: 0.2s;
+    background-color: var(--dark-teal);
 }
 
 a {
@@ -610,52 +617,72 @@ button:hover.grey-style, .pressed.grey-style  {
 .arrangement-box   { 
     width: 45dvw;
     height: 80dvh;
-    display: flex;
-    vertical-align: text-top;
-    flex-wrap: wrap;
 }
 
 .page-btn  { 
-    min-width: 100%;
-    height: 25%;
-    border: none;
-    margin: 0;
+    width: 95%;
+    margin-left: 5%;
+    height: 12%;
+    transition-duration: 0;
     font-weight: 500;
     font-size: 1rem;
     color: var(--grey4);
-    background-color: var(--grey1);
+    background-color: var(--faint-blue);
+    border: 1px dotted black;
+    border-radius: 10px 0 0 10px;
     display: flex;
     text-align: left;
     flex-wrap: wrap;
-    padding: 6% 3%0 3%;
+    padding: 6% 3% 0 3%;
 }
 
 .page-btn.pressed  { 
+    width: 100%;
+    margin-left: 0;
     font-weight: 700;
     font-size: 1.625rem;
-    height: 50%;
+    height: 40%;
     color: var(--dark-blue);
     border: 1px solid black;
-    border-radius: 10px 0 0 10px;
     padding: 3%;
     display: flex;
 }
 
-.page-btn.pressed:nth-of-type(1)  { 
-    background-color: var(--light-blue);
+.page-btn :nth-child(2) {
+    display: none;
 }
 
-.page-btn.pressed:nth-of-type(2)  { 
-    background-color: var(--light-teal);
-}
-
-.page-btn.pressed:nth-of-type(3)  { 
-    background-color: var(--faint-orange);
+.page-btn.pressed :nth-child(2) {
+    display: inline-block;
 }
 
 .page-btn.pressed > div  { 
     font-size: 1.125rem;
     width: 100%;
+}
+
+.page-btn:nth-of-type(1).pressed {
+    background-color: var(--light-blue);
+}
+
+.page-btn:nth-of-type(2).pressed {
+    background-color: #CBE0F6;
+}
+
+.page-btn:nth-of-type(3).pressed {
+    background-color: #C5E2F2;
+}
+
+.page-btn:nth-of-type(4).pressed {
+    background-color: #BFE3EE;
+}
+
+.page-btn:nth-of-type(5).pressed {
+    background-color: #B9E5EA;
+}
+
+.page-btn:nth-of-type(6).pressed {
+    background-color: var(--light-teal);
 }
 
 #image-picker, .box-image { 
