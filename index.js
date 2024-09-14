@@ -73,14 +73,16 @@ const indexPage = () => {
 
     const horizontalScroll = (event) => {
 
+
         testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
         firstBox = document.getElementById("first-box");
         lastBox = document.getElementById("last-box");
         maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
 
+
         event.preventDefault();
 
-        
+    
 
         if (!event.deltaY) {
             return;
@@ -88,25 +90,23 @@ const indexPage = () => {
           
         event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
 
-        
-
-        if (testimonials.getBoundingClientRect().right >= lastBox.getBoundingClientRect().right && event.deltaY + event.deltaX > 0){
+        if (testimonials.getBoundingClientRect().right >= lastBox.getBoundingClientRect().right && event.deltaY + event.deltaX >= 0){
             event.currentTarget.scrollLeft = 0;
             event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
         }
 
 
-        else if (testimonials.getBoundingClientRect().left <= firstBox.getBoundingClientRect().left && event.deltaY + event.deltaX < 0){
+        else if (testimonials.getBoundingClientRect().left <= firstBox.getBoundingClientRect().left && event.deltaY + event.deltaX <= 0){
             lastBox.scrollIntoView({ behavior: "instant", block: "nearest", inline: "start" });
             event.currentTarget.scrollLeft += (event.deltaY + event.deltaX);
         }
 
       }
 
-     
 
-
-    testimonials.addEventListener("wheel", horizontalScroll);
+      if (!window.matchMedia("(pointer: coarse)").matches) {
+        testimonials.addEventListener("wheel", horizontalScroll);
+    }
     
 
 }

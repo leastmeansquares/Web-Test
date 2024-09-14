@@ -30,17 +30,26 @@
 
 html  { 
     box-sizing: border-box;
-  }
+}
+
+html, body {
+    overflow-x: clip;
+}
+
+body {
+position: relative;
+}
 
 
-  *, *:before, *:after  { 
+*, *:before, *:after  { 
     box-sizing: inherit;
-  }
+}
 
 
   .hide  { 
     display: none !important;
   }
+
 
 
   /**  HEADINGS AND FONTS  **/
@@ -65,20 +74,20 @@ h1, footer span  {
 
 :not(#title) > h1 {
     font-weight: 600;
-    font-size: clamp(3rem, 4dvw, 4rem);
+    font-size: clamp(2.75rem, 4dvw, 4rem);
     color: var(--header-blue);
     font-family: "Podkova", "Oswald", sans-serif;
 }
 
 #title > h2  { 
-    font-size: 1.125rem;
+    font-size: clamp(0.75rem, 1.125rem, 2dvw);
     text-shadow: 1px 1px 1px black;
     color: var(--light-blue);
 }
 
 :not(#title) > h2, #discoveryBtn {
     font-weight: 500;
-    font-size: 2.25rem;
+    font-size: clamp(1.75rem, 4dvw, 3.2rem);
     padding: 1% 0 2% 0;
     color: var(--dark-blue);
 }
@@ -87,11 +96,6 @@ h3 {
     font-size: 2rem;
     padding-bottom: 3%;
     font-weight: 450;
-}
-
-h3.subtitle {
-    font-size: 1.25rem;
-    padding-bottom: 0;
 }
 
 h4 {
@@ -116,7 +120,7 @@ strong {
 
 /**  HEADER  **/
 
-header  { 
+header { 
     width: 100dvw;
     max-width: 100%;
     overflow: hidden;
@@ -128,18 +132,17 @@ header  {
     position: sticky;
 }
 
-
 .navbar  { 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    height: 70px;
+    height: min(70px, 15dvw, 15dvh);
 }
 
 nav p {
     font-weight: 900;
-    font-size: 1.125rem;
+    font-size: clamp(0.75rem, 1.125rem, 2dvw);
 }
 
 
@@ -154,8 +157,8 @@ nav p {
 }
 
 .logo  { 
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: min(48px, 10.3dvw, 10.3dvh);
     margin-left: -15px;
     margin-right: 5px;
 }
@@ -253,22 +256,45 @@ nav p {
 /**  WELCOME  **/
 
 #welcome > :first-child {
-    width: 60%;
+    width: 50%;
     margin-right: 5%;
 }
 
 #welcome > :nth-child(2) {
-    width: 35%;
+    width: 40%;
     border: 1px dotted var(--header-blue);
+    margin-right: 5%;
+}
+
+@media (width <= 800px) {
+
+    #welcome {
+        display: block;
+        padding: 0 5%;
+    }
+
+    #welcome > :first-child {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #welcome > :nth-child(2) {
+        width: 95%;
+        border: 1px dotted var(--header-blue);
+        margin: 5%;
+    }
+
 }
 
 
 
 /**  MAIN BODY SECTIONS  **/
 
-.container  { 
+.container{ 
     display: inline-block;
     width: 100%;
+    max-width: 100dvw;
   }
 
 
@@ -278,10 +304,10 @@ nav p {
 }
 
 .text-box p  { 
-    font-size: 1.125rem;
+    font-size: clamp(0.875rem, 2dvw ,1.125rem);
 }
 
-.align  { 
+.align-a { 
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -307,9 +333,13 @@ nav p {
     border-radius: 30px 30px 0 0;
 }
 
+#circle-wrapper {
+    height: calc(40dvh + 20dvw);
+}
 
 .circle-box, .bullet-box  { 
-    padding-top: 50px;
+    padding: 20px 5px 20px 5px;
+    margin: 0 5dvw 5dvh 5dvw;
     text-align: center;
     width: clamp(160px, 22dvw, 320px);
     vertical-align: top;
@@ -347,9 +377,9 @@ nav p {
 
 
 .circle  { 
-    width: 50%;
+    width: 70%;
     height: 0;
-    padding-bottom: 50%;
+    padding-bottom: 70%;
     background-color: var(--light-blue);
     border-radius: 50%;
     display: inline-block;
@@ -358,8 +388,47 @@ nav p {
     color: var(--grey5);
     vertical-align: top;
     font-size: 5dvw;
-    margin-bottom: 20px;
+    margin-bottom: calc(10% + 10px);
   }
+
+  @media (width <= 680px) {
+
+    .circle  { 
+        width: 65%;
+        height: 0;
+        padding-bottom: 65%;
+    }
+
+    .circle-box  { 
+        padding: 40px 5px 20px 5px;
+        margin: 0 2dvw 0 2dvw;
+        width: clamp(160px, 22dvw, 320px);
+        vertical-align: top;
+    }
+
+    #circle-wrapper {
+        padding: 5% 5%;
+        height: calc(50dvh - 20dvw);
+    }
+
+    .circle-box > p:first-of-type { 
+        font-weight: 700;
+        font-size: calc(0.625rem + 0.625dvw);
+    }
+    
+    .circle-box > p:last-of-type  { 
+        font-size: calc(0.375rem + 0.625dvw);
+        font-weight: 600;
+    }
+  }
+
+  @media (width <= 375px) {
+    .circle  { 
+        width: calc(65% - 75px + 20dvw);
+        height: 0;
+        padding-bottom: calc(65% - 75px + 20dvw);
+    }
+}
 
 .circle-2  { 
     width: 3%;
@@ -453,6 +522,12 @@ button, #header-btn, a {
 #nav-button:hover {
     transition-duration: 0.2s;
     background-color: var(--dark-teal);
+}
+
+@media (width <= 600px) {
+    #nav-button {
+        display: none;
+    }
 }
 
 a {
@@ -813,6 +888,12 @@ button:hover.grey-style, .pressed.grey-style  {
     margin-left: 20px;
     margin-right: 20px;
     display: inline-block
+}
+
+@media (pointer:coarse) {
+    .scroll-hide {
+        display: none;
+    }
 }
 
 aside {
