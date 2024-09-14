@@ -22,16 +22,11 @@ const indexPage = () => {
         btn.addEventListener("click", contactUsClick)
     )
 
-
     let pageBtn = ["","","","","",""];
-
-
-    for (let i = 0; i < 6; i++){
-        pageBtn[i] = document.getElementById(`page-btn-${i}`);
-    }
-
+    let imagePickerAlt = ["","","","","",""];
     const imagePicker = document.getElementById("image-picker");
 
+    
     const imageLinks = [
         `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`,
         `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`,
@@ -41,19 +36,32 @@ const indexPage = () => {
         `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`
     ]
 
+
+    for (let i = 0; i < 6; i++){
+        pageBtn[i] = document.getElementById(`page-btn-${i}`);
+        imagePickerAlt[i] = document.getElementById(`image-picker-alt-${i}`);
+        imagePickerAlt[i].src = imageLinks[i];
+    }
+
+
     const pageBtnClick = (btn) => {
 
-        let foundButton;
+        const small = window.matchMedia("(max-width: 800px)").matches;
 
         for (i = 0; i < 6; i++){
+
             if (btn === pageBtn[i]){
                 foundButton = i;
-                pageBtn[i].classList.add("pressed");
             }
+
             else {
                 pageBtn[i].classList.remove("pressed");
+                if (small) imagePickerAlt[i].classList.remove("pressed");
             }
         }
+
+        pageBtn[foundButton].classList.add("pressed");
+        if (small) imagePickerAlt[foundButton].classList.add("pressed");
 
         imagePicker.src = imageLinks[foundButton];
     }
@@ -69,7 +77,7 @@ const indexPage = () => {
     let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
     let firstBox = document.getElementById("first-box");
     let lastBox = document.getElementById("last-box");
-    let maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
+
 
     const horizontalScroll = (event) => {
 
@@ -77,8 +85,7 @@ const indexPage = () => {
         testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
         firstBox = document.getElementById("first-box");
         lastBox = document.getElementById("last-box");
-        maxScroll = testimonials.scrollWidth - testimonials.clientWidth;
-
+        viewBox = testimonials.getBoundingClientRect();
 
         event.preventDefault();
 
@@ -87,24 +94,26 @@ const indexPage = () => {
         if (!event.deltaY) {
             return;
           }
-          
-        event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
 
-        if (testimonials.getBoundingClientRect().right >= lastBox.getBoundingClientRect().right && event.deltaY + event.deltaX >= 0){
-            event.currentTarget.scrollLeft = 0;
-            event.currentTarget.scrollLeft += 0.5 * (event.deltaY + event.deltaX);
+        event.currentTarget.scrollLeft += 0.75 * (event.deltaY + event.deltaX);
+
+        firstBox.position = firstBox.getBoundingClientRect();
+        lastBox.position = lastBox.getBoundingClientRect();
+
+        
+        if (viewBox.left >= lastBox.position.left && event.deltaY > 0){
+            event.currentTarget.scrollLeft = firstBox.position.left;
         }
 
-
-        else if (testimonials.getBoundingClientRect().left <= firstBox.getBoundingClientRect().left && event.deltaY + event.deltaX <= 0){
-            lastBox.scrollIntoView({ behavior: "instant", block: "nearest", inline: "start" });
-            event.currentTarget.scrollLeft += (event.deltaY + event.deltaX);
+        else if (viewBox.left <= firstBox.position.left && event.deltaY < 0){
+            event.currentTarget.scrollLeft = lastBox.position.left; 
         }
 
       }
 
 
       if (!window.matchMedia("(pointer: coarse)").matches) {
+        testimonials.scrollLeft += 0.5 * testimonials.scrollWidth;
         testimonials.addEventListener("wheel", horizontalScroll);
     }
     
@@ -296,8 +305,10 @@ const dropDownBtnAdd = (boxes) => {
 
     const dropdownBtnClick = (btn) => {
         
+        btn.classList.toggle("pressed");
         boxes[btn.id].classList.toggle("pressed");
         btn.lastChild.classList.toggle("down");
+
     }
     
     document.body.querySelectorAll(".dropdown-btn").forEach((btn) => 
@@ -307,7 +318,7 @@ const dropDownBtnAdd = (boxes) => {
 }
 
 
-const discoveryBtn = document.getElementById("discovery-btn");
+const discoveryBtn = document.getElementById("discovery-section");
 const discoveryDropdown = document.getElementById("discovery-dropdown");
 const discoveryBoxes = {
     discoveryBtn: discoveryDropdown
