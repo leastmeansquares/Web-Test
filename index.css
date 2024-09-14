@@ -68,7 +68,7 @@ h1, footer span  {
 }
 
 #title > h1, footer span, #header-btn  { 
-    font-size: clamp(2rem, 5dvw, 4rem);
+    font-size: clamp(1.875rem, 5dvw, 4rem);
     text-shadow: 1px 1px 1px black;
 }
 
@@ -80,7 +80,7 @@ h1, footer span  {
 }
 
 #title > h2  { 
-    font-size: clamp(0.75rem, 1.125rem, 2dvw);
+    font-size: clamp(0.625rem, 1.125rem, 2dvw);
     text-shadow: 1px 1px 1px black;
     color: var(--light-blue);
 }
@@ -245,7 +245,7 @@ nav p {
     text-align: left;
     top: 20dvh;
     left: 3dvw;
-    width: 40%;
+    width: max(40%, min(220px, 100dvw));
   }
 
 .shift-up  { 
