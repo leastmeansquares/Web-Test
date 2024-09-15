@@ -17,6 +17,7 @@
     --grey5: #222222; /* Very dark grey for footer / creating contrast */
     --header-blue: #0a131d; /* Used for header, footer, main image*/
     --transparent: #0a131d00;
+    --bck-width: clamp(5px ,0.625dvw, 10px);
 }
 
 *  {  
@@ -46,9 +47,9 @@ position: relative;
 }
 
 
-  .hide  { 
+.hide  { 
     display: none !important;
-  }
+}
 
 
 
@@ -85,7 +86,7 @@ h1, footer span  {
     color: var(--light-blue);
 }
 
-:not(#title) > h2, #discoveryBtn {
+:not(#title) > h2, #discoveryBtn, #getInTouchBtn {
     font-weight: 500;
     font-size: clamp(1.75rem, 4dvw, 3.2rem);
     padding: 1% 0 2% 0;
@@ -98,7 +99,7 @@ h3 {
     font-weight: 500;
 }
 
-#discoveryBtn h3 {
+#discoveryBtn h3, #getInTouchBtn h3 {
     padding-bottom: 0;
     font-weight: 700;
     font-size: clamp(1.125rem, 3dvw, 2.25rem);
@@ -375,12 +376,6 @@ nav p {
     margin: 0 5%;
 }
 
-
-.three-steps  { 
-    height: calc(250px);
-}
-
-
 .circle  { 
     width: clamp(50%, 70%, 50% + 2dvw);
     height: 0;
@@ -449,24 +444,6 @@ nav p {
     font-weight: 600;
 }
 
-
-.three-steps-box, .three-steps-box-o  { 
-    border-radius: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.three-steps-box{
-    border: 2px solid var(--logo-teal);
-}
-
-.three-steps-box-o{
-    border: 2px solid var(--light-orange);
-}
-
-
 .border-box { 
     border-radius: 30px;
     border: 1px solid var(--dark-blue);
@@ -523,7 +500,7 @@ a {
     transform: scale(1.05);
 }
 
-#discoveryBtn:not(.pressed):hover {
+#discoveryBtn:not(.pressed):hover, #getInTouchBtn:not(.pressed):hover {
     transform: scale(1.01);
 }
 
@@ -534,12 +511,12 @@ button:hover.index-button  {
 
 
 button:hover.index-button > div{ 
-    box-shadow: 2px 2px 3px var(--dark-teal);
+    box-shadow: 2px 2px 3px var(--header-blue);
 }
 
 
 button:hover.index-button > img { 
-    box-shadow: 2px -2px 3px var(--dark-teal);
+    box-shadow: 2px -2px 3px var(--header-blue);
 }
 
 .main-button  { 
@@ -593,42 +570,6 @@ button:hover.grey-style, .pressed.grey-style  {
     width: 30%;
 }
 
-.index-button  { 
-    border: 1px dotted var(--header-blue);
-    margin-left: 3%;
-    margin-right: 3%;
-    width: clamp(0%, calc(80px + 15dvw), min(25dvw, 500px));
-    background-color: var(--transparent);
-    height: clamp(5dvw, min(15dvw, 500px), 500px);
-    max-width: 25dvw;
-}
-
-.index-button > div  { 
-    width: clamp(80px, calc(80px + 15dvw), 100%);
-    height: 40px;
-    margin-top: -5px;
-    border-radius: 0 0 20px 20px;
-    color: black;
-    background-color: white;
-}
-
-.index-button p {
-    color: var(--dark-blue);
-    font-size: clamp(0.625rem, 2dvw, 1.25rem);
-    font-weight: 700;
-}
-
-.button-image  { 
-
-    width: clamp(80px, calc(80px + 15dvw), 100%);
-    max-width: 500px;
-    width: clamp(80px, calc(80px + 15dvw), 100%);
-    max-width: 500px;
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-    object-fit: cover;
-}
-
 .dropdown-btn {
     width: 100%;
     height: 40px;
@@ -648,70 +589,12 @@ button:hover.grey-style, .pressed.grey-style  {
     border-bottom: 1px dotted black;
 }
 
-.dropdown-box, #discovery-dropdown {
+.dropdown-box, #discovery-dropdown, #get-in-touch-dropdown {
     display: none;
 }
 
-.dropdown-box.pressed, #discovery-dropdown.pressed {
+.dropdown-box.pressed, #discovery-dropdown.pressed, #get-in-touch-dropdown.pressed {
     display: block;
-}
-
-#discoveryBtn {
-    background-color: var(--transparent);
-    border: 2px solid var(--dark-blue);
-    border-radius: 10px;
-    padding: 3%;
-    margin: 0%;
-    background: var(--grey3);
-    min-height: 50px;
-}
-
-#discovery-dropdown > div:first-child {
-    margin: 20px;
-}
-
-@media (width > 1000px){
-    
-    #discovery-dropdown > div {
-        margin-bottom: 5%;
-        margin-top: 5%;
-    }
-
-    #discovery-dropdown > :first-child {
-        margin-bottom: 10%;
-    }
-}
-
-#discoveryBtn:hover, #discoveryBtn.pressed {
-    background-color: var(--grey3);
-}
-
-#discovery-dropdown {
-    border-left: 2px solid var(--dark-blue);
-    border-right: 2px solid var(--dark-blue);
-    border-bottom: 2px solid var(--dark-blue);
-    border-radius: 0 0 10px 10px;
-    background: var(--grey1);
-    min-height: calc(60dvw - 30px + 5%);
-    padding: 3% 2%;
-}
-
-#discovery-dropdown > div {
-    height: 20dvh;
-}
-
-#discoveryBtn, #discovery-dropdown {
-    width: 95%;
-}
-
-#discoveryBtn.pressed{
-    border-radius: 5px 5px 0 0;
-}
-
-#discovery-section {
-    background-image: linear-gradient(160deg, #96C2C5, #789EA5);
-    border-top: 1px dotted var(--dark-blue);
-    min-height: 70px;
 }
 
 .arrow {
@@ -732,6 +615,93 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .right {
     transform: rotate(-45deg);
+}
+
+
+
+/** DISCOVERY BUTTON SECTION **/
+
+#discovery-section, #contact-us {
+    min-height: 70px;
+}
+
+#discovery-section {
+    border-top: 1px dotted var(--dark-blue);
+}
+
+#discoveryBtn, #getInTouchBtn {
+    background-color: var(--transparent);
+    border: 2px solid var(--dark-blue);
+    border-radius: 10px;
+    padding: 3%;
+    margin: 0%;
+    background: var(--grey3);
+    min-height: 50px;
+}
+
+#discoveryBtn:hover, #discoveryBtn.pressed, #getInTouchBtn:hover, #getInTouchBtn.pressed {
+    background-color: var(--grey3);
+}
+
+#discoveryBtn.pressed, #getInTouchBtn.pressed {
+    border-radius: 5px 5px 0 0;
+}
+
+#discoveryBtn, #discovery-dropdown, #getInTouchBtn, #get-in-touch-dropdown {
+    width: min(95%, 1500px);
+}
+
+
+/** DISCOVERY BUTTON DROPDOWN **/
+
+
+#discovery-dropdown, #get-in-touch-dropdown {
+    border-left: 2px solid var(--dark-blue);
+    border-right: 2px solid var(--dark-blue);
+    border-bottom: 2px solid var(--dark-blue);
+    border-radius: 0 0 10px 10px;
+    background: var(--grey1);
+    min-height: calc(60dvw - 30px + 5%);
+}
+
+.dropdown-div {
+    height: 45%;
+    margin: 2.5% 0;
+    width: 100%;
+}
+
+.index-button  {
+    border: 1px dotted var(--header-blue);
+    border-radius: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: clamp(0%, calc(80px + 15dvw), min(25dvw, 400px));
+    background-color: var(--transparent);
+    height: calc(100% - clamp(35px, 2dvw, 50px) + clamp(5dvw, min(15dvw, 500px), 400px));
+    max-width: 23dvw;
+    margin-top: 0;
+}
+
+.button-image  { 
+    width: 100%;
+    height: calc(100% - clamp(30px, 2dvw, 45px));
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.index-button > div  { 
+    width: 100%;
+    height: clamp(35px, 2dvw, 50px);
+    margin-top: -5px;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+}
+
+.index-button p {
+    color: var(--dark-blue);
+    font-size: clamp(0.625rem, 2dvw, 1.25rem);
+    font-weight: 700;
 }
 
 
@@ -835,7 +805,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
     .arrangement-box { 
         width: 100dvw;
-        height: 100dvh;
+        height: fit-content;
         align-items: center;
         padding-bottom: 0;
         overflow: hidden;
@@ -849,6 +819,7 @@ button:hover.grey-style, .pressed.grey-style  {
     .page-btn { 
         width: 100%;
         margin-left: 0;
+        margin-bottom: 20px;
         border-radius: 10px;
         height: 6dvh;
         font-size: 0.875rem;
@@ -1078,6 +1049,7 @@ aside > .testimonials::-webkit-scrollbar, .index-testimonials::-webkit-scrollbar
     width: 100%;
 }
 
+
 /** LETTINGS PAGE **/
 
 #offer-boxes span {
@@ -1210,21 +1182,97 @@ textarea  {
     color: var(--dark-blue)
 }
 
+/**  CONTACT US IN THREE STEPS  **/
+
+.three-steps-box > div > div {
+    border-radius: 80px;
+}
+
+.three-steps-box { 
+    border-radius: 120px;
+    height: calc(fit-content + 40px);
+    width: 90dvw;
+    padding: 5% 15% 5% 5%;
+    margin-bottom: 30px;
+}
+
+.three-steps-element  { 
+   width: 25dvw;
+   margin: 2%;
+   border-radius: 120px;
+}
+
+#get-started {
+    width: 100%;
+    height: 50px;
+}
+
 
 /** FOOTER **/
 
 footer  { 
     width: 100%;
-    min-height: 200px;
-    background-color: var(--grey5);
+    height: fit-content;
+    display: inline-block;
+    margin: 0;
+    background: var(--dark-blue);
 }
 
+footer > :first-child{
+    background: linear-gradient(170deg, #789EA5, #5B7B84);
+    border-top: 1px dotted var(--dark-blue);
+}
 
-footer > :last-child  { 
+footer > :first-child > :first-child {
+    background: conic-gradient(from -45deg at bottom, var(--transparent) 90deg, var(--header-blue) 0) 100%/calc(8 * var(--bck-width)) 100%;
+    background-color: var(--transparent);
+    height: calc(4 * var(--bck-width));
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 8px;
+}
+
+footer > :first-child > :nth-child(2) {
+    background: linear-gradient(90deg,
+    var(--header-blue) calc(50% - var(--bck-width)), 
+    var(--transparent) calc(50% - var(--bck-width)), 
+    var(--transparent) calc(50% + var(--bck-width)), 
+    var(--header-blue) calc(50% + var(--bck-width))
+    ) 100%/calc(8 * var(--bck-width)) 100%;
+    height: var(--bck-width);
+    margin-bottom: 0;
+    padding: 0;
+}
+
+footer > :first-child > :nth-child(3) {
+    background: linear-gradient(90deg,
+    var(--transparent) calc(0%),
+    var(--transparent) calc(8%),
+    var(--header-blue) calc(8%),
+    var(--header-blue) calc(50% - var(--bck-width)), 
+    var(--transparent) calc(50% - var(--bck-width)), 
+    var(--transparent) calc(50% + var(--bck-width)), 
+    var(--header-blue) calc(50% + var(--bck-width)),
+    var(--header-blue) calc(92%),
+    var(--transparent) calc(92%)
+    ) 100%/calc(8 * var(--bck-width)) 100%;
+    background-color: var(--transparent);
+    height: calc(2 * var(--bck-width));
+    margin-bottom: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#footer-button-section {
+    background: var(--dark-blue);
+}
+
+#footer-info { 
     font-size: 0.75rem;
     color: var(--grey4);
     padding: 10px;
     background-color: var(--header-blue);
+    height: 100%;
 }
 
 

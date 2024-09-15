@@ -318,13 +318,15 @@ const dropDownBtnAdd = (boxes) => {
 }
 
 
-const discoveryBtn = document.getElementById("discovery-section");
+const footerBtns = document.body.querySelectorAll(".footer-button");
 const discoveryDropdown = document.getElementById("discovery-dropdown");
-const discoveryBoxes = {
-    discoveryBtn: discoveryDropdown
+const getInTouchDropdown = document.getElementById("get-in-touch-dropdown");
+const footerBoxes = {
+    discoveryBtn: discoveryDropdown,
+    getInTouchBtn: getInTouchDropdown
 }
 
-dropDownBtnAdd(discoveryBoxes);
+dropDownBtnAdd(footerBoxes);
 
 
 if (location.pathname === "/lettings.html" || location.pathname === "https://leastmeansquares.github.io/lettings.html"){
