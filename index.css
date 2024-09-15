@@ -462,7 +462,7 @@ nav p {
 
 /**  BUTTONS  **/
 
-button, #header-btn, a { 
+button, #header-btn, a, select { 
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -1184,28 +1184,73 @@ textarea  {
 
 /**  CONTACT US IN THREE STEPS  **/
 
-.three-steps-box > div > div {
-    border-radius: 80px;
-}
-
 .three-steps-box { 
     border-radius: 120px;
     height: calc(fit-content + 40px);
     width: 90dvw;
-    padding: 5% 15% 5% 5%;
+    padding: 4%;
     margin-bottom: 30px;
 }
 
-.three-steps-element  { 
-   width: 25dvw;
-   margin: 2%;
+.three-steps-element { 
+   width: 40dvw;
+   margin: max(6%, 20px) 2%;
    border-radius: 120px;
+}
+
+.three-steps-element:last-of-type {
+    margin-bottom: -20px;
+}
+
+.three-steps-element > p {
+    font-size: clamp(0.625rem, 1.5dvw, 1.5rem);
+}
+
+.three-steps-box form {
+    width: 40dvw;
+    margin-right: 2%;
+    margin-left: 20px;
+    position: relative;
 }
 
 #get-started {
     width: 100%;
-    height: 50px;
+    height: clamp(35px, 10dvw ,50px);
+    background-color: var(--light-teal);
 }
+
+#page-subject {
+    background: none;
+    width: 100%;
+    height: fit-content;
+    font-size: clamp(0.75rem, 2.5dvw, 3rem);
+    border: 1px solid var(--light-teal);
+    color: var(--light-teal);
+    appearance: none;
+}
+
+#page-subject > option {
+    background-color: var(--dark-blue);
+    font-size: clamp(0.5rem, 1.5dvw, 1.5rem);
+}
+
+.three-steps-box form:before {
+    position: absolute;
+    top: 36%;
+    right: calc(10px + 0.5dvw);
+    content: " ";
+    width: 0;
+    height: 0;
+    margin-top: -5px;
+    border-style: solid;
+    border-width: 0.75dvw 0.5dvw 0 0.5dvw;
+    border-color: var(--light-teal) transparent transparent transparent;
+    pointer-events: none;
+  }
+
+  .three-steps-box form:focus {
+    border-color: red transparent transparent transparent;
+  }
 
 
 /** FOOTER **/
