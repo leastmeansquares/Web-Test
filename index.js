@@ -126,24 +126,44 @@ const indexPage = () => {
 
 const lettingsPage = () => {
 
+    const servicesTitle = document.getElementById("services-title");
     const textDisplay = document.getElementById("text-display");
+    const servicesImage = document.getElementById("services-image");
 
     const textObj = {
-        lettingsBtn1: "For the landlords who simply want the agent to find a good quality tenant, complete the necessary checks and make the transition as smooth as possible for them to manage the property themselves.",
-        lettingsBtn2: "Similar to the Let-Only service above but this includes an Inventory &amp; Property Condition Report which goes hand-in-hand with registering the security deposit. Once the tenancy commences, we then continue to collect the rent and provide monthly statements and support for the landlord. Generally, this is for landlords who prefer to be involved directly with the day-to-day running of the property but who have a back-up with the agent for the financial and legal aspects of the tenancy. You can upgrade at any time to Full-Management.",
-        lettingsBtn3: "This is the most popular choice for landlords, managing the tenants, maintenance/safety checks, rent collection and dealing with any issues. The agent takes over the full running of the property and keeps the landlord updated on an ongoing basis. A landlord would only normally go to the property in between tenancies for their own peace of mind.",
-        lettingsBtn4: "In addition to the Full-Management of your property, we also include the MV-Plan service (as below) which aims to reduce the number of call-out charges for non- specialist, small maintenance jobs which the agent may be able to undertake ie. tightening screws, battery replacement, small repairs (although material costs may still apply).",
-        lettingsBtn5: "The maintenance Visit Plan (MV-Plan) is best described as “A Letting Agent with basic maintenance/handyman included”. The MV-Plan can be selected as a stand-alone service or taken as an upgrade to a Management Plan for a small increase on monthly commission. This type of plan would benefit a landlord who doesn’t have time to spend at the property for maintenance/handyman visits and checks but with the added advantage of the feedback of the letting agent. See separate document for more information."
-    }
+        lettingsBtn1: ["Let Only Service",
+                        "For the landlords who simply want the agent to find a good quality tenant, complete the necessary checks and make the transition as smooth as possible for them to manage the property themselves.",
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"],
+        lettingsBtn2: ["Rent Collection & Bond Registration",
+                        "Similar to the Let-Only service above but this includes an Inventory & Property Condition Report which goes hand-in-hand with registering the security deposit. Once the tenancy commences, we then continue to collect the rent and provide monthly statements and support for the landlord. Generally, this is for landlords who prefer to be involved directly with the day-to-day running of the property but who have a back-up with the agent for the financial and legal aspects of the tenancy. You can upgrade at any time to Full-Management.",
+                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg"],
+        lettingsBtn3: ["Full Management",
+                        "This is the most popular choice for landlords, managing the tenants, maintenance/safety checks, rent collection and dealing with any issues. The agent takes over the full running of the property and keeps the landlord updated on an ongoing basis. A landlord would only normally go to the property in between tenancies for their own peace of mind.",
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"],
+        lettingsBtn4: ["Full Management PLUS",
+                        "In addition to the Full-Management of your property, we also include the MV-Plan service (as below) which aims to reduce the number of call-out charges for non- specialist, small maintenance jobs which the agent may be able to undertake ie. tightening screws, battery replacement, small repairs (although material costs may still apply).",
+                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg"],
+        lettingsBtn5: ["MV-Plan",
+                        "The maintenance Visit Plan (MV-Plan) is best described as “A Letting Agent with basic maintenance/handyman included”. The MV-Plan can be selected as a stand-alone service or taken as an upgrade to a Management Plan for a small increase on monthly commission. This type of plan would benefit a landlord who doesn’t have time to spend at the property for maintenance/handyman visits and checks but with the added advantage of the feedback of the letting agent. See separate document for more information.",
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"],
+        lettingsBtn6: ["More Services",
+                        "Empty box",
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"]
+        }
+
+
 
     const lettingsBtnClick = (btn) => {
 
-        textDisplay.innerHTML = `${textObj[btn.id]}`;
+        servicesTitle.innerText = `${textObj[btn.id][0]}`;
+        textDisplay.innerText = `${textObj[btn.id][1]}`;
+        servicesImage.src = `${textObj[btn.id][2]}`;
         lettingsBtn1.classList.remove("pressed");
         lettingsBtn2.classList.remove("pressed");
         lettingsBtn3.classList.remove("pressed");
         lettingsBtn4.classList.remove("pressed");
         lettingsBtn5.classList.remove("pressed");
+        lettingsBtn6.classList.remove("pressed");
         btn.classList.add("pressed");
     }
 
@@ -153,15 +173,6 @@ const lettingsPage = () => {
     )
 
     lettingsBtnClick(document.getElementById("lettingsBtn1"));
-
-    const lettingBoxes = {
-        dropdownBtn1: dropdownBox1,
-        dropdownBtn2: dropdownBox2,
-        dropdownBtn3: dropdownBox3,
-        dropdownBtn4: dropdownBox4,
-    }
-
-   dropDownBtnAdd(lettingBoxes);
 }
 
 
@@ -330,10 +341,13 @@ dropDownBtnAdd(footerBoxes);
 
 
 if (location.pathname === "/lettings.html" || location.pathname === "https://leastmeansquares.github.io/lettings.html"){
-    lettingsPage();
+    try {lettingsPage()}
+    catch {alert("Error: Invalid location for JavaScript");}
+    
 }
 else if (location.pathname === "/maintenance.html" || location.pathname === "https://leastmeansquares.github.io/maintenance.html"){
-    maintenancePage();
+    try {maintenancePage()}
+    catch {alert("Error: Invalid location for JavaScript");}
 }
 else if (location.pathname === "/tenants.html" || location.pathname === "https://leastmeansquares.github.io/tenants.html"){
     ;

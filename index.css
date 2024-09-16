@@ -2,7 +2,8 @@
 
 :root  {  
     --dark-blue:#122133; /* General purpose dark blue */
-    --light-blue: #d1dffa; /* Light blue, for contrasting with main shades */
+    --light-blue: #d1dffa; /* Light blue, for contrasting with main shades... try #D5E9F6? */
+    --faint-teal: #d9f2f2;
     --light-teal: #b3e6e6; /* Main teal in site */
     --logo-teal: #218e91; /* Main teal from the logo */
     --dark-teal: #065C5D; /* Dark teal, mostly used for accents #0a6566*/ 
@@ -59,38 +60,52 @@ h1, footer span  {
     font-weight: 700;
   }
 
-#title > h1 {
+#title > h1, #title-alt > h1 {
     font-family: "Podkova", "Oswald", sans-serif;
 }
 
-#title > h1, footer span { 
+#title > h1, #title-alt > h1, footer span { 
     padding-bottom: 3%;
     color: var(--light-teal);
 }
 
-#title > h1, footer span, #header-btn  { 
+#title > h1, #title-alt > h1, footer span, #header-btn  { 
     font-size: clamp(1.875rem, 5dvw, 4rem);
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 2px 2px 5px var(--header-blue);
 }
 
-:not(#title) > h1 {
-    font-weight: 600;
-    font-size: clamp(2.75rem, 4dvw, 4rem);
-    color: var(--header-blue);
-    font-family: "Podkova", "Oswald", sans-serif;
+#title > h2, #title-alt > h2  { 
+    text-shadow: 1px 1px 1px black;
+    color: var(--light-blue);
+    font-weight: 400;
+    padding: 0;
 }
 
 #title > h2  { 
     font-size: clamp(0.625rem, 1.125rem, 2dvw);
-    text-shadow: 1px 1px 1px black;
+}
+
+#title-alt > h2  { 
+    font-size: clamp(0.875rem, 1.125rem, 2dvw);
+}
+
+footer h2  { 
+    font-size: clamp(1.875rem, 5dvw, 4rem);
     color: var(--light-blue);
 }
 
-:not(#title) > h2, #discoveryBtn, #getInTouchBtn {
+h2, #discoveryBtn, #getInTouchBtn {
     font-weight: 500;
-    font-size: clamp(1.75rem, 4dvw, 3.2rem);
     padding: 1% 0 2% 0;
     color: var(--dark-blue);
+}
+
+#discoveryBtn, #getInTouchBtn {
+    font-size: clamp(1.5rem, 4dvw, 3.2rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3.5dvw, 3.2rem);
 }
 
 h3 {
@@ -105,17 +120,13 @@ h3 {
     font-size: clamp(1.125rem, 3dvw, 2.25rem);
 }
 
-h4 {
-    font-size: 1.625rem;
+.bullet-box > h4 {
+    font-size: clamp(1.125rem, 2.5dvw, 1.625rem);
     font-weight: 450;
     color: white;
-    background-color: var(--dark-blue);
-    height: clamp(max(calc(650px - 100vw), 60px), 60px, 120dvh);
     font-family: "Podkova", "Oswald", sans-serif;
-    padding-top: 3%;
     margin-bottom: 5px;
 }
-
 
 strong {
     font-family: "Podkova", "Oswald", sans-serif;
@@ -344,31 +355,12 @@ nav p {
     height: calc(40dvh + 20dvw);
 }
 
-.circle-box, .bullet-box  { 
+.circle-box { 
     padding: 20px 5px 20px 5px;
     margin: 0 5dvw 5dvh 5dvw;
     text-align: center;
     width: clamp(22dvw, 22dvw, 320px);
     vertical-align: top;
-}
-
-#bullet-table {
-    min-height: clamp(max(calc(1200px - 200vw), 80px), 160px, 240dvh);
-}
-
-#bullet-table > div {
-    height: clamp(max(calc(1320px - 200vw), 180px), calc(180px - 3.5dvw), calc(240dvh));
-}
-
-.bullet-box  { 
-    text-align: left;
-    width: clamp(320px, 45dvw, 45dvw);
-    height: clamp(max(calc(1300px - 200vw), 160px), 160px, 240dvh);
-    background-color: var(--dark-blue);
-    color: var(--grey4);
-    padding: 0 3% 2% 3%;
-    margin: 2%;
-    border-radius: 10px;
 }
 
 .why-choose  { 
@@ -597,11 +589,12 @@ button:hover.grey-style, .pressed.grey-style  {
     display: block;
 }
 
-.arrow {
+.arrow, .arrow-xl {
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
+    content: "";
     transform: rotate(225deg);
   }
 
@@ -626,7 +619,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 #discovery-section {
-    border-top: 1px dotted var(--dark-blue);
+    padding-bottom: 5%;
 }
 
 #discoveryBtn, #getInTouchBtn {
@@ -854,61 +847,6 @@ button:hover.grey-style, .pressed.grey-style  {
     }
 
 }
-
-
-.box-image {
-    max-height: 50vh;
-    margin-bottom: -5px;
-}
-
-.lettings-top {
-    height: 7vw;
-    padding: 0 0 0 5px;
-    border-radius: 20px 20px 0 0;
-}
-
-.tall-box {
-    width: 25vw;
-    height: 60vh; 
-    margin-bottom: 40px;
-}
-
-#text-display, #lettings-top {
-    border: 1px dotted black;
-}
-
-.lettings-btn { 
-    width: 20%;
-    height: 12vh;
-    color: black;
-    border: 1px dotted black;
-    font-weight: 500;
-    font-size: 1rem;
-    color: var(--grey4);
-    background-color: var(--grey1);
-}
-
-.lettings-btn.pressed  { 
-    background-color: var(--light-teal);
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--dark-blue);
-}
-
-.plan-box {
-    width: 90vw;
-    margin-top: 40px;
-    border-radius: 20px;
-    border: 1px solid var(--header-blue);
-}
-
-.plan-box:first-child {
-    border-radius: 20px 20px 0 0;
-}
-
-.plan-box #text-display {
-    border-radius: 0 0 20px 20px;
-}
     
 
 /** TABLES **/
@@ -966,6 +904,7 @@ button:hover.grey-style, .pressed.grey-style  {
     transform-origin: right top;
     align-items: baseline;
     padding-top: 0;
+    scrollbar-width: none;
 }
 
 .index-testimonials > .testimonial-box {
@@ -1050,18 +989,128 @@ aside > .testimonials::-webkit-scrollbar, .index-testimonials::-webkit-scrollbar
 }
 
 
-/** LETTINGS PAGE **/
+/** LETTINGS PAGE UPPER **/
 
-#offer-boxes span {
-    font-weight: 550;
+
+#bullet-table {
+    min-height: calc(fit-content + 10%);
 }
 
-#offer-boxes > div:first-of-type {
-    width: 25%;
+#bullet-table > div {
+    height: fit-content;
+    margin: 40px 10px;
+
 }
 
-#offer-boxes > div:nth-of-type(2) {
-    width: 70%;
+.bullet-box  { 
+    text-align: left;
+    width: 95dvw;
+    min-width: min(300px, calc(98dvw - 20px));
+    height: clamp(10dvh, calc(120px), 30dvh);
+    background-color: var(--dark-blue);
+    color: var(--grey4);
+    padding: 1% 2%;
+    margin: 0 auto;
+    border-radius: 10px;
+    vertical-align: top;
+}
+
+
+/** LETTINGS PAGE SERVICE PLANS **/
+
+#plan-section {
+    height: 90dvh;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg,
+                    #0a131ddd,
+                    #0a131dee),
+                    url(images\\Backgrounds\\pexels-heyho-6585598.jpg);
+}
+
+#plan-box {
+    border-radius: 15px;
+    margin: 30px 0 20px 0;
+    width: clamp(min(100dvw, 300px), 70dvw, 1000px);
+}
+
+#lettings-top {
+    width: 100%;
+    max-height: 50px;
+    padding: 0 10px 0 10px;
+    background-color: transparent;
+    color: var(--faint-blue);
+    font-weight: 700px;
+    margin-bottom: 20px;
+    border: 2px solid var(--faint-blue);
+}
+
+.box-image {
+    min-height: 10dvh;
+    border-left: 1px solid var(--header-blue);
+    border-right: 1px solid var(--header-blue);
+    border-bottom: 1px solid var(--header-blue);
+    margin-bottom: -5px;
+    background-color: transparent;
+    display: none;
+}
+
+#text-display {
+    height: calc(max(40dvw, 40dvh));
+    font-size: clamp(0.5rem, 2dvw, 2rem);
+    border-radius: 15px;
+    border: 2px solid var(--faint-blue);
+    margin-bottom: 15px;
+    color: var(--faint-blue)
+}
+
+#service-button-container {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.lettings-btn { 
+    width: calc(100% / 3);
+    height: 6dvh;
+    border: 1px solid var(--header-blue);
+    font-weight: 500;
+    font-size: clamp(0.5rem, 1.5dvw, 1rem);
+    color: var(--grey4);
+    background-color: transparent;
+    border: 2px solid var(--faint-blue);
+}
+
+.lettings-btn.pressed  { 
+    font-weight: 700;
+}
+
+#lettings-row-1 > .lettings-btn.pressed:nth-of-type(1)  { 
+    color: var(--faint-teal);
+}
+
+#lettings-row-1 > .lettings-btn.pressed:nth-of-type(2)  { 
+    color: var(--light-blue);
+}
+
+#lettings-row-1 > .lettings-btn.pressed:nth-of-type(3)  { 
+    color: var(--light-teal);
+}
+
+#lettings-row-2 > .lettings-btn.pressed:nth-of-type(1)  { 
+    color: var(--logo-teal);
+}
+
+#lettings-row-2 > .lettings-btn.pressed:nth-of-type(2)  { 
+    color: var(--light-orange);
+}
+
+#lettings-row-2 > .lettings-btn.pressed:nth-of-type(3)  { 
+    color: var(--grey3);
 }
 
 
@@ -1248,10 +1297,6 @@ textarea  {
     pointer-events: none;
   }
 
-  .three-steps-box form:focus {
-    border-color: red transparent transparent transparent;
-  }
-
 
 /** FOOTER **/
 
@@ -1421,9 +1466,11 @@ footer > :first-child > :nth-child(3) {
 }
     
 .bck-image {
-    background-image: url("images\\Backgrounds\\pexels-lina-5624177.jpg");
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images\\Backgrounds\\pexels-lina-5624177.jpg");
     overflow: hidden;
     background-size: cover;
+    opacity: 0%, 100%;
+    box-shadow: inset 0 0 0 1000px #0a131d33;
 }
 
 .bck-image-2 {
