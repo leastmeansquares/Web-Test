@@ -22,58 +22,6 @@ const indexPage = () => {
         btn.addEventListener("click", contactUsClick)
     )
 
-    let pageBtn = ["","","","","",""];
-    let imagePickerAlt = ["","","","","",""];
-    const imagePicker = document.getElementById("image-picker");
-
-    
-    const imageLinks = [
-        `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`,
-        `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`,
-        `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`,
-        `images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg`,
-        `images\\Backgrounds\\pexels-spencphoto-28111458.jpg`,
-        `images\\Backgrounds\\pexels-life-of-pix-8092.jpg`
-    ]
-
-
-    for (let i = 0; i < 6; i++){
-        pageBtn[i] = document.getElementById(`page-btn-${i}`);
-        imagePickerAlt[i] = document.getElementById(`image-picker-alt-${i}`);
-        imagePickerAlt[i].src = imageLinks[i];
-    }
-
-
-    const pageBtnClick = (btn) => {
-
-        const small = window.matchMedia("(max-width: 800px)").matches;
-
-        for (i = 0; i < 6; i++){
-
-            if (btn === pageBtn[i]){
-                foundButton = i;
-            }
-
-            else {
-                pageBtn[i].classList.remove("pressed");
-                if (small) imagePickerAlt[i].classList.remove("pressed");
-            }
-        }
-
-        pageBtn[foundButton].classList.add("pressed");
-        if (small) imagePickerAlt[foundButton].classList.add("pressed");
-
-        imagePicker.src = imageLinks[foundButton];
-    }
-
-    document.body.querySelectorAll(".page-btn").forEach((btn) => 
-        btn.addEventListener("click", ()=>pageBtnClick(btn))
-    )
-
-    pageBtnClick(pageBtn[0]);
-
-
-
     let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
     let firstBox = document.getElementById("first-box");
     let lastBox = document.getElementById("last-box");
@@ -133,22 +81,28 @@ const lettingsPage = () => {
     const textObj = {
         lettingsBtn1: ["Let Only Service",
                         "For the landlords who simply want the agent to find a good quality tenant, complete the necessary checks and make the transition as smooth as possible for them to manage the property themselves.",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"],
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
+                        "#d1dffa"],
         lettingsBtn2: ["Rent Collection & Bond Registration",
                         "Similar to the Let-Only service above but this includes an Inventory & Property Condition Report which goes hand-in-hand with registering the security deposit. Once the tenancy commences, we then continue to collect the rent and provide monthly statements and support for the landlord. Generally, this is for landlords who prefer to be involved directly with the day-to-day running of the property but who have a back-up with the agent for the financial and legal aspects of the tenancy. You can upgrade at any time to Full-Management.",
-                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg"],
+                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg",
+                        "#b3e6e6"],
         lettingsBtn3: ["Full Management",
                         "This is the most popular choice for landlords, managing the tenants, maintenance/safety checks, rent collection and dealing with any issues. The agent takes over the full running of the property and keeps the landlord updated on an ongoing basis. A landlord would only normally go to the property in between tenancies for their own peace of mind.",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"],
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
+                        "#218e91"],
         lettingsBtn4: ["Full Management PLUS",
                         "In addition to the Full-Management of your property, we also include the MV-Plan service (as below) which aims to reduce the number of call-out charges for non- specialist, small maintenance jobs which the agent may be able to undertake ie. tightening screws, battery replacement, small repairs (although material costs may still apply).",
-                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg"],
+                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg",
+                        "#7b68ee"],
         lettingsBtn5: ["MV-Plan",
                         "The maintenance Visit Plan (MV-Plan) is best described as “A Letting Agent with basic maintenance/handyman included”. The MV-Plan can be selected as a stand-alone service or taken as an upgrade to a Management Plan for a small increase on monthly commission. This type of plan would benefit a landlord who doesn’t have time to spend at the property for maintenance/handyman visits and checks but with the added advantage of the feedback of the letting agent. See separate document for more information.",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"],
-        lettingsBtn6: ["More Services",
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
+                        "#ffddcc"],
+        lettingsBtn6: ["Maintenance Services",
                         "Empty box",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg"]
+                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
+                    "#e0e0e0"]
         }
 
 
@@ -156,6 +110,7 @@ const lettingsPage = () => {
     const lettingsBtnClick = (btn) => {
 
         servicesTitle.innerText = `${textObj[btn.id][0]}`;
+        servicesTitle.style.color = `${textObj[btn.id][3]}`;
         textDisplay.innerText = `${textObj[btn.id][1]}`;
         servicesImage.src = `${textObj[btn.id][2]}`;
         lettingsBtn1.classList.remove("pressed");
@@ -247,18 +202,21 @@ const maintenancePage = () => {
 
     dropDownBtnAdd(maintenanceBoxes);
 
+
+
     let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
-    testimonials.top = testimonials.getBoundingClientRect().top;
+    let firstBox = document.getElementById("first-box");
     let lastBox = document.getElementById("last-box");
-    let maxScroll = testimonials.scrollHeight - testimonials.clientHeight;
+
 
 
     const verticalScroll = (event) => {
 
+
         testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
-        testimonials.top = testimonials.getBoundingClientRect().top;
+        firstBox = document.getElementById("first-box");
         lastBox = document.getElementById("last-box");
-        maxScroll = testimonials.scrollHeight - testimonials.clientHeight;
+        viewBox = testimonials.getBoundingClientRect();
 
         event.preventDefault();
 
@@ -266,33 +224,74 @@ const maintenancePage = () => {
             return;
           }
 
+        event.currentTarget.scrollTop += 0.75 * (event.deltaY + event.deltaX);
 
-        event.currentTarget.scrollTop += 0.5 * event.deltaY;
+        firstBox.position = firstBox.getBoundingClientRect();
+        lastBox.position = lastBox.getBoundingClientRect();
 
-        const endPoint = lastBox.getBoundingClientRect().top;
-
-        if (testimonials.top >= endPoint && event.deltaY + event.deltaX > 0){
-            event.currentTarget.scrollTop = 0;
-            event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
+        
+        if (viewBox.top >= lastBox.position.top && event.deltaY > 0){
+            event.currentTarget.scrollTop = firstBox.position.top;
         }
 
-        else if (event.currentTarget.scrollTop <= 0 && event.deltaY + event.deltaX < 0){
-            event.currentTarget.scrollTop = maxScroll;
-            while (event.currentTarget.scrollTop > endPoint){
-                event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
-            }
-            event.currentTarget.scrollTop += 0.5 * (event.deltaY + event.deltaX);
+        else if (viewBox.top <= firstBox.position.top && event.deltaY < 0){
+            event.currentTarget.scrollTop = lastBox.position.top; 
         }
 
       }
 
-     
-    testimonials.addEventListener("wheel", verticalScroll);
+
+      if (!window.matchMedia("(pointer: coarse)").matches) {
+        testimonials.scrollTop += 0.5 * testimonials.scrollWidth;
+        testimonials.addEventListener("wheel", verticalScroll);
+    }
+
+}
+
+const tenantPage = () => {
+
+    let pageBtn = ["","","","","","",""];
+    let buttonBox = ["","","","","","",""];
+    const arrangementBoxB = document.getElementById("arrangement-box-b");
+
+
+    for (let i = 0; i < 7; i++){
+        pageBtn[i] = document.getElementById(`page-btn-${i}`);
+        buttonBox[i] = document.getElementById(`btn-text-${i}`);
+    }
+
+    const pageBtnClick = (btn) => {
+
+        for (i = 0; i < 7; i++){
+
+            if (btn === pageBtn[i]){
+                foundButton = i;
+            }
+
+            else {
+                pageBtn[i].classList.remove("pressed");
+                buttonBox[i].classList.add("hide");
+            }
+        }
+
+        pageBtn[foundButton].classList.add("pressed");
+        buttonBox[foundButton].classList.remove("hide");
+        arrangementBoxB.scrollTop = 0;
+    }
+
+    document.body.querySelectorAll(".page-btn").forEach((btn) => 
+        btn.addEventListener("click", ()=>pageBtnClick(btn))
+    )
+
+    pageBtnClick(pageBtn[0]);
+
+
+
 }
 
 
 
-// UNIVERSAL FEATURES
+// PERSISTENT FEATURES
 
 const headerClick = () => {
 
@@ -350,7 +349,8 @@ else if (location.pathname === "/maintenance.html" || location.pathname === "htt
     catch {alert("Error: Invalid location for JavaScript");}
 }
 else if (location.pathname === "/tenants.html" || location.pathname === "https://leastmeansquares.github.io/tenants.html"){
-    ;
+    try {tenantPage()}
+    catch {alert("Error: Invalid location for JavaScript");}
 }
 else {
     try {indexPage()}
