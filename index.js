@@ -22,48 +22,27 @@ const indexPage = () => {
         btn.addEventListener("click", contactUsClick)
     )
 
-    let testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
-    let firstBox = document.getElementById("first-box");
-    let lastBox = document.getElementById("last-box");
 
-
-    const horizontalScroll = (event) => {
-
-
-        testimonials = document.getElementById("testimonial-container") || document.body.querySelectorAll(".testimonial-box");
-        firstBox = document.getElementById("first-box");
-        lastBox = document.getElementById("last-box");
-        viewBox = testimonials.getBoundingClientRect();
-
-        event.preventDefault();
-
-    
-
-        if (!event.deltaY) {
-            return;
-          }
-
-        event.currentTarget.scrollLeft += 0.75 * (event.deltaY + event.deltaX);
-
-        firstBox.position = firstBox.getBoundingClientRect();
-        lastBox.position = lastBox.getBoundingClientRect();
-
+    const testimonialShift = (right) => {
         
-        if (viewBox.left >= lastBox.position.left && event.deltaY > 0){
-            event.currentTarget.scrollLeft = firstBox.position.left;
-        }
-
-        else if (viewBox.left <= firstBox.position.left && event.deltaY < 0){
-            event.currentTarget.scrollLeft = lastBox.position.left; 
-        }
-
-      }
-
-
-      if (!window.matchMedia("(pointer: coarse)").matches) {
-        testimonials.scrollLeft += 0.5 * testimonials.scrollWidth;
-        testimonials.addEventListener("wheel", horizontalScroll);
+        testimonialSlide[current].classList.add("hide");
+        current = (current + 2 * (1 && right) + 10)  % 11;
+        testimonialSlide[current].classList.remove("hide");
     }
+
+
+    let testimonialSlide = [];
+    const leftBtn = document.getElementById("testimonial-left");
+    const rightBtn = document.getElementById("testimonial-right");
+
+    for (let i = 0; i < 11; i++){
+        testimonialSlide.push(document.getElementById(`testimonial-${i}`));
+    }
+
+    let current = 0;
+
+    leftBtn.addEventListener("click", () => testimonialShift(false));
+    rightBtn.addEventListener("click", () => testimonialShift(true));
     
 
 }
