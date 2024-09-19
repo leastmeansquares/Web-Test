@@ -192,11 +192,11 @@ nav p {
 #header-display  { 
     display: none;
     position: fixed;
-    top: 70px;
+    top: min(70px, 15dvw, 15dvh);
     left: clamp(calc(100dvw - 600px), 50dvw, calc(100dvw - 300px));
     width: clamp(300px, 50dvw, 600px);
     height: clamp(20dvh, 400px, calc(100dvh - 85px));
-    z-index: 7;
+    z-index: 8;
     border-radius: 0 0 2px 2px;
     box-shadow: -3px 0px 5px var(--dark-teal);
 }
@@ -204,7 +204,7 @@ nav p {
 
 #header-display > div  { 
     height: clamp(2dvh, 50px, calc(100dvh - 85px));
-    z-index: 8;
+    z-index: 9;
     font-size: 1.5rem;
     padding-left: 20px;
     cursor: pointer;
@@ -1282,7 +1282,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 /**  FORM DESIGN  **/
 
-#form-section-outer  { 
+#bck-display-outer { 
     background: var(--header-blue);
     opacity: 60%;
     display: none;
@@ -1292,15 +1292,15 @@ button:hover.grey-style, .pressed.grey-style  {
     margin: 0;
     width: 100dvw;
     height: 100dvh;
-    z-index: 7;
+    z-index: 0;
 }
 
 
 #main-form  { 
-    height: clamp(50dvh, 50dvw, 70dvh);
+    height: 80dvh;
     width: 80dvw;
     position: fixed;
-    top: clamp(calc(20dvh), calc(20dvw + 35px), 20dvh);
+    top: calc(10dvh + 35px);
     left: 10%;
     z-index: 8;
     overflow: auto;
@@ -1314,10 +1314,28 @@ button:hover.grey-style, .pressed.grey-style  {
     border: 4px solid var(--dark-teal);
 }
 
+.form-head span{
+    font-size: clamp(1.375rem, 3dvw, 2rem);
+    padding-bottom: 3%;
+    font-weight: 700;
+}
+
+#main-form label span {
+    font-size: clamp(1rem, 2dvw, 1.5rem);
+    padding-bottom: 3%;
+    font-weight: 700;
+}
+
+
+.form-head  { 
+    height: 10%;
+    margin-bottom: 20px;
+}
+
 
 fieldset  { 
     height: 100%;
-    width: 50%;
+    width: 800%;
     padding: 2%;
     border: none;
     color: var(--dark-teal);
@@ -1340,9 +1358,9 @@ form > :nth-child(2) {
     padding-bottom: 24px;
     background-color: var(--dark-teal);
     border-radius: 50%;
-    position: relative;
-    left: calc(99% - 10px);
-    top: -25%;
+    position: absolute;
+    left: calc(99% - 20px);
+    top: 10px;
     opacity: 25%;
     margin-bottom: 30px;
 }
@@ -1353,31 +1371,38 @@ form > :nth-child(2) {
 }
 
 
-.form-head  { 
-    height: 10%;
-}
-
-
 form input:not(#privacy), textarea, select  { 
     color: var(--dark-teal);
     border-radius: 5px;
     width: 100%;
-    border: 1px solid var(--dark-teal);
+    border: 1px dotted var(--dark-teal);
     padding: 0 6px;
     margin: 1px 0 5px 0;
     font-size: 1rem;
+    height: 40px;
 }
 
+fieldset > :nth-child(n+2) {
+    width: 100%;
+}
 
-textarea  { 
+fieldset > :nth-child(n+2) > div {
+    width: 49%;
+}
+
+fieldset > :nth-last-child(2) {
+    justify-content: left;
+}
+
+textarea { 
     resize: none;
     height: 200px;
 }
 
-
 #privacy  { 
     accent-color: var(--dark-teal);
-    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -1390,12 +1415,25 @@ textarea  {
     border-radius: 10px;
     font-size: 1rem;
     transition-duration: 0.4s;
+    margin: 10px auto;
 }
 
 #submit-btn:hover  { 
     background-color: white;
     color: var(--dark-blue)
 }
+
+fieldset::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 0;
+    background-color: red;
+    opacity: 30%;
+}
+
+fieldset::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+  }
 
 
 /**  CONTACT US IN THREE STEPS  **/

@@ -3,25 +3,6 @@
 
 const indexPage = () => {
 
-    const mainForm = document.getElementById("main-form");
-    const outerForm = document.getElementById("form-section-outer");
-
-    const contactUsClick = () => {
-
-        if (mainForm.style.display){
-            mainForm.style.display = "";
-            outerForm.style.display = "";
-        }
-        else {
-            mainForm.style.display = "flex";
-            outerForm.style.display = "block";
-        }
-    }
-
-    document.body.querySelectorAll(".form-btn").forEach((btn) => 
-        btn.addEventListener("click", contactUsClick)
-    )
-
 
     const testimonialShift = (right) => {
         
@@ -272,19 +253,53 @@ const tenantPage = () => {
 
 // PERSISTENT FEATURES
 
+const mainForm = document.getElementById("main-form");
+const outerBck = document.getElementById("bck-display-outer");
+
+const contactUsClick = () => {
+
+    if (mainForm.style.display){
+        cancelClick();
+    }
+    else {
+        cancelClick();
+        mainForm.style.display = "flex";
+        outerBck.style.display = "block";
+        outerBck.style.opacity = "0.6";
+    }
+}
+
+document.body.querySelectorAll(".form-btn").forEach((btn) => 
+    btn.addEventListener("click", contactUsClick)
+)
+
 const headerClick = () => {
 
     if (headerDisplay.style.display){
-        headerDisplay.style.display = "";
+        outerBck.removeEventListener("mouseenter", headerClick, true);
+        document.removeEventListener("scroll", cancelClick);
+        cancelClick();
     }
     else {
+        outerBck.addEventListener("mouseenter", headerClick, true);
+        document.addEventListener("scroll", cancelClick);
+        cancelClick();
         headerDisplay.style.display = "block";
+        outerBck.style.display = "block";
+        outerBck.style.opacity = "0";
     }
+}
+
+const cancelClick = () => {
+    mainForm.style.display = "";
+    outerBck.style.display = "";
+    headerDisplay.style.display = "";
 }
 
 
 const headerDisplay = document.getElementById("header-display");
 document.getElementById("header-btn").addEventListener("click", headerClick);
+outerBck.addEventListener("click", cancelClick);
 
 
 
