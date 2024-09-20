@@ -254,7 +254,10 @@ const tenantPage = () => {
 // PERSISTENT FEATURES
 
 const mainForm = document.getElementById("main-form");
+mainForm.selection = document.getElementById("pick-subject");
 const outerBck = document.getElementById("bck-display-outer");
+getStartedBtn = document.getElementById("get-started");
+footerSubject = document.getElementById("page-subject");
 
 const contactUsClick = () => {
 
@@ -272,6 +275,13 @@ const contactUsClick = () => {
 document.body.querySelectorAll(".form-btn").forEach((btn) => 
     btn.addEventListener("click", contactUsClick)
 )
+
+getStartedBtn.addEventListener("click", () => {
+    mainForm.selection.value = footerSubject.value;
+    contactUsClick()
+}
+);
+
 
 const headerClick = () => {
 

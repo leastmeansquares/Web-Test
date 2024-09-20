@@ -27,7 +27,7 @@
                 <nav></nav>
                 <nav></nav>
                 <nav></nav>
-                <nav><button id="nav-button">Contact Us</button></nav>
+                <nav><button id="nav-button" class="form-btn">Contact Us</button></nav>
                 <nav><button id="header-btn" class="light-blue-text">&#8801</button></nav>
             </nav>
             <section id="header-display" class="title-blue dark-teal-text">
@@ -116,16 +116,16 @@
                     <button class="dropdown-btn pressed" id="discoveryBtn"><h3>DISCOVER THE SERVICE FOR YOU</h3><div class="arrow-xl up"></div></button>
                     <div id="discovery-dropdown" class="pressed">
                         <div class="align-a dropdown-div">
-                            <a href="index.html">
-                                <button class="index-button" id="service-btn-1">
-                                    <img loading="lazy" src="images\Backgrounds\pexels-heyho-6585598.jpg" class="button-image">  
-                                    <div><p>Home Page</p></div>
-                                </button>
-                            </a>
                             <a href="lettings.html">
                                 <button class="index-button" id="service-btn-2">
                                     <img loading="lazy" src="images\Backgrounds\pexels-pixabay-262470.jpg" class="button-image">  
                                     <div><p>Letting Services & Pricing</p></div>
+                                </button>
+                            </a>
+                            <a href="maintenance.html">
+                                <button class="index-button" id="service-btn-4">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-tima-miroshnichenko-6473975.jpg" class="button-image">  
+                                    <div><p>Property Maintenance</p></div>
                                 </button>
                             </a>
                             <a href="tenants.html">
@@ -136,21 +136,21 @@
                             </a>
                         </div>
                         <div class="align-a dropdown-div">
-                            <a href="maintenance.html">
-                                <button class="index-button" id="service-btn-4">
-                                    <img loading="lazy" src="images\Backgrounds\pexels-tima-miroshnichenko-6473975.jpg" class="button-image">  
-                                    <div><p>Property Maintenance</p></div>
+                            <a href="index.html">
+                                <button class="index-button" id="service-btn-1">
+                                    <img loading="lazy" src="images\Backgrounds\pexels-heyho-6585598.jpg" class="button-image">  
+                                    <div><p>PLACEHOLDER</p></div>
                                 </button>
-                            </a>
+                            </a>    
                             <a href="https://www.onthemarket.com/">
                                 <button class="index-button" id="service-btn-5">
                                     <img loading="lazy" src="images\Backgrounds\pexels-mali-68470.jpg" class="button-image">  
-                                    <div><p>View Our Properties</p></div>
+                                    <div><p>PLACEHOLDER</p></div>
                                 </button>
                             <a href="#contact-us">
                                 <button class="index-button" id="service-btn-6">
                                     <img loading="lazy" src="images\Backgrounds\pexels-craigmdennis-205421.jpg" class="button-image">  
-                                    <div><p>Contact Us</p></div>
+                                    <div><p>PLACEHOLDER</p></div>
                                 </button>
                             </a>
                         </div>
@@ -183,7 +183,7 @@
                                 <p>MAINTENANCE VISIT PLAN (MV-PLAN)</p>
                                 <p>Starting at just £50.00 per month, our MV-Plan can be stand-alone
                                     or added to a managed service to combine Lettings, Management and Maintenance.
-                                    Contact us for details.</p>
+                                </p>
                             </div>
                             <div class="circle-box why-choose">
                                 <div class="circle"><i class="fa-solid fa-computer"></i></div>
@@ -335,20 +335,20 @@
                                 <p class="light-blue-text">WAIT TO HEAR FROM US</p>
                             </div>
                         </div>
-                        <form>
+                        <element class="align-c">
                             <label for="page-subject"><p class="light-teal-text">I'd Like To...</p></label><br>
                             <select name="page-subject" id="page-subject" required>
-                                <option>Book a Free Rental Appraisal</option>
-                                <option value="subject-a">Arrange a Viewing</option>
-                                <option value="subject-b">Discuss Our Services</option>
-                                <option value="subject-c">Make a Maintenance Enquiry</option>
-                                <option value="subject-d">Ask Us Something</option>
-                                <option value="other">Other (Please Specify)</option>
+                                <option value="Book a Free Rental Appraisal">Book a Free Rental Appraisal</option>
+                                <option value="Arrange a Viewing">Arrange a Viewing</option>
+                                <option value="Discuss Our Services">Discuss Our Services</option>
+                                <option value="Make a Maintenance Enquiry">Make a Maintenance Enquiry</option>
+                                <option value="Ask Us Something">Ask Us Something</option>
+                                <option value="Other (Please Specify)">Other (Please Specify)</option>
                             </select><br>
-                            <button class="main-button white-style white" id="get-started">
+                            <button class="main-button white" id="get-started">
                                 Get Started
                             </button>
-                        </form>
+                        </element>
                     </div>                    
                 </div>
             </section>
@@ -382,7 +382,7 @@
 
 
         <section id="form-display">    
-            <form id="main-form" action="https://formsubmit.co/aarongill1821@gmail.com" method="POST">
+            <form id="main-form" action="https://formspree.io/f/mjkbqkan" method="POST">
                 <fieldset>   
                     <div class="form-head">        
                         <span>Quick Contact Form</span> 
@@ -405,12 +405,12 @@
                     <div class="align-b">      
                         <div>        
                             <label for="email">Email Address</label><br>
-                            <input type="email" id="email" name="Email" required oninvalid="this.setCustomValidity('Please enter your email address.')"
+                            <input type="email" id="email" name="Email" required oninvalid="this.setCustomValidity('Please enter a valid email address.')"
                             oninput="this.setCustomValidity('')"><br>
                         </div>  
                         <div>   
                             <label for="phone-number">Phone Number</label><br>
-                            <input type="tel" id="phone-number" name="Phone Number" required oninvalid="this.setCustomValidity('Please enter your phone number.')"
+                            <input type="tel" id="phone-number" name="Phone Number" required oninvalid="this.setCustomValidity('Please enter a valid phone number.')"
                             oninput="this.setCustomValidity('')"><br>
                         </div>
                     </div>     
@@ -420,20 +420,22 @@
                     <label for="postcode">Postcode</label><br>
                     <input type="text" id="postcode" name="Postcode" required oninvalid="this.setCustomValidity('Please enter a valid postcode.')"
                     oninput="this.setCustomValidity('')"><br><br>
-                    <label for="subject"><span>I'd Like To...</span></label><br>
-                    <select name="Subject" id="subject">
-                        <option>Book a Free Rental Appraisal</option>
-                                <option value="subject-a">Arrange a Viewing</option>
-                                <option value="subject-b">Discuss Our Services</option>
-                                <option value="subject-c">Make a Maintenance Enquiry</option>
-                                <option value="subject-d">Ask Us Something</option>
-                                <option value="other">Other (Please Specify)</option>
+                    <label for="pick-subject"><span>I'd Like To...</span></label><br>
+                    <select id="pick-subject" name="Chosen Subject" required oninvalid="this.setCustomValidity('Please select an option')"
+                    oninput="this.setCustomValidity('')">
+                        <option value="">--Please choose an option--</option>
+                        <option value="Book a Free Rental Appraisal">Book a Free Rental Appraisal</option>
+                        <option value="Arrange a Viewing">Arrange a Viewing</option>
+                        <option value="Discuss Our Services">Discuss Our Services</option>
+                        <option value="Make a Maintenance Enquiry">Make a Maintenance Enquiry</option>
+                        <option value="Ask Us Something">Ask Us Something</option>
+                        <option value="Other (Please Specify)">Other (Please Specify)</option>
                     </select><br>
                     <label for="message">Message</label><br>
                     <textarea id="message" name="Message" required minlength="30" maxlength="9999" oninvalid="this.setCustomValidity('Please enter a message of at least 30 characters')"
                     oninput="this.setCustomValidity('')"></textarea><br>
                     <div class="align-c">
-                        <input type="checkbox" id="privacy" name="Privacy" class="checkbox" required oninvalid="this.setCustomValidity('Please read and accept the privacy policy.')"
+                        <input type="checkbox" id="privacy"class="checkbox" required oninvalid="this.setCustomValidity('Please read and accept the privacy policy.')"
                         oninput="this.setCustomValidity('')">
                         <label for="privacy">I accept the privacy policy</label><br>    
                     </div>

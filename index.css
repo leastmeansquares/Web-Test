@@ -627,13 +627,19 @@ button:hover.grey-style, .pressed.grey-style  {
 .dropdown-btn {
     width: 100%;
     height: 40px;
-    font-size: 1.5rem;
+    font-size: clamp(0.75rem, 2dvw, 1.5rem);
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
     vertical-align: text-top;
-    padding: 0 1%;
+    padding: 0 max(1%, 10px);
     margin: 8px 0;
+}
+
+.dropdown-btn > p {
+    font-size: clamp(0.75rem, 1.875dvw, 1.5rem);
+    font-weight: 500;
 }
 
 .dropdown-box {
@@ -1036,26 +1042,37 @@ button:hover.grey-style, .pressed.grey-style  {
     
 }
 
-
-
-@media (pointer:coarse) {
-    .scroll-hide {
+@media (pointer:coarse) or (width <= 800px) {
+    .near-end {
         display: none;
     }
 }
 
 
+#maintenance-main {
+    margin-top: 20px;
+}
+
 #our-work {
-    height: fit-content;
-    width: 60dvw;
-    max-width: 600px;
+    height: 80%;
+    width: 55dvw;
     margin-left: 20px;
     margin-bottom: 20px;
+    margin-top: 5%;
 }
 
 #our-work > img {
     width: 60dvw;
-    max-width: 100%;   
+    height: 85%;
+    max-width: 100%;  
+    overflow: hidden;
+    object-fit: cover;
+    border: 1px dotted var(--header-blue);
+}
+
+#split {
+    height: 840px;
+    padding-bottom: 40px;
 }
 
 #split > aside {
@@ -1080,7 +1097,7 @@ button:hover.grey-style, .pressed.grey-style  {
     border-top: 1px solid var(--header-blue);
 }
 
-.scroll-box > div {
+.scroll-box > blockquote {
     width: 100%;
     border-radius: 10px;
     margin: 0 auto;
@@ -1089,19 +1106,89 @@ button:hover.grey-style, .pressed.grey-style  {
     z-index: 1;
 }
 
-.scroll-box > div:not(:first-of-type) {
-    margin-top: 10px;
+.scroll-box > blockquote:not(:first-of-type) {
+    margin-top: 20px;
     border-top: 1px solid var(--header-blue);
 }
 
-.scroll-box > div:not(:last-of-type) {
-    margin-bottom: 10px;
+.scroll-box > blockquote:not(:last-of-type) {
+    margin-bottom: 20px;
     border-bottom: 1px solid var(--header-blue);
 
 }
 
 #split .testimonials::-webkit-scrollbar {
     width: 0;
+  }
+
+
+
+
+  @media ( width <= 800px){
+    #split {
+        display: block;
+        align-items: baseline;
+        justify-items: baseline;
+        height: calc(400px + 125dvw);
+    }
+
+    #our-work {
+        height: 110dvw;
+        width: 90dvw;
+        max-width: 600px;
+        margin: 20px 5dvw;
+    }
+    
+    #our-work > img {
+        width: 90%;
+        height: 75%;
+        margin: 0 5%;
+        max-width: 100%;  
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    #split > aside {
+        width: 100%;
+        margin: 0 5%;
+    }
+
+    #split > aside > div:first-of-type {
+        margin-bottom: 0px;
+    }
+    
+    
+    .scroll-box {
+        margin-top: 20px;
+        width: 1000dvw;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+        overflow-y: auto;
+        border: none;
+    }
+    
+    .scroll-box > blockquote {
+        min-width: 300px;
+        height: 100%;
+        border-bottom: 1px solid var(--header-blue);
+    }
+
+    .scroll-box > blockquote:not(:first-of-type) {
+        margin-top: 0px;
+        border-bottom: 1px solid var(--header-blue);
+        margin-left: 10px;
+    }
+    
+    .scroll-box > blockquote:not(:last-of-type) {
+        margin-bottom: 0px;
+        border-top: 1px solid var(--header-blue);
+    }
+    
+    .scroll-box > blockquote:nth-last-of-type(5) {
+        margin-right: 20px;
+    }
   }
 
 
@@ -1145,7 +1232,7 @@ button:hover.grey-style, .pressed.grey-style  {
 /** LETTINGS PAGE SERVICE PLANS **/
 
 #plan-section {
-    height: 90dvh;
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
@@ -1159,7 +1246,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 #plan-box {
     border-radius: 15px;
-    margin: 30px 0 20px 0;
+    margin: calc(5% + 30px) 0 calc(5% + 20px) 0;
     width: clamp(min(100dvw, 300px), 70dvw, 1000px);
 }
 
@@ -1297,11 +1384,11 @@ button:hover.grey-style, .pressed.grey-style  {
 
 
 #main-form  { 
-    height: 80dvh;
-    width: 80dvw;
+    height: 90dvh;
+    width: max(80dvw, min(100dvw, 400px));
     position: fixed;
-    top: calc(10dvh + 35px);
-    left: 10%;
+    top: calc(5dvh + 35px);
+    left: calc((100dvw - max(80dvw, min(100dvw, 400px))) / 2);
     z-index: 8;
     overflow: auto;
     background: var(--grey1);
@@ -1359,7 +1446,7 @@ form > :nth-child(2) {
     background-color: var(--dark-teal);
     border-radius: 50%;
     position: absolute;
-    left: calc(99% - 20px);
+    left: calc(99% - 30px);
     top: 10px;
     opacity: 25%;
     margin-bottom: 30px;
@@ -1371,7 +1458,7 @@ form > :nth-child(2) {
 }
 
 
-form input:not(#privacy), textarea, select  { 
+form input:not(#privacy), element input, textarea, select  { 
     color: var(--dark-teal);
     border-radius: 5px;
     width: 100%;
@@ -1460,7 +1547,7 @@ fieldset::-webkit-scrollbar-thumb {
     font-size: clamp(0.625rem, 1.5dvw, 1.5rem);
 }
 
-.three-steps-box form {
+.three-steps-box element {
     width: 40dvw;
     margin-right: 2%;
     margin-left: 20px;
@@ -1469,7 +1556,7 @@ fieldset::-webkit-scrollbar-thumb {
 
 #get-started {
     width: 100%;
-    height: clamp(35px, 10dvw ,50px);
+    height: clamp(35px, 12dvw, 55px);
     background-color: var(--light-teal);
 }
 
@@ -1481,6 +1568,7 @@ fieldset::-webkit-scrollbar-thumb {
     border: 1px solid var(--light-teal);
     color: var(--light-teal);
     appearance: none;
+    margin-top: 15px;
 }
 
 #page-subject > option {
@@ -1488,7 +1576,7 @@ fieldset::-webkit-scrollbar-thumb {
     font-size: clamp(0.5rem, 1.5dvw, 1.5rem);
 }
 
-.three-steps-box form:before {
+.three-steps-box element:before {
     position: absolute;
     top: 36%;
     right: calc(10px + 0.5dvw);
@@ -1500,6 +1588,12 @@ fieldset::-webkit-scrollbar-thumb {
     border-width: 0.75dvw 0.5dvw 0 0.5dvw;
     border-color: var(--light-teal) transparent transparent transparent;
     pointer-events: none;
+  }
+
+  @media (width <= 600px){
+    .three-steps-box element:before {
+        border: 0px;
+    }
   }
 
 
