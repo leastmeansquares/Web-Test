@@ -286,12 +286,10 @@ getStartedBtn.addEventListener("click", () => {
 const headerClick = () => {
 
     if (headerDisplay.style.display){
-        outerBck.removeEventListener("mouseenter", headerClick, true);
         document.removeEventListener("scroll", cancelClick);
         cancelClick();
     }
     else {
-        outerBck.addEventListener("mouseenter", headerClick, true);
         document.addEventListener("scroll", cancelClick);
         cancelClick();
         headerDisplay.style.display = "block";
