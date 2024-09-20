@@ -890,29 +890,44 @@ button:hover.grey-style, .pressed.grey-style  {
 }
     
 
-/** TABLES **/
+/** PRICE PLAN TABLE **/
+
+.table-box {
+    width: 100dvw;
+    overflow-x: scroll;
+}
 
 .services { 
-    margin: 25px auto 0 auto;
-    color: var(--dark-blue);
+    width: 100%;
+    margin: 0 2.5dvw 25px 0;
+    color: var(--header-blue);
+    font-size: clamp(1.125rem, 2dvw, 1.625rem);
 }
 
 .services th, .services td  { 
-    padding: 5px 0;
-    border: 1px dotted var(--grey4);
+    padding: 5px;
     text-align: center;
+}
+
+.services td  { 
+    border-bottom: 1px dotted var(--grey3);
+    border-right: 1px dotted var(--grey4);
 }
 
 .services th {
     border-top: none;
-    padding: 5px;
-    color: var(--header-blue);
+}
+
+.services th > div {
+    border: 1px solid black;
 }
 
 .services td:first-child, .services th:first-child { 
     border-left: none;
-    padding: 5px;
-    color: var(--header-blue);
+    position: sticky;
+    left: 0;
+    padding-left: 2.5dvw;
+    background-color: var(--faint-blue);
 }
 
 .services tr:last-of-type td {
@@ -935,19 +950,30 @@ button:hover.grey-style, .pressed.grey-style  {
     width: 40dvw;
 }
 
-.services tr:nth-of-type(3), .services tr:nth-of-type(10), .services tr:nth-of-type(18) {
-    background-color: var(--logo-teal);
+.services tr:nth-of-type(2), .services tr:nth-of-type(9), .services tr:nth-of-type(17), .services tr:nth-last-of-type(7) {
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid var(--dark-teal);
 }
 
-.services tr:last-of-type {
-    background-color: var(--faint-orange);
+.services tr:nth-of-type(2) td, .services tr:nth-of-type(9) td, .services tr:nth-of-type(17) td, .services tr:nth-last-of-type(7) td {
+    border: none;
+    color: var(--dark-teal);
+    font-weight: 800;
+    font-family: "Podkova", "Oswald", sans-serif;
+    padding-top: 5dvh;
+    padding-bottom: 2dvh;
 }
 
+.services tr:nth-last-of-type(7) {
+    border-bottom: 2px solid var(--logo-orange);
+}
 
-
+.services tr:nth-last-of-type(7) td {
+    color: var(--logo-orange);
+}
 
 .services tr:nth-child(n+1):nth-child(-n+19) td:nth-of-type(4) {
-    /*background-color: var(--faint-teal);*/
     color: var(--header-blue);
 }
 
@@ -1247,7 +1273,7 @@ button:hover.grey-style, .pressed.grey-style  {
 #plan-box {
     border-radius: 15px;
     margin: calc(5% + 30px) 0 calc(5% + 20px) 0;
-    width: clamp(min(100dvw, 300px), 70dvw, 1000px);
+    width: clamp(min(95dvw, 340px), 70dvw, 1000px);
 }
 
 #lettings-top {
@@ -1259,6 +1285,12 @@ button:hover.grey-style, .pressed.grey-style  {
     font-weight: 700px;
     margin-bottom: 20px;
     border: 2px solid var(--faint-blue);
+}
+
+@media (width < 375px){
+    #lettings-top h3 {
+        font-size: calc(1.375rem - 1dvw);
+    }
 }
 
 .box-image {
@@ -1274,7 +1306,7 @@ button:hover.grey-style, .pressed.grey-style  {
 #text-display {
     height: calc(max(40dvw, 40dvh));
     max-height: 500px;
-    font-size: clamp(0.5rem, 2dvw, 2rem);
+    font-size: clamp(0.875rem, 2dvw, 2rem);
     border-radius: 15px;
     border: 2px solid var(--faint-blue);
     margin-bottom: 15px;
