@@ -356,6 +356,12 @@ nav p {
         border: 1px solid var(--header-blue);
     }
 
+    @media (width >= 330px){
+        #outer-welcome > :last-child {
+            margin-top: -100px;
+        }
+    }
+
 }
 
 
@@ -912,7 +918,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 .services colgroup > col:not(first-of-type) {
-    width: clamp(120px, calc(24.5dvw - 75px), 300px);
+    width: clamp(140px, calc(24.5dvw - 75px), 300px);
     min-width: 120px;
 }
 
@@ -949,12 +955,18 @@ button:hover.grey-style, .pressed.grey-style  {
     color: var(--dark-blue);
 }
 
-.showhide1 {
+.showhide1, .showhide2, .showhide3 {
     display: none;
 }
 
 @media (width > 1334px){
-    .showhide1 {
+    .showhide3 {
+        display: block;
+    }
+}
+
+@media (width < 663px){
+    .showhide1, .showhide2 {
         display: block;
     }
 }

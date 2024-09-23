@@ -56,11 +56,11 @@ const lettingsPage = () => {
                         "images\\Backgrounds\\pexels-life-of-pix-8092.jpg",
                         "#7b68ee"],
         lettingsBtn5: ["MV-Plan",
-                        "The maintenance Visit Plan (MV-Plan) is best described as “A Letting Agent with basic maintenance/handyman included”. The MV-Plan can be selected as a stand-alone service or taken as an upgrade to a Management Plan for a small increase on monthly commission. This type of plan would benefit a landlord who doesn’t have time to spend at the property for maintenance/handyman visits and checks but with the added advantage of the feedback of the letting agent. See separate document for more information.",
+                        "The maintenance Visit Plan (MV-Plan) is best described as “A Letting Agent with basic maintenance/handyman included”. The MV-Plan can be selected as a stand-alone service or taken as an upgrade to a Management Plan for a small increase on monthly commission. This type of plan would benefit a landlord who doesn’t have time to spend at the property for maintenance/handyman visits and checks but with the added advantage of the feedback of the letting agent.",
                         "images\\Backgrounds\\pexels-heyho-6585598.jpg",
                         "#ffddcc"],
         lettingsBtn6: ["Maintenance Services",
-                        "Empty box",
+                        "Our years of experience in dealing with maintenance and general repairs is paramount to a quality inspection as we can identify or resolve many of the issues on our visits. Additional maintenance services we can organise for landlords include Annual Gas Safety Certificates (CP12), Energy Performance Certificate (EPC - 10 years), Electrical Installation Condition Reports (EICR- 5 Years), Additional Specialist Certificates, or Checks for Compliance. Please see Maintenance Page for more details",
                         "images\\Backgrounds\\pexels-heyho-6585598.jpg",
                     "#e0e0e0"]
         }
