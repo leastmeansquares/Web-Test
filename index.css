@@ -89,7 +89,7 @@ h1, footer span  {
 }
 
 #title > h2  { 
-    font-size: clamp(0.625rem, 1.125rem, 2dvw);
+    font-size: clamp(0.75rem, 1.125rem, 2dvw);
 }
 
 #title-alt > h2  { 
