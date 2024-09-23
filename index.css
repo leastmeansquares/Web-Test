@@ -61,6 +61,7 @@ hr {
 }
 
 
+
   /**  HEADINGS AND FONTS  **/
 
 h1, footer span  {
@@ -114,7 +115,7 @@ h2, #discoveryBtn, #getInTouchBtn {
 h2 {
     font-size: clamp(1.5rem, 3.5dvw, 3.2rem);
     position: relative;
-    top: -2dvh;
+    top: -2lvh;
 }
 
 h3, .btn-text span:first-of-type {
@@ -165,7 +166,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    height: min(70px, 15dvw, 15dvh);
+    height: min(70px, 15dvw, 15lvh);
 }
 
 nav p {
@@ -186,7 +187,7 @@ nav p {
 
 .logo  { 
     width: auto;
-    height: min(48px, 10.3dvw, 10.3dvh);
+    height: min(48px, 10.3dvw, 10.3lvh);
     margin-left: -15px;
     margin-right: 5px;
 }
@@ -194,10 +195,10 @@ nav p {
 #header-display  { 
     display: none;
     position: fixed;
-    top: min(70px, 15dvw, 15dvh);
+    top: min(70px, 15dvw, 15lvh);
     left: clamp(calc(100dvw - 600px), 50dvw, calc(100dvw - 300px));
     width: clamp(300px, 50dvw, 600px);
-    height: clamp(20dvh, 400px, calc(100dvh - 85px));
+    height: clamp(20lvh, 400px, calc(100lvh - 85px));
     z-index: 8;
     border-radius: 0 0 2px 2px;
     box-shadow: -3px 0px 5px var(--dark-teal);
@@ -205,7 +206,7 @@ nav p {
 
 
 #header-display > div  { 
-    height: clamp(2dvh, 50px, calc(100dvh - 85px));
+    height: clamp(2lvh, 50px, calc(100lvh - 85px));
     z-index: 9;
     font-size: 1.5rem;
     padding-left: 20px;
@@ -221,7 +222,7 @@ nav p {
 /** IMAGES **/
 
 #hero {
-    height: 70dvh;
+    height: 70lvh;
 }
 
 #main-image::before  { 
@@ -238,7 +239,7 @@ nav p {
   }
 
 #main-image > img  { 
-    height: 70dvh;
+    height: 70lvh;
     position: fixed;
     z-index: -2;
     overflow: hidden;
@@ -250,7 +251,7 @@ nav p {
 #main-image  { 
     width: 100dvw;
     max-width: 100%;
-    height: 70dvh;
+    height: 70lvh;
     overflow: hidden;
     object-fit: cover;
 }
@@ -263,7 +264,7 @@ nav p {
 .image-text  { 
     position: absolute;
     text-align: left;
-    top: 20dvh;
+    top: 20lvh;
     left: 3dvw;
     width: max(40%, min(220px, 100dvw));
   }
@@ -295,7 +296,7 @@ nav p {
 
 
 #welcome {
-    height: 60dvh;
+    height: 60lvh;
     padding-top: 3%;
 }
 
@@ -416,7 +417,7 @@ nav p {
 
 .circle-box { 
     padding: 20px 5px 20px 5px;
-    margin: 0 5dvw 5dvh 5dvw;
+    margin: 0 5dvw 5lvh 5dvw;
     text-align: center;
     width: clamp(22dvw, 22dvw, 320px);
     vertical-align: top;
@@ -452,7 +453,7 @@ nav p {
 
     #circle-wrapper {
         padding: 5% 5%;
-        height: calc(50dvh - 20dvw);
+        height: calc(50lvh - 20dvw);
         max-height: 90dvw;
     }
 
@@ -780,14 +781,14 @@ button:hover.grey-style, .pressed.grey-style  {
 /**  SPECIAL BUTTON ARRANGEMENTS **/
 
 #application-process {
-    height: clamp(calc(950px - 100dvw), calc(60dvw + 250px), min(100dvw, 100dvh) + 20px);
+    height: clamp(calc(950px - 100dvw), calc(60dvw + 250px), min(100dvw, 100lvh) + 20px);
     max-width: 100%;
     padding-top: 30px;
 }
 
 #arrangement-box-a { 
     width: max(10dvw, 80px);
-    height: 60dvh;
+    height: 60lvh;
     margin-bottom: 5%;
     align-items: top;
     background-color: var(--grey3);
@@ -795,7 +796,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 #arrangement-box-b { 
     width: calc(100% - max(10dvw, 80px));
-    height: 60dvh;
+    height: 60lvh;
     margin-bottom: 5%;
     border-radius: 0 10px 10px 0;
     overflow-y: auto;
@@ -906,7 +907,7 @@ button:hover.grey-style, .pressed.grey-style  {
     width: 100dvw;
     overflow-x: auto;
     height: calc(fit-content + 40px);
-    padding-bottom: 10dvh;
+    padding-bottom: 10lvh;
 }
 
 .services { 
@@ -937,7 +938,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .services th {
     border-top: none;
-    height: 20dvh;
+    height: 20lvh;
 }
 
 .services th > div {
@@ -1004,8 +1005,8 @@ button:hover.grey-style, .pressed.grey-style  {
     color: var(--logo-teal);
     font-weight: 800;
     font-family: "Podkova", "Oswald", sans-serif;
-    padding-top: 5dvh;
-    padding-bottom: 2dvh;
+    padding-top: 5lvh;
+    padding-bottom: 2lvh;
     background: var(--faint-blue);
 }
 
@@ -1051,7 +1052,7 @@ button:hover.grey-style, .pressed.grey-style  {
     vertical-align: top;
     width: 100%;
     max-width: calc(1000px + 20%);
-    height: 60dvh;
+    height: 60lvh;
     min-height: fit-content;
 }
 
@@ -1310,8 +1311,8 @@ button:hover.grey-style, .pressed.grey-style  {
 /** LETTINGS PAGE SERVICE PLANS **/
 
 #plan-section {
-    height: max(100dvh, fit-content);
-    min-height: 80dvh;
+    height: max(100lvh, fit-content);
+    min-height: 80lvh;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
@@ -1347,7 +1348,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 .box-image {
-    min-height: 10dvh;
+    min-height: 10lvh;
     border-left: 1px solid var(--header-blue);
     border-right: 1px solid var(--header-blue);
     border-bottom: 1px solid var(--header-blue);
@@ -1357,7 +1358,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 #text-display {
-    height: calc(max(40dvw, 40dvh));
+    height: calc(max(40dvw, 40lvh));
     max-height: 500px;
     font-size: clamp(0.875rem, 2dvw, 2rem);
     border-radius: 15px;
@@ -1375,7 +1376,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .lettings-btn { 
     width: calc(100% / 3);
-    height: 6dvh;
+    height: 6lvh;
     min-height: 40px;
     border: 1px solid var(--header-blue);
     font-weight: 500;
@@ -1464,16 +1465,16 @@ button:hover.grey-style, .pressed.grey-style  {
     left: 0;
     margin: 0;
     width: 100dvw;
-    height: 100dvh;
+    height: 100lvh;
     z-index: 0;
 }
 
 
 #main-form  { 
-    height: 90dvh;
+    height: 90lvh;
     width: max(80dvw, min(100dvw, 400px));
     position: fixed;
-    top: calc(5dvh + 35px);
+    top: calc(5lvh + 35px);
     left: calc((100dvw - max(80dvw, min(100dvw, 400px))) / 2);
     z-index: 8;
     overflow: auto;
