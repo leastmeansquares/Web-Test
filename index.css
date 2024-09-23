@@ -233,7 +233,7 @@ nav p {
     width: 100dvw;
     max-width: 100%;
     height: 100%;
-    background: linear-gradient(140deg, var(--header-blue) 35%, var(--transparent));
+    background: linear-gradient(110deg, var(--header-blue) 35%, var(--transparent));
     opacity: 70%;
   }
 
@@ -583,12 +583,12 @@ button:hover.index-button  {
 
 
 button:hover.index-button > div{ 
-    box-shadow: 2px 2px 3px var(--header-blue);
+    box-shadow: 2px 2px 3px var(--logo-teal);
 }
 
 
 button:hover.index-button > img { 
-    box-shadow: 2px -2px 3px var(--header-blue);
+    box-shadow: 2px -2px 3px var(--logo-teal);
 }
 
 .alt-button  { 
@@ -1315,7 +1315,7 @@ button:hover.grey-style, .pressed.grey-style  {
     background-image: linear-gradient(90deg,
                     #0a131ddd,
                     #0a131dee),
-                    url(images\\Backgrounds\\pexels-heyho-6585598.jpg);
+                    url("images\\Backgrounds\\P1090913.JPG");
 }
 
 #plan-box {
@@ -1864,7 +1864,7 @@ footer > :first-child > :nth-child(3) {
 }
     
 .bck-image {
-    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images\\Backgrounds\\pexels-lina-5624177.jpg");
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images\\Backgrounds\\20170825_165741.jpg");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 100%;
@@ -1872,7 +1872,7 @@ footer > :first-child > :nth-child(3) {
 }
 
 .bck-image-2 {
-    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images\\Backgrounds\\pexels-mali-68470.jpg");
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/242323278_2036677076488859_1015781924829081344_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=hIsbDoCs5wIQ7kNvgG6D1B4&_nc_ht=scontent-man2-1.xx&oh=00_AYBDoNW8rD9eq0IUJ8Gux1lGdv1b_8uafeGLmgsDWV6hyQ&oe=66F742E7");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 100%;
@@ -1880,9 +1880,16 @@ footer > :first-child > :nth-child(3) {
 }
 
 .bck-image-3 {
-    background: linear-gradient(90deg, #0a131ddd, #0a131dff 100%), url("images\\Backgrounds\\pexels-curtis-adams-1694007-3935316.jpg");
+    background: linear-gradient(90deg, #0a131ddd, #0a131dff 100%), url("images\\Backgrounds\\P1190134.JPG");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 100%;
 }
 
+.bck-image-4 {
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images\\Backgrounds\\P1000060.JPG");
+    overflow: hidden;
+    background-size: cover;
+    opacity: 0%, 100%;
+    box-shadow: inset 0 0 0 1000px #0a131d33;
+}

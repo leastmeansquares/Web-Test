@@ -24,8 +24,31 @@ const indexPage = () => {
 
     leftBtn.addEventListener("click", () => testimonialShift(false));
     rightBtn.addEventListener("click", () => testimonialShift(true));
-    
 
+    const mainImage = document.getElementById("hero-img");
+
+    heroSRCS = [
+        "images\\Backgrounds\\P1000065.JPG",
+        "images\\Backgrounds\\64985_BLENHEIMCOTTAGE_IMG_01_0000_max_620x414.JPG",
+        "images\\Backgrounds\\P1110462.JPG"
+    ]
+
+    let srcCounter = 0;
+    const srcLen = heroSRCS.length;
+
+    const imageTransition = () => {
+        if (srcCounter < srcLen - 1) {
+            srcCounter += 1;
+            mainImage.src = heroSRCS[srcCounter];
+        }
+        else {
+            mainImage.src = heroSRCS[0];
+            srcCounter = 0;
+        }
+        setTimeout(imageTransition, 7500);
+    }
+    
+    setTimeout(imageTransition, 7500);
 }
 
 
@@ -41,27 +64,21 @@ const lettingsPage = () => {
     const textObj = {
         lettingsBtn1: ["Let Only Service",
                         "For the landlords who simply want the agent to find a good quality tenant, complete the necessary checks and make the transition as smooth as possible for them to manage the property themselves.",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
                         "#d1dffa"],
         lettingsBtn2: ["Rent Collection & Bond Registration",
                         "Similar to the Let-Only service above but this includes an Inventory & Property Condition Report which goes hand-in-hand with registering the security deposit. Once the tenancy commences, we then continue to collect the rent and provide monthly statements and support for the landlord. Generally, this is for landlords who prefer to be involved directly with the day-to-day running of the property but who have a back-up with the agent for the financial and legal aspects of the tenancy. You can upgrade at any time to Full-Management.",
-                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg",
                         "#b3e6e6"],
         lettingsBtn3: ["Full Management",
                         "This is the most popular choice for landlords, managing the tenants, maintenance/safety checks, rent collection and dealing with any issues. The agent takes over the full running of the property and keeps the landlord updated on an ongoing basis. A landlord would only normally go to the property in between tenancies for their own peace of mind.",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
                         "#218e91"],
         lettingsBtn4: ["Full Management PLUS",
                         "In addition to the Full-Management of your property, we also include the MV-Plan service (as below) which aims to reduce the number of call-out charges for non- specialist, small maintenance jobs which the agent may be able to undertake ie. tightening screws, battery replacement, small repairs (although material costs may still apply).",
-                        "images\\Backgrounds\\pexels-life-of-pix-8092.jpg",
                         "#7b68ee"],
         lettingsBtn5: ["MV-Plan",
                         "The maintenance Visit Plan (MV-Plan) is best described as “A Letting Agent with basic maintenance/handyman included”. The MV-Plan can be selected as a stand-alone service or taken as an upgrade to a Management Plan for a small increase on monthly commission. This type of plan would benefit a landlord who doesn’t have time to spend at the property for maintenance/handyman visits and checks but with the added advantage of the feedback of the letting agent.",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
                         "#ffddcc"],
         lettingsBtn6: ["Maintenance Services",
                         "Our years of experience in dealing with maintenance and general repairs is paramount to a quality inspection as we can identify or resolve many of the issues on our visits. Additional maintenance services we can organise for landlords include Annual Gas Safety Certificates (CP12), Energy Performance Certificate (EPC - 10 years), Electrical Installation Condition Reports (EICR- 5 Years), Additional Specialist Certificates, or Checks for Compliance. Please see Maintenance Page for more details",
-                        "images\\Backgrounds\\pexels-heyho-6585598.jpg",
                     "#e0e0e0"]
         }
 
@@ -70,9 +87,8 @@ const lettingsPage = () => {
     const lettingsBtnClick = (btn) => {
 
         servicesTitle.innerText = `${textObj[btn.id][0]}`;
-        servicesTitle.style.color = `${textObj[btn.id][3]}`;
         textDisplay.innerText = `${textObj[btn.id][1]}`;
-        servicesImage.src = `${textObj[btn.id][2]}`;
+        servicesTitle.style.color = `${textObj[btn.id][2]}`;
         lettingsBtn1.classList.remove("pressed");
         lettingsBtn2.classList.remove("pressed");
         lettingsBtn3.classList.remove("pressed");
@@ -344,7 +360,6 @@ dropDownBtnAdd(footerBoxes);
 if (location.pathname === "/lettings.html" || location.pathname === "https://leastmeansquares.github.io/lettings.html"){
     try {lettingsPage()}
     catch {alert("Error: Invalid location for JavaScript");}
-    
 }
 else if (location.pathname === "/maintenance.html" || location.pathname === "https://leastmeansquares.github.io/maintenance.html"){
     try {maintenancePage()}
