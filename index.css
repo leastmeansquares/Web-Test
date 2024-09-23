@@ -1306,7 +1306,7 @@ button:hover.grey-style, .pressed.grey-style  {
 /** LETTINGS PAGE SERVICE PLANS **/
 
 #plan-section {
-    height: 100dvh;
+    height: min(calc(fit-content + 18dvh), 100dvh);
     width: 100%;
     overflow: hidden;
     object-fit: cover;
@@ -1370,7 +1370,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .lettings-btn { 
     width: calc(100% / 3);
-    height: 6dvh;
+    height: max(6dvh, 40px);
     border: 1px solid var(--header-blue);
     font-weight: 500;
     font-size: clamp(0.625rem, 1.5dvw, 1rem);
