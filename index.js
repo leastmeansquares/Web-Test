@@ -28,9 +28,16 @@ const indexPage = () => {
     const mainImage = document.getElementById("hero-img");
 
     heroSRCS = [
-        "images\\Backgrounds\\P1000065.JPG",
-        "images\\Backgrounds\\64985_BLENHEIMCOTTAGE_IMG_01_0000_max_620x414.JPG",
-        "images\\Backgrounds\\P1110462.JPG"
+        "images/Backgrounds/P1000065.JPG",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/Buttercross.jpg",
+        "images/Backgrounds/Home Page with tint.JPG",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 005.jpg",
+        "images/Backgrounds/P1060123.JPG",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 010.jpg",
+        "images/Maintenance/WhatsApp/IMG-20240924-WA0016.jpg",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 001.jpg",
+        "images/Maintenance/305628803_496311505834695_124968227498160094_n.jpg",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 008.jpg",
     ]
 
     let srcCounter = 0;
@@ -45,10 +52,10 @@ const indexPage = () => {
             mainImage.src = heroSRCS[0];
             srcCounter = 0;
         }
-        setTimeout(imageTransition, 7500);
+        setTimeout(imageTransition, 2000);
     }
     
-    setTimeout(imageTransition, 7500);
+    setTimeout(imageTransition, 2000);
 }
 
 
@@ -133,27 +140,27 @@ const maintenancePage = () => {
 
 
     const imageSRCs = [
-        "images\\Maintenance\\305628803_496311505834695_124968227498160094_n.jpg",
-        "images\\Maintenance\\20200808_205124.jpg",
-        "images\\Maintenance\\20210512_172327.jpg",
-        "images\\Maintenance\\20210608_162955.jpg",
-        "images\\Maintenance\\20230209_133627.jpg",
-        "images\\Maintenance\\20240205_124911.jpg",
-        "images\\Maintenance\\20240503_144151.jpg",
-        "images\\Maintenance\\IMG-20230409-WA0004.jpg",
-        "images\\Maintenance\\IMG-20230409-WA0006.jpg",
-        "images\\Maintenance\\20200622_180922.jpg",
-        "images\\Maintenance\\20200918_120712.jpg",
-        "images\\Maintenance\\20200919_183746.jpg",
-        "images\\Maintenance\\20200919_183838.jpg",
-        "images\\Maintenance\\20220801_100053.jpg",
-        "images\\Maintenance\\20220807_143228.jpg",
-        "images\\Maintenance\\20240308_154957.jpg",
-        "images\\Maintenance\\20240308_155050.jpg",
-        "images\\Maintenance\\20240503_144042.jpg",
-        "images\\Maintenance\\20240503_144223.jpg",
-        "images\\Maintenance\\20240531_104127.jpg",
-        "images\\Maintenance\\20240531_104243.jpg"
+        "images/Maintenance/305628803_496311505834695_124968227498160094_n.jpg",
+        "images/Maintenance/20200808_205124.jpg",
+        "images/Maintenance/20210512_172327.jpg",
+        "images/Maintenance/20210608_162955.jpg",
+        "images/Maintenance/20230209_133627.jpg",
+        "images/Maintenance/20240205_124911.jpg",
+        "images/Maintenance/20240503_144151.jpg",
+        "images/Maintenance/IMG-20230409-WA0004.jpg",
+        "images/Maintenance/IMG-20230409-WA0006.jpg",
+        "images/Maintenance/20200622_180922.jpg",
+        "images/Maintenance/20200918_120712.jpg",
+        "images/Maintenance/20200919_183746.jpg",
+        "images/Maintenance/20200919_183838.jpg",
+        "images/Maintenance/20220801_100053.jpg",
+        "images/Maintenance/20220807_143228.jpg",
+        "images/Maintenance/20240308_154957.jpg",
+        "images/Maintenance/20240308_155050.jpg",
+        "images/Maintenance/20240503_144042.jpg",
+        "images/Maintenance/20240503_144223.jpg",
+        "images/Maintenance/20240531_104127.jpg",
+        "images/Maintenance/20240531_104243.jpg"
     ]
 
 
