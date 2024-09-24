@@ -19,7 +19,7 @@
     --grey5: #222222; /* Very dark grey for footer / creating contrast */
     --header-blue: #0a131d; /* Used for header, footer, main image*/
     --transparent: #0a131d00;
-    --purple: hsl(225, 53%, 78%);
+    --purple: #a9b8e5;
     --bck-width: clamp(5px ,0.625lvw, 10px);
 }
 
@@ -60,6 +60,9 @@ hr {
     margin: 20px 0;
 }
 
+.showhide1, .showhide2, .showhide3, .showhide4 {
+    display: none;
+}
 
 
   /**  HEADINGS AND FONTS  **/
@@ -222,8 +225,11 @@ nav p {
 /** IMAGES **/
 
 #hero {
-    height: 70lvh;
+    height: max(70lvh, 30dvw);
+    min-height: 500px;
+    max-height: 800px;
 }
+
 
 #main-image::before  { 
     content: "";
@@ -239,7 +245,9 @@ nav p {
   }
 
 #main-image > img  { 
-    height: 70lvh;
+    height: max(70lvh, 30dvw);
+    min-height: 500px;
+    max-height: 800px;
     position: fixed;
     z-index: -2;
     overflow: hidden;
@@ -251,7 +259,9 @@ nav p {
 #main-image  { 
     width: 100lvw;
     max-width: 100%;
-    height: 70lvh;
+    height: max(70lvh, 30dvw);
+    min-height: 500px;
+    max-height: 800px;
     overflow: hidden;
     object-fit: cover;
 }
@@ -296,7 +306,7 @@ nav p {
 
 
 #welcome {
-    height: 60lvh;
+    height: max(60lvh, 30lvw, fit-content);
     padding-top: 3%;
 }
 
@@ -516,7 +526,7 @@ nav p {
 
 /**  BUTTONS  **/
 
-button, #header-btn, a, select, .hero-btn { 
+button:not(#discoveryBtn), #header-btn, a, select, .hero-btn { 
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -569,7 +579,7 @@ a {
     text-decoration: none;
 }
 
-#header-btn:hover, #main-btn:hover, .alt-button:hover, .main-button:hover{ 
+#header-btn:hover, #main-btn:hover, .alt-button:hover, .main-button:hover, .hero-btn:hover, button:hover.index-button{ 
     transform: scale(1.05);
 }
 
@@ -577,19 +587,12 @@ a {
     transform: scale(1.01);
 }
 
-
-button:hover.index-button  { 
-    transform: scale(1.1);
-}
-
-
 button:hover.index-button > div{ 
-    box-shadow: 0 0 8px var(--logo-teal);
+    box-shadow: 0 2px 8px var(--logo-teal);
 }
-
 
 button:hover.index-button > img { 
-    box-shadow: 0 0 8px var(--logo-teal);
+    box-shadow: 0 -2px 8px var(--logo-teal);
 }
 
 .alt-button  { 
@@ -743,14 +746,12 @@ button:hover.grey-style, .pressed.grey-style  {
 .index-button  {
     border: 0px;
     border-radius: 10px;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin: 0 3% 10px 3%;
     width: clamp(0%, calc(80px + 15lvw), min(25lvw, 400px));
     background-color: var(--transparent);
     height: calc(100% - clamp(35px, 2lvw, 50px) + clamp(5lvw, min(15lvw, 500px), 400px));
     max-width: 23lvw;
     max-height: 60px;
-    margin-top: 0;
 }
 
 .button-image  { 
@@ -765,7 +766,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .index-button > div  { 
     width: 100%;
-    height: clamp(35px, 2lvw, 50px);
+    height: clamp(20px, 4lvw, 50px);
     margin-top: -5px;
     border-radius: 0 0 10px 10px;
     background-color: white;
@@ -778,10 +779,27 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
+@media (width <= 600px){
+
+    .index-button > div  { 
+        width: 100%;
+        height: clamp(35px, 2lvw, 50px);
+        margin-top: -5px;
+        border-radius: 0 0 10px 10px;
+        background-color: white;
+    }
+
+    .showhide4 {
+        display: block;
+    }
+}
+
+
 /**  SPECIAL BUTTON ARRANGEMENTS **/
 
 #application-process {
     height: clamp(calc(950px - 100lvw), calc(60lvw + 250px), min(100lvw, 100lvh) + 20px);
+    min-height: fit-content;
     max-width: 100%;
     padding-top: 30px;
 }
@@ -789,6 +807,7 @@ button:hover.grey-style, .pressed.grey-style  {
 #arrangement-box-a { 
     width: max(10lvw, 80px);
     height: 60lvh;
+    min-height: 400px;
     margin-bottom: 5%;
     align-items: top;
     background-color: var(--grey3);
@@ -797,6 +816,7 @@ button:hover.grey-style, .pressed.grey-style  {
 #arrangement-box-b { 
     width: calc(100% - max(10lvw, 80px));
     height: 60lvh;
+    min-height: 400px;
     margin-bottom: 5%;
     border-radius: 0 10px 10px 0;
     overflow-y: auto;
@@ -957,10 +977,6 @@ button:hover.grey-style, .pressed.grey-style  {
 .services th span:last-of-type {
     font-size: clamp(0.75, 1.25lvw, 1rem);
     color: var(--dark-blue);
-}
-
-.showhide1, .showhide2, .showhide3 {
-    display: none;
 }
 
 @media (width > 1334px){
@@ -1338,6 +1354,7 @@ button:hover.grey-style, .pressed.grey-style  {
     color: var(--faint-blue);
     font-weight: 700px;
     margin-bottom: 20px;
+    margin-top: 20px;
     border: 2px solid var(--faint-blue);
 }
 
@@ -1869,14 +1886,15 @@ footer > :first-child > :nth-child(3) {
 }
     
 .bck-image {
-    background: linear-gradient(320deg, #0a131ddd, var(--logo-teal) 100%);
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Backgrounds/Home Page with tint.JPG");
     overflow: hidden;
     background-size: cover;
+    opacity: 0%, 100%;
     box-shadow: inset 0 0 0 1000px #0a131d33;
 }
 
 .bck-image-2 {
-    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/242323278_2036677076488859_1015781924829081344_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=hIsbDoCs5wIQ7kNvgG6D1B4&_nc_ht=scontent-man2-1.xx&oh=00_AYBDoNW8rD9eq0IUJ8Gux1lGdv1b_8uafeGLmgsDWV6hyQ&oe=66F742E7");
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Maintenance/banner-maintenance.jpg");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 100%;
@@ -1884,14 +1902,14 @@ footer > :first-child > :nth-child(3) {
 }
 
 .bck-image-3 {
-    background: linear-gradient(90deg, #0a131ddd, #0a131dff 100%), url("images\\Backgrounds\\P1190134.JPG");
+    background: linear-gradient(90deg, #0a131ddd, #0a131dff 100%), url("images/Backgrounds/P1190134.JPG");
     overflow: hidden;
     background-size: cover;
-    opacity: 0%, 100%;
+    opacity: 0%, 80%;
 }
 
 .bck-image-4 {
-    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images\\Backgrounds\\P1000060.JPG");
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Backgrounds/tenant-banner.jpg");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 100%;
