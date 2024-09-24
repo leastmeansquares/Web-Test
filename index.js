@@ -28,16 +28,16 @@ const indexPage = () => {
     const mainImage = document.getElementById("hero-img");
 
     heroSRCS = [
-        "images/Backgrounds/P1000065.JPG",
+        "images/Backgrounds/garden-1.jpeg",
         "images/Backgrounds/Castleford & Pontefract Landmarks/Buttercross.jpg",
-        "images/Backgrounds/Home Page with tint.JPG",
-        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 005.jpg",
-        "images/Backgrounds/P1060123.JPG",
-        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 010.jpg",
-        "images/Maintenance/WhatsApp/IMG-20240924-WA0016.jpg",
-        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 001.jpg",
-        "images/Maintenance/305628803_496311505834695_124968227498160094_n.jpg",
-        "images/Backgrounds/Castleford & Pontefract Landmarks/CastlefordLandmarks 008.jpg",
+        "images/Backgrounds/exterior-1.jpeg",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/castleford-landmarks-5.jpg",
+        "images/Backgrounds/exterior-2.jpeg",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/castleford-landmarks-10.jpg",
+        "images/Maintenance/maintenance-garden.jpg",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/castleford-landmarks-1.jpg",
+        "images/Maintenance/logo-garden.jpg",
+        "images/Backgrounds/Castleford & Pontefract Landmarks/castleford-landmarks-8.jpg",
     ]
 
     let srcCounter = 0;
@@ -140,27 +140,27 @@ const maintenancePage = () => {
 
 
     const imageSRCs = [
-        "images/Maintenance/305628803_496311505834695_124968227498160094_n.jpg",
-        "images/Maintenance/20200808_205124.jpg",
-        "images/Maintenance/20210512_172327.jpg",
-        "images/Maintenance/20210608_162955.jpg",
-        "images/Maintenance/20230209_133627.jpg",
-        "images/Maintenance/20240205_124911.jpg",
-        "images/Maintenance/20240503_144151.jpg",
-        "images/Maintenance/IMG-20230409-WA0004.jpg",
-        "images/Maintenance/IMG-20230409-WA0006.jpg",
-        "images/Maintenance/20200622_180922.jpg",
-        "images/Maintenance/20200918_120712.jpg",
-        "images/Maintenance/20200919_183746.jpg",
-        "images/Maintenance/20200919_183838.jpg",
-        "images/Maintenance/20220801_100053.jpg",
-        "images/Maintenance/20220807_143228.jpg",
-        "images/Maintenance/20240308_154957.jpg",
-        "images/Maintenance/20240308_155050.jpg",
-        "images/Maintenance/20240503_144042.jpg",
-        "images/Maintenance/20240503_144223.jpg",
-        "images/Maintenance/20240531_104127.jpg",
-        "images/Maintenance/20240531_104243.jpg"
+        "images/Maintenance/logo-garden.jpg",
+        "images/Maintenance/maintenance-in-progress-2.jpg",
+        "images/Maintenance/maintenance-8.jpg",
+        "images/Maintenance/maintenance-9.jpg",
+        "images/Maintenance/maintenance-10.jpg",
+        "images/Maintenance/maintenance-in-progress-1.jpg",
+        "images/Maintenance/maintenance-2.jpg",
+        "images/Maintenance/maintenance-property-1.jpg",
+        "images/Maintenance/maintenance-property-2.jpg",
+        "images/Maintenance/maintenance-1.jpg",
+        "images/Maintenance/maintenance-3.jpg",
+        "images/Maintenance/maintenance-4.jpg",
+        "images/Maintenance/maintenance-5.jpg",
+        "images/Maintenance/maintenance-6.jpg",
+        "images/Maintenance/maintenance-7.jpg",
+        "images/Maintenance/maintenance-11.jpg",
+        "images/Maintenance/maintenance-12.jpg",
+        "images/Maintenance/maintenance-13.jpg",
+        "images/Maintenance/maintenance-14.jpg",
+        "images/Maintenance/maintenance-15.jpg",
+        "images/Maintenance/maintenance-16.jpg"
     ]
 
 

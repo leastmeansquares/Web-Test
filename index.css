@@ -427,10 +427,6 @@ nav p {
     border-radius: 30px 30px 0 0;
 }
 
-#circle-wrapper {
-    height: fit-content;
-}
-
 .circle-box { 
     padding: 20px 5px 20px 5px;
     margin: 0 5lvw 5lvh 5lvw;
@@ -467,7 +463,7 @@ nav p {
         vertical-align: top;
     }
 
-    #circle-wrapper {
+    .circle-wrapper {
         padding: 5% 5%;
         height: calc(50lvh - 20lvw);
         max-height: 90lvw;
@@ -1343,7 +1339,7 @@ button:hover.grey-style, .pressed.grey-style  {
     background-image: linear-gradient(90deg,
                     #0a131ddd,
                     #0a131dee),
-                    url("images\\Backgrounds\\P1090913.JPG");
+                    url("images/Backgrounds/exterior-3.jpeg");
 }
 
 #plan-box {
@@ -1892,7 +1888,7 @@ footer > :first-child > :nth-child(3) {
 }
     
 .bck-image {
-    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Backgrounds/Home Page with tint.JPG");
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Backgrounds/exterior-1.jpeg");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 100%;
@@ -1908,14 +1904,14 @@ footer > :first-child > :nth-child(3) {
 }
 
 .bck-image-3 {
-    background: linear-gradient(90deg, #0a131ddd, #0a131dff 100%), url("images/Backgrounds/P1190134.JPG");
+    background: linear-gradient(90deg, #0a131ddd, #0a131dff 100%), url("images/Backgrounds/interior-1.jpeg");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 80%;
 }
 
 .bck-image-4 {
-    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Backgrounds/tenant-banner.jpg");
+    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Backgrounds/tenant-banner.jpeg");
     overflow: hidden;
     background-size: cover;
     opacity: 0%, 100%;
