@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
             <nav class="navbar title-blue">
                 <nav>
                     <a href="index.html" class="align-c">
-                        <img src="images\Logos\LOGO_CIRCLE_DARK_TEAL_BLACK_SQUARE_TRANSPARENT_CROPPED.png" class="logo">
+                        <img src="images/Logos/LOGO_CIRCLE_DARK_TEAL_BLACK_SQUARE_TRANSPARENT_CROPPED.png" class="logo" alt="One of the Pro Property Care logos. The acronym PPC is written in large teal text.">
                         <p class="teal-text">Residential Letting &<br>Property Management</p>
                     </a>
                 </nav>
@@ -32,7 +32,7 @@
             </nav>
             <section id="header-display" class="title-blue dark-teal-text">
                 <div>Home Page</div>
-                <div>Service Information & Pricing</div>
+                <div>Landlord Information</div>
                 <div>Tenant Information</div>
                 <div>Property Maintenance</div>
                 <div>View Our Properties</div>
@@ -44,7 +44,7 @@
 
         <main>
 
-            <section class="bck-image text-box">               
+            <section class="bck-image text-box" alt="A banner showing a white property with a brown roof">               
                     <div id="title-alt">
                         <h1>LETTINGS AND MANAGEMENT</h1>                       
                         <h2>A FASTER, MORE DYNAMIC WAY OF FINDING TENANTS & MANAGING PROPERTIES</h2>
@@ -95,7 +95,7 @@
                 
                 <div id="plan-box">
                     <div class="text-box light-teal" id="lettings-top">                   
-                        <h3 id="services-title"></h3>
+                        <h3 id="services-title">Let Only Service</h3>
                     </div>
                     <div id="services-image" class="box-image"></div>
                     <div class="text-box container" id="text-display"></div>
@@ -400,6 +400,7 @@
                         <element class="align-c">
                             <label for="page-subject"><p class="light-teal-text">I'd Like To...</p></label><br>
                             <select name="page-subject" id="page-subject" required>
+                                <option value="">Please Choose an Option</option>
                                 <option value="Book a Free Rental Appraisal">Book a Free Rental Appraisal</option>
                                 <option value="Arrange a Viewing">Arrange a Viewing</option>
                                 <option value="Discuss Our Services">Discuss Our Services</option>
@@ -430,19 +431,20 @@
             </section>
 
             <section id="footer-info" class="container">
-                <div class="align-a">
-                     <div>Landlord Page</div>
-                     <div>Tenant Page</div>
-                     <div>Maintenance Page</div>
-                     <div>Contact Form</div>
+               <div class="align-a">
+                    <div>Landlord Information</div>
+                    <div>Tenant Information</div>
+                    <div>Property Maintenance</div>
+                    <div>Contact Form</div>
+               </div>
+               <div class="align-a">
+                    <div>Properties (onthemarket.com)</div>
+                    <div>FaceBook</div>
+                    <div>Privacy Policy</div>
+                    <div>Legal Information</div>
                 </div>
-                <div class="align-a">
-                     <div>Properties (onthemarket.com)</div>
-                     <div>FaceBook</div>
-                     <div>Privacy Policy</div>
-                     <div>Legal Information</div>
-                 </div>
-             </section>    
+            </section>  
+
         </footer>
 
 
@@ -461,12 +463,12 @@
                     <div class="align-b">      
                         <div>        
                             <label for="first-name">First Name</label><br>
-                            <input type="text" id="first-name" name="First Name" required oninvalid="this.setCustomValidity('Please enter your full name.')"
+                            <input type="text" id="first-name" name="First Name" required oninvalid="this.setCustomValidity('Please enter a valid name.')"
                             oninput="this.setCustomValidity('')">
                         </div>  
                         <div>   
                             <label for="last-name">Last Name</label><br>
-                            <input type="text" id="last-name" name="Last Name" required  oninvalid="this.setCustomValidity('Please enter your full name.')"
+                            <input type="text" id="last-name" name="Last Name" required  oninvalid="this.setCustomValidity('Please enter a valid name.')"
                             oninput="this.setCustomValidity('')">
                         </div>
                     </div>
@@ -482,16 +484,16 @@
                             oninput="this.setCustomValidity('')"><br>
                         </div>
                     </div>     
-                    <label for="address">First Line of Address</label><br>
-                    <input type="address" id="address" name="Address" required oninvalid="this.setCustomValidity('Please enter the first line of your address.')"
+                    <label for="address">First Line of Address (Optional)</label><br>
+                    <input type="text" id="address" name="Address" oninvalid="this.setCustomValidity('Please enter a valid address.')"
                     oninput="this.setCustomValidity('')"><br>
-                    <label for="postcode">Postcode</label><br>
-                    <input type="text" id="postcode" name="Postcode" required oninvalid="this.setCustomValidity('Please enter a valid postcode.')"
+                    <label for="postcode">Postcode (Optional)</label><br>
+                    <input type="text" id="postcode" name="Postcode" oninvalid="this.setCustomValidity('Please enter a valid postcode.')"
                     oninput="this.setCustomValidity('')"><br><br>
                     <label for="pick-subject"><span>I'd Like To...</span></label><br>
                     <select id="pick-subject" name="Chosen Subject" required oninvalid="this.setCustomValidity('Please select an option')"
                     oninput="this.setCustomValidity('')">
-                        <option value="">--Please choose an option--</option>
+                        <option value="">--Please Choose an Option--</option>
                         <option value="Book a Free Rental Appraisal">Book a Free Rental Appraisal</option>
                         <option value="Arrange a Viewing">Arrange a Viewing</option>
                         <option value="Discuss Our Services">Discuss Our Services</option>

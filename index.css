@@ -64,6 +64,10 @@ hr {
     display: none;
 }
 
+img {
+    max-width: 100%; 
+    height: auto 
+}
 
   /**  HEADINGS AND FONTS  **/
 
@@ -240,7 +244,7 @@ nav p {
     max-width: 100%;
     height: 100%;
     background: linear-gradient(110deg, var(--header-blue) 35%, var(--transparent));
-    opacity: 75%;
+    opacity: 0.75;
   }
 
 #main-image > img  { 
@@ -265,7 +269,7 @@ nav p {
     object-fit: cover;
 }
 
-@media (width < 800px){
+@media (max-width: 799px){
 
     #hero, #main-image , #main-image::before, #main-image > img {
         min-height: calc(100lvw - 300px);
@@ -345,7 +349,7 @@ nav p {
     display: none;
 }
 
-@media (width <= 1000px) {
+@media (max-width: 1000px) {
 
     #outer-welcome {
         display: block;
@@ -373,7 +377,7 @@ nav p {
         border: 1px solid var(--header-blue);
     }
 
-    @media (width >= 330px){
+    @media (min-width: 330px){
         #outer-welcome > :last-child {
             margin-top: -100px;
         }
@@ -454,7 +458,7 @@ nav p {
     line-height: calc(clamp(178%, 110% + 4lvw, 200% + 6lvw));
   }
 
-  @media (width <= 680px) {
+  @media (max-width: 681px) {
 
     .circle-box  { 
         padding: 60px 5px 20px 5px;
@@ -571,7 +575,7 @@ button:not(#discoveryBtn), #header-btn, a, select, .hero-btn {
     background-color: var(--dark-teal);
 }
 
-@media (width <= 600px) {
+@media (max-width: 600px) {
     #nav-button {
         display: none;
     }
@@ -781,7 +785,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
-@media (width <= 600px){
+@media (max-width: 600px){
 
     .index-button > div  { 
         width: 100%;
@@ -900,7 +904,7 @@ button:hover.grey-style, .pressed.grey-style  {
     width: 8px;
     border-radius: 0;
     background-color: var(--faint-blue);
-    opacity: 30%;
+    opacity: 0.3;
 }
 
 #arrangement-box-b::-webkit-scrollbar-thumb {
@@ -909,7 +913,7 @@ button:hover.grey-style, .pressed.grey-style  {
   }
 
 
-@media (width < 800px){
+@media (max-width: 799px){
 
     .page-btn { 
         height: calc(100% / 7);
@@ -981,13 +985,13 @@ button:hover.grey-style, .pressed.grey-style  {
     color: var(--dark-blue);
 }
 
-@media (width > 1334px){
+@media (min-width: 1335px){
     .showhide3 {
         display: block;
     }
 }
 
-@media (width < 663px){
+@media (max-width: 662px){
     .showhide1, .showhide2 {
         display: block;
     }
@@ -1028,7 +1032,7 @@ button:hover.grey-style, .pressed.grey-style  {
     background: var(--faint-blue);
 }
 
-@media (width <= 612px) {
+@media (max-width: 612px) {
     .services th:first-child, .services tr:nth-of-type(2) td:first-of-type, .services tr:nth-of-type(9) td:first-of-type, .services tr:nth-of-type(17) td:first-of-type, .services tr:nth-last-of-type(7) td:first-of-type {
         background: linear-gradient(90deg, var(--faint-blue) calc(100% - 1px), var(--grey4) calc(100% - 1px));
     }
@@ -1131,7 +1135,7 @@ button:hover.grey-style, .pressed.grey-style  {
     background: var(--logo-teal);
 }
 
-@media (width < 600px) {
+@media (max-width: 599px) {
     .testimonial-box .arrow-xl {
         width: 10px;
         height: 10px;
@@ -1139,7 +1143,7 @@ button:hover.grey-style, .pressed.grey-style  {
     
 }
 
-@media (pointer:coarse) or (width <= 800px) {
+@media (pointer:coarse) or (max-width: 800px) {
     .near-end {
         display: none;
     }
@@ -1221,7 +1225,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 
 
-  @media ( width <= 800px){
+  @media ( max-width: 800px){
     #split {
         display: block;
         align-items: baseline;
@@ -1360,7 +1364,7 @@ button:hover.grey-style, .pressed.grey-style  {
     border: 2px solid var(--faint-blue);
 }
 
-@media (width < 375px){
+@media (max-width: 374px){
     #lettings-top h3 {
         font-size: calc(1.375rem - 1lvw);
     }
@@ -1464,7 +1468,7 @@ button:hover.grey-style, .pressed.grey-style  {
     font-weight: 700;
 }
 
-@media (width <= 600px) {
+@media (max-width: 600px) {
 
     .bck-pattern-bricks {
         display: block;
@@ -1477,7 +1481,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 #bck-display-outer { 
     background: var(--header-blue);
-    opacity: 60%;
+    opacity: 0.6;
     display: none;
     position: fixed;
     top: 0;
@@ -1554,13 +1558,13 @@ form > :nth-child(2) {
     position: absolute;
     left: calc(99% - 30px);
     top: 10px;
-    opacity: 25%;
+    opacity: 0.25;
     margin-bottom: 30px;
 }
 
 
 #x-btn:hover  { 
-    opacity: 35%;
+    opacity: 0.35;
 }
 
 
@@ -1619,7 +1623,7 @@ textarea {
 fieldset::-webkit-scrollbar {
     width: 8px;
     border-radius: 0;
-    opacity: 30%;
+    opacity: 0.3;
 }
 
 fieldset::-webkit-scrollbar-thumb {
@@ -1694,7 +1698,7 @@ fieldset::-webkit-scrollbar-thumb {
     pointer-events: none;
   }
 
-  @media (width <= 600px){
+  @media (max-width: 600px){
     .three-steps-box element:before {
         border: 0px;
     }
@@ -1891,7 +1895,7 @@ footer > :first-child > :nth-child(3) {
     background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Backgrounds/exterior-1.jpeg");
     overflow: hidden;
     background-size: cover;
-    opacity: 0%, 100%;
+    opacity: 0, 1;
     box-shadow: inset 0 0 0 1000px #0a131d33;
 }
 
@@ -1899,7 +1903,7 @@ footer > :first-child > :nth-child(3) {
     background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images/Maintenance/banner-maintenance.jpg");
     overflow: hidden;
     background-size: cover;
-    opacity: 0%, 100%;
+    opacity: 0, 1;
     box-shadow: inset 0 0 0 1000px #0a131d33;
 }
 
@@ -1907,7 +1911,7 @@ footer > :first-child > :nth-child(3) {
     background: linear-gradient(90deg, #0a131ddd, #0a131dff 100%), url("images/Backgrounds/interior-1.jpeg");
     overflow: hidden;
     background-size: cover;
-    opacity: 0%, 80%;
+    opacity: 0, 0.8;
 }
 
 .bck-image-4 {

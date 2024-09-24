@@ -12,7 +12,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Podkova:wght@400..800&display=swap" rel="stylesheet">
-        <link rel="preload" as="image" href="images\Backgrounds\garden-1.jpeg">
+        <link rel="preload" as="image" href="images/Backgrounds/garden-1.jpeg">
         <script src="https://kit.fontawesome.com/d6fb9c08b7.js" crossorigin="anonymous"></script>
     </head>
 
@@ -21,7 +21,7 @@
             <nav class="navbar title-blue">
                 <nav>
                     <a href="index.html" class="align-c">
-                        <img src="images\Logos\LOGO_CIRCLE_DARK_TEAL_BLACK_SQUARE_TRANSPARENT_CROPPED.png" class="logo">
+                        <img src="images/Logos/LOGO_CIRCLE_DARK_TEAL_BLACK_SQUARE_TRANSPARENT_CROPPED.png" class="logo" alt="One of the Pro Property Care logos. The acronym PPC is written in large teal text.">
                         <p class="teal-text">Residential Letting &<br>Property Management</p>
                     </a>
                 </nav>
@@ -47,7 +47,7 @@
         <main id="index-page">
             <section class="shift-up" id="hero">
                 <div id="main-image">
-                    <img id="hero-img" src="images\Backgrounds\garden-1.jpeg">
+                    <img id="hero-img" src="images/Backgrounds/garden-1.jpeg" alt="A large background that switches between images of properties, property maintenance performed by PPC, and pictures of Castleford, Pontefract, and the surrounding area.">
                 </div>
                 <div class="image-text">
                     <div id="title">
@@ -121,19 +121,19 @@
                         <div class="align-a dropdown-div">
                             <a href="lettings.html">
                                 <button class="index-button" id="service-btn-1">
-                                    <img loading="lazy" src="images\Backgrounds\exterior-3-tiny.jpeg" class="button-image">  
+                                    <img loading="lazy" src="images/Backgrounds/exterior-3-tiny.jpeg" class="button-image" alt="A small image showing the exterior of a property">  
                                     <div><p>Landlord <br class="showhide4">Information</p></div>
                                 </button>
                             </a>
                             <a href="tenants.html">
                                 <button class="index-button" id="service-btn-2">
-                                    <img loading="lazy" src="images\Backgrounds\interior-2-tiny.jpeg" class="button-image">  
+                                    <img loading="lazy" src="images/Backgrounds/interior-2-tiny.jpeg" class="button-image" alt="A small image showing the interior of a property">  
                                     <div><p>Tenant <br class="showhide4">Information</p></div>
                                 </button>
                             </a>
                             <a href="maintenance.html">
                                 <button class="index-button" id="service-btn-3">
-                                    <img loading="lazy" src="images\Maintenance\toolbox.png" class="button-image">  
+                                    <img loading="lazy" src="images/Maintenance/toolbox.png" class="button-image" alt="A small image showing a toolbox and various maintenance supplies">  
                                     <div><p>Property <br class="showhide4">Maintenance</p></div>
                                 </button>
                             </a>
@@ -407,7 +407,7 @@
                         </div>
                     </div>     
                     <label for="address">First Line of Address (Optional)</label><br>
-                    <input type="address" id="address" name="Address" oninvalid="this.setCustomValidity('Please enter a valid address.')"
+                    <input type="text" id="address" name="Address" oninvalid="this.setCustomValidity('Please enter a valid address.')"
                     oninput="this.setCustomValidity('')"><br>
                     <label for="postcode">Postcode (Optional)</label><br>
                     <input type="text" id="postcode" name="Postcode" oninvalid="this.setCustomValidity('Please enter a valid postcode.')"
