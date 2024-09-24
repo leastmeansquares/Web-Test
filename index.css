@@ -90,7 +90,7 @@ h1, footer span  {
 }
 
 #title > h2  { 
-    font-size: clamp(0.75rem, 1.125rem, 2lvw);
+    font-size: clamp(0.75rem, 1.5rem, 2.25lvw);
 }
 
 #title-alt > h2  { 
@@ -235,7 +235,7 @@ nav p {
     max-width: 100%;
     height: 100%;
     background: linear-gradient(110deg, var(--header-blue) 35%, var(--transparent));
-    opacity: 70%;
+    opacity: 75%;
   }
 
 #main-image > img  { 
@@ -269,19 +269,19 @@ nav p {
     width: max(40%, min(220px, 100lvw));
   }
 
-  #hero-btn {
+  .hero-btn {
     width: clamp(min(240px, 45lvw), 35lvw, 350lvw);
     height: clamp(min(60px, 10lvw), 3.5lvw, 3.5lvw);
-    margin: 20px 0;
+    margin: 1lvw 0;
     background: var(--faint-blue);
     border: 1px solid var(--dark-blue);
     font-size: clamp(0.625rem, 1.75lvw, 1.25rem);
     font-weight: 600;
     transition-duration: 0.2s;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
-#hero-btn:hover {
+.hero-btn:hover {
     border: 1px solid var(--dark-blue);
     box-shadow: 2px 2px 3px var(--dark-blue);
     background-color: var(--light-teal);
@@ -516,7 +516,7 @@ nav p {
 
 /**  BUTTONS  **/
 
-button, #header-btn, a, select, #hero-btn { 
+button, #header-btn, a, select, .hero-btn { 
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -1869,10 +1869,9 @@ footer > :first-child > :nth-child(3) {
 }
     
 .bck-image {
-    background: linear-gradient(90deg, #0a131ddd, var(--transparent) 100%), url("images\\Backgrounds\\20170825_165741.jpg");
+    background: linear-gradient(320deg, #0a131ddd, var(--logo-teal) 100%);
     overflow: hidden;
     background-size: cover;
-    opacity: 0%, 100%;
     box-shadow: inset 0 0 0 1000px #0a131d33;
 }
 

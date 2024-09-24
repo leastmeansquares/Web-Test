@@ -52,10 +52,10 @@ const indexPage = () => {
             mainImage.src = heroSRCS[0];
             srcCounter = 0;
         }
-        setTimeout(imageTransition, 2000);
+        setTimeout(imageTransition, 5000);
     }
     
-    setTimeout(imageTransition, 2000);
+    setTimeout(imageTransition, 5000);
 }
 
 
@@ -358,7 +358,7 @@ const dropDownBtnAdd = (boxes) => {
 }
 
 
-const footerBtns = document.body.querySelectorAll(".footer-button");
+/*const footerBtns = document.body.querySelectorAll(".footer-button");
 const discoveryDropdown = document.getElementById("discovery-dropdown");
 const getInTouchDropdown = document.getElementById("get-in-touch-dropdown");
 const footerBoxes = {
@@ -366,7 +366,7 @@ const footerBoxes = {
     getInTouchBtn: getInTouchDropdown
 }
 
-dropDownBtnAdd(footerBoxes);
+dropDownBtnAdd(footerBoxes);*/
 
 
 if (location.pathname === "/lettings.html" || location.pathname === "https://leastmeansquares.github.io/lettings.html"){
