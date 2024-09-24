@@ -230,7 +230,6 @@ nav p {
     max-height: 800px;
 }
 
-
 #main-image::before  { 
     content: "";
     position: fixed;
@@ -264,6 +263,13 @@ nav p {
     max-height: 800px;
     overflow: hidden;
     object-fit: cover;
+}
+
+@media (width < 800px){
+
+    #hero, #main-image , #main-image::before, #main-image > img {
+        min-height: calc(100lvw - 300px);
+    }
 }
 
 .small-image  { 
