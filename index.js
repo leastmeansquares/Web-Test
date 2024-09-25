@@ -373,11 +373,11 @@ if (location.pathname === "/lettings.html" || location.pathname === "/lettings")
     try {lettingsPage()}
     catch {alert("Error: Invalid location for JavaScript");}
 }
-else if (location.pathname === "/maintenance.html" || location.pathname === "https://leastmeansquares.github.io/maintenance.html" || location.pathname === "https://www.propropertycare.co.uk/maintenance.html"){
+else if (location.pathname === "/maintenance.html" || location.pathname === "https://leastmeansquares.github.io/maintenance.html" || location.pathname === "/maintenance"){
     try {maintenancePage()}
     catch {alert("Error: Invalid location for JavaScript");}
 }
-else if (location.pathname === "/tenants.html" || location.pathname === "https://leastmeansquares.github.io/tenants.html" || location.pathname === "https://www.propropertycare.co.uk/tenants.html"){
+else if (location.pathname === "/tenants.html" || location.pathname === "https://leastmeansquares.github.io/tenants.html" || location.pathname === "/tenants"){
     try {tenantPage()}
     catch {alert("Error: Invalid location for JavaScript");}
 }
