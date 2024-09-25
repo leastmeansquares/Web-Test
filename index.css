@@ -153,6 +153,10 @@ strong {
     color: var(--header-blue);
 }
 
+a {
+    color: unset;
+}
+
 
 /**  HEADER  **/
 
@@ -532,7 +536,7 @@ nav p {
 
 /**  BUTTONS  **/
 
-button:not(#discoveryBtn), #header-btn, a, select, .hero-btn { 
+button:not(#discoveryBtn), #header-btn, a, select, .hero-btn, .form-btn { 
     cursor: pointer;
     transition-duration: 0.2s;
 }
