@@ -369,7 +369,7 @@ const footerBoxes = {
 dropDownBtnAdd(footerBoxes);*/
 
 
-if (location.pathname === "/lettings.html" || location.pathname === "https://leastmeansquares.github.io/lettings.html" || location.pathname === "https://www.propropertycare.co.uk/lettings.html"){
+if (location.pathname === "/lettings.html" || location.pathname === "/lettings"){
     try {lettingsPage()}
     catch {alert("Error: Invalid location for JavaScript");}
 }
