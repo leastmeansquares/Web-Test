@@ -551,7 +551,7 @@ button:not(#discoveryBtn), #header-btn, a, select, .hero-btn, .form-btn {
     font-size: clamp(0.75rem, 2lvw, 1.25rem);
     font-weight: 600;
     transition-duration: 0.2s;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .main-button:hover {
