@@ -284,8 +284,15 @@ const tenantPage = () => {
 const mainForm = document.getElementById("main-form");
 mainForm.selection = document.getElementById("pick-subject");
 const outerBck = document.getElementById("bck-display-outer");
-getStartedBtn = document.getElementById("get-started");
-footerSubject = document.getElementById("page-subject");
+const getStartedBtn = document.getElementById("get-started");
+const footerSubject = document.getElementById("page-subject");
+const formSubject = document.getElementById("pick-subject");
+const viewing = document.body.querySelectorAll(".viewing");
+const maintenanceRequest = document.body.querySelectorAll(".maintenance-request");
+const viewingRequired = document.body.querySelectorAll(".viewing-required");
+const maintenanceRequired = document.body.querySelectorAll(".maintenance-required");
+const messageLabel = document.getElementById("message-label");
+const message = document.getElementById("message");
 
 const contactUsClick = () => {
 
@@ -307,6 +314,34 @@ document.body.querySelectorAll(".form-btn").forEach((btn) =>
 getStartedBtn.addEventListener("click", () => {
     mainForm.selection.value = footerSubject.value;
     contactUsClick()
+}
+);
+
+formSubject.addEventListener("click", () => {
+    if (formSubject.value === "Arrange a Viewing"){
+        viewing.forEach((e) => e.classList.remove("hide"));
+        maintenanceRequest.forEach((e) => e.classList.add("hide"));
+        messageLabel.innerText = "Please state any relevant information below which may influence any decision to let the property"
+        message.attributes.required = "";
+        viewingRequired.forEach((e) => e.attributes.required = "required");
+        maintenanceRequired.forEach((e) => e.attributes.required = "");
+    }
+    else if (formSubject.value === "Make a Maintenance Enquiry"){
+        viewing.forEach((e) => e.classList.add("hide"));
+        maintenanceRequest.forEach((e) => e.classList.remove("hide"));
+        messageLabel.innerText = "What is the maintenance issue / enquiry?"
+        message.attributes.required = "required";
+        viewingRequired.forEach((e) => e.attributes.required = "");
+        maintenanceRequired.forEach((e) => e.attributes.required = "required");
+    }
+    else {
+        viewing.forEach((e) => e.classList.add("hide"));
+        maintenanceRequest.forEach((e) => e.classList.add("hide"));
+        messageLabel.innerText = "Message"
+        message.attributes.required = "required";
+        viewingRequired.forEach((e) => e.attributes.required = "");
+        maintenanceRequired.forEach((e) => e.attributes.required = "");
+    };
 }
 );
 

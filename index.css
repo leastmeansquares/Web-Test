@@ -1595,8 +1595,12 @@ fieldset > :nth-last-child(2) {
     justify-content: left;
 }
 
-textarea { 
+textarea {
     resize: none;
+    height: 80px;
+}
+
+#message { 
     height: 200px;
 }
 
