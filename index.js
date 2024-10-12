@@ -326,7 +326,7 @@ formSubject.addEventListener("click", () => {
         viewingRequired.forEach((e) => e.attributes.required = "required");
         maintenanceRequired.forEach((e) => e.attributes.required = "");
     }
-    else if (formSubject.value === "Make a Maintenance Enquiry"){
+    else if (formSubject.value === "Report a Maintenance Issue"){
         viewing.forEach((e) => e.classList.add("hide"));
         maintenanceRequest.forEach((e) => e.classList.remove("hide"));
         messageLabel.innerText = "What is the maintenance issue / enquiry?"

@@ -369,7 +369,7 @@
                                 <option value="Book a Free Rental Appraisal">Book a Free Rental Appraisal</option>
                                 <option value="Arrange a Viewing">Arrange a Viewing</option>
                                 <option value="Discuss Our Services">Discuss Our Services</option>
-                                <option value="Make a Maintenance Enquiry">Make a Maintenance Enquiry</option>
+                                <option value="Report a Maintenance Issue">Report a Maintenance Issue (Tenants)</option>
                                 <option value="Ask Us Something">Ask Us Something</option>
                                 <option value="Other (Please Specify)">Other (Please Specify)</option>
                             </select><br>
@@ -396,19 +396,19 @@
             </section>
 
             <section id="footer-info" class="container">
-                <div class="align-a">
-                 <div><a href="lettings.html">Landlord Information</a></div>
-                 <div><a href="tenants.html">Tenant Information</a></div>
-                 <div><a href="maintenance.html">Property Maintenance</a></div>
-                 <div class="form-btn">Contact Form</div>
+               <div class="align-a">
+                <div><a href="lettings.html">Landlord Information</a></div>
+                <div><a href="tenants.html">Tenant Information</a></div>
+                <div><a href="maintenance.html">Property Maintenance</a></div>
+                <div class="form-btn">Contact Form</div>
+               </div>
+               <div class="align-a">
+                <div><a href="">Our Properties</a></div>
+                <div><a href="">FaceBook</a></div>
+                <div><a href="">WhatsApp</a></div>
+                <div><a href="">Privacy Policy</a></div>
                 </div>
-                <div class="align-a">
-                 <div><a href="">Our Properties</a></div>
-                 <div><a href="">FaceBook</a></div>
-                 <div><a href="">WhatsApp</a></div>
-                 <div><a href="">Privacy Policy</a></div>
-                 </div>
-             </section>  
+            </section>  
 
         </footer>
 
@@ -420,12 +420,32 @@
             <form id="main-form" action="https://formspree.io/f/mjkbqkan" method="POST">
                 <fieldset>   
                     <div class="form-head">        
-                        <span>Quick Contact Form</span> 
+                        <span>Contact Form Menu</span> 
                         <p>Just send us a message and we'll get back to you ASAP</p>
                         <button id="x-btn" class="form-btn" onsubmit="return false">&#10005</button>
                         <br><br> 
                     </div> 
-                    <div class="align-b">      
+                    <label for="pick-subject"><span>I'd Like To...</span></label><br>
+                    <select id="pick-subject" name="Chosen Subject" required oninvalid="this.setCustomValidity('Please select an option')"
+                    oninput="this.setCustomValidity('')">
+                        <option value="">--Please Choose an Option--</option>
+                        <option value="Book a Free Rental Appraisal">Book a Free Rental Appraisal</option>
+                        <option value="Arrange a Viewing">Arrange a Viewing</option>
+                        <option value="Discuss Our Services">Discuss Our Services</option>
+                        <option value="Report a Maintenance Issue">Report a Maintenance Issue (Tenants)</option>
+                        <option value="Ask Us Something">Ask Us Something</option>
+                        <option value="Other (Please Specify)">Other (Please Specify)</option>
+                    </select><br><br>
+                    <label for="property-to-view" class="viewing hide">Which Property Would You Like to View?</label><br class="viewing hide">
+                    <input type="text" id="property-to-view" name="Property to View" oninvalid="this.setCustomValidity('Please enter a property.')" 
+                    oninput="this.setCustomValidity('')" class="viewing hide"><br class="viewing hide">
+                    <label for="availability" class="viewing hide">When Would You Like to View the Property? (General Availability)</label><br class="viewing hide">
+                    <input type="text" id="availability" name="Availability to View Property" oninvalid="this.setCustomValidity('Please enter your availability.')"
+                    oninput="this.setCustomValidity('')" class="viewing hide"><br class="viewing hide"><br class="viewing hide">
+                    <label for="property-rented" class="maintenance-request hide">Which Property Do You Rent From Us?</label><br class="maintenance-request hide">
+                    <input type="text" id="property-rented" name="Property Rented" oninvalid="this.setCustomValidity('Please enter a property.')" 
+                    oninput="this.setCustomValidity('')" class="maintenance-request hide"><br class="maintenance-request hide">
+                    <div class="align-b">     
                         <div>        
                             <label for="first-name">First Name</label><br>
                             <input type="text" id="first-name" name="First Name" required oninvalid="this.setCustomValidity('Please enter a valid name.')"
@@ -437,6 +457,76 @@
                             oninput="this.setCustomValidity('')">
                         </div>
                     </div>
+                    <div class="align-b viewing hide">      
+                        <div>
+                            <label for="pick-status">Current Status</label><br>        
+                            <select id="pick-status" name="Status" class="viewing-required" oninvalid="this.setCustomValidity('Please select an option')"
+                            oninput="this.setCustomValidity('')">
+                                <option value="">--Please Choose an Option--</option>
+                                <option value="Private Renting">Private Renting</option>
+                                <option value="Mortgaged/Owner">Mortgaged/Owner</option>
+                                <option value="Staying with Family/Friends">Staying with Family/Friends</option>
+                                <option value="Council Renting">Council Renting</option>
+                                <option value="Shared Ownership">Shared Ownership</option>
+                                <option value="Other">Other</option>
+                            </select><br>
+                        </div>  
+                        <div>   
+                            <label for="pick-occupation">Current Occupation</label><br>    
+                            <select id="pick-occupation" name="Occupation" class="viewing-required" oninvalid="this.setCustomValidity('Please select an option')"
+                            oninput="this.setCustomValidity('')">
+                                <option value="">--Please Choose an Option--</option>
+                                <option value="Full-Time Employed">Full-Time Employed</option>
+                                <option value="Part-Time Employed">Part-Time Employed"</option>
+                                <option value="Self Employed">Self Employed</option>
+                                <option value="Benefits">Benefits</option>
+                                <option value="Pension">Pension</option>
+                                <option value="Other">Other</option>
+                            </select><br>
+                        </div>
+                    </div>
+                    <br class="viewing hide">
+                    <div class="align-b viewing hide">      
+                        <div>        
+                            <label for="first-name-2">Second Applicant First Name (If Applicable)</label><br>
+                            <input type="text" id="first-name-2" name="Second Applicant First Name" oninvalid="this.setCustomValidity('Please enter a valid name.')"
+                            oninput="this.setCustomValidity('')">
+                        </div>  
+                        <div>   
+                            <label for="last-name-2">Second Applicant Last Name (If Applicable)</label><br>
+                            <input type="text" id="last-name-2" name="Second Applicant Last Name" oninvalid="this.setCustomValidity('Please enter a valid name.')"
+                            oninput="this.setCustomValidity('')">
+                        </div>
+                    </div>
+                    <div class="align-b viewing hide">      
+                        <div>
+                            <label for="pick-status-2">Second Applicant Current Status (If Applicable)</label><br>        
+                            <select id="pick-status-2" name="Second Applicant Status" oninvalid="this.setCustomValidity('Please select an option')"
+                            oninput="this.setCustomValidity('')">
+                                <option value="">--Please Choose an Option--</option>
+                                <option value="Private Renting">Private Renting</option>
+                                <option value="Mortgaged/Owner">Mortgaged/Owner</option>
+                                <option value="Staying with Family/Friends">Staying with Family/Friends</option>
+                                <option value="Council Renting">Council Renting</option>
+                                <option value="Shared Ownership">Shared Ownership</option>
+                                <option value="Other">Other</option>
+                            </select><br>
+                        </div>  
+                        <div>   
+                            <label for="pick-occupation-2">Second Applicant Current Occupation (If Applicable)</label><br>    
+                            <select id="pick-occupation-2" name="Second Applicant Occupation" oninvalid="this.setCustomValidity('Please select an option')"
+                            oninput="this.setCustomValidity('')">
+                                <option value="">--Please Choose an Option--</option>
+                                <option value="Full-Time Employed">Full-Time Employed</option>
+                                <option value="Part-Time Employed">Part-Time Employed</option>
+                                <option value="Self Employed">Self Employed</option>
+                                <option value="Benefits">Benefits</option>
+                                <option value="Pension">Pension</option>
+                                <option value="Other">Other</option>
+                            </select><br>
+                        </div>
+                    </div>
+                    <br class="align-b viewing hide">  
                     <div class="align-b">      
                         <div>        
                             <label for="email">Email Address</label><br>
@@ -455,18 +545,51 @@
                     <label for="postcode">Postcode (Optional)</label><br>
                     <input type="text" id="postcode" name="Postcode" oninvalid="this.setCustomValidity('Please enter a valid postcode.')"
                     oninput="this.setCustomValidity('')"><br><br>
-                    <label for="pick-subject"><span>I'd Like To...</span></label><br>
-                    <select id="pick-subject" name="Chosen Subject" required oninvalid="this.setCustomValidity('Please select an option')"
-                    oninput="this.setCustomValidity('')">
-                        <option value="">--Please Choose an Option--</option>
-                        <option value="Book a Free Rental Appraisal">Book a Free Rental Appraisal</option>
-                        <option value="Arrange a Viewing">Arrange a Viewing</option>
-                        <option value="Discuss Our Services">Discuss Our Services</option>
-                        <option value="Make a Maintenance Enquiry">Make a Maintenance Enquiry</option>
-                        <option value="Ask Us Something">Ask Us Something</option>
-                        <option value="Other (Please Specify)">Other (Please Specify)</option>
-                    </select><br>
-                    <label for="message">Message</label><br>
+                    <label for="additional-people" class="viewing hide">Will there any additional persons living at the property? If so, please state names, ages and relationship</label><br class="viewing hide">
+                    <textarea id="additional-people" name="Additional People" maxlength="9999" oninvalid="this.setCustomValidity('Please enter a valid message')"
+                    oninput="this.setCustomValidity('')" class="viewing hide"></textarea><br class="viewing hide">
+                    <label for="pets" class="viewing hide">Do you intend to have any pets living at the property? If so, please specify type and number of pets</label><br class="viewing hide">
+                    <textarea id="pets" name="Pets" maxlength="9999" oninvalid="this.setCustomValidity('Please enter a valid message')"
+                    oninput="this.setCustomValidity('')" class="viewing hide"></textarea><br class="viewing hide">
+                    
+                    <div class="maintenance-request hide">      
+                        <label for="maintenance-location">Location of Issue</label><br>
+                        <input type="text" id="maintenance-location" name="Maintenance Location" class="maintenance-required" oninvalid="this.setCustomValidity('Please enter a valid location.')"
+                            oninput="this.setCustomValidity('')"><br>
+                    </div>
+                    <div class="align-b maintenance-request hide">      
+                        <div>
+                            <label for="maintenance-issue">Type of Issue</label><br>        
+                            <select id="maintenance-issue" name="Maintenance Issue" class="maintenance-required" oninvalid="this.setCustomValidity('Please select an option')"
+                            oninput="this.setCustomValidity('')">
+                                <option value="">--Please Choose an Option--</option>
+                                <option value="Water Leaking (pressurised)">Water Leaking (pressurised) - Turn Off Stop Tap</option>
+                                <option value="Water Leaking (Waste-pipes)">Water Leaking (Waste-pipes) - Don't use until rectified</option>
+                                <option value="Smell of Gas - Turn off Gas at meter">Smell of Gas -Turn off Gas at meter</option>
+                                <option value="Damage">Damage</option>
+                                <option value="Repairs">Repairs</option>
+                                <option value="Alarms">Alarms</option>
+                                <option value="Faults">Faults</option>
+                                <option value="Security">Security</option>
+                                <option value="Damp / Mould">Damp / Mould</option>
+                                <option value="Multiple Problems">Multiple Problems</option>
+                                <option value="Unknown / Other">Unknown / Other</option>
+                            </select><br>
+                        </div>  
+                        <div>   
+                            <label for="urgency">Follow-Up Urgency</label><br>    
+                            <select id="urgency" name="Follow-Up Urgency" class="maintenance-required" oninvalid="this.setCustomValidity('Please select an option')"
+                            oninput="this.setCustomValidity('')">
+                                <option value="">--Please Choose an Option--</option>
+                                <option value="Request Call-Back">Request Call-Back</option>
+                                <option value="Request Visit">Request Visit</option>
+                                <option value="Request Advice">Request Advice</option>
+                                <option value="Next Day Call-back">Next Day Call-back</option>
+                                <option value="Unsure / Other">Unsure / Other</option>
+                            </select><br>
+                        </div>
+                    </div>
+                    <label for="message" id="message-label">Message</label><br>
                     <textarea id="message" name="Message" required minlength="30" maxlength="9999" oninvalid="this.setCustomValidity('Please enter a message of at least 30 characters')"
                     oninput="this.setCustomValidity('')"></textarea><br>
                     <div class="align-c">

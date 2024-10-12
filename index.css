@@ -1530,6 +1530,7 @@ button:hover.grey-style, .pressed.grey-style  {
 
 .form-head  { 
     height: 10%;
+    min-height: 70px;
     margin-bottom: 20px;
 }
 
