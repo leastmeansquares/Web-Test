@@ -1798,6 +1798,10 @@ footer > :first-child > :nth-child(3) {
     width: 25lvw;
 }
 
+#footer-logos img {
+    max-width: 15dvw;
+}
+
 /** PRIVACY POLICY **/
 
 #privacy-display > div {
