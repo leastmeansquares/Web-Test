@@ -536,7 +536,7 @@ nav p {
 
 /**  BUTTONS  **/
 
-button:not(#discoveryBtn), #header-btn, a, select, .hero-btn, .form-btn { 
+button:not(#discoveryBtn), #header-btn, a, select, .hero-btn, .form-btn, .privacy-policy { 
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -1497,7 +1497,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
-#main-form  { 
+#main-form, #privacy-display { 
     height: 90lvh;
     width: max(80lvw, min(100lvw, 400px));
     position: fixed;
@@ -1507,12 +1507,15 @@ button:hover.grey-style, .pressed.grey-style  {
     overflow: auto;
     background: var(--grey1);
     border-radius: 20px;
-    display: none;
     align-items: center;
     justify-content: center;
     margin: auto;
     padding-top: 2px;
     border: 4px solid var(--dark-teal);
+}
+
+#main-form {
+    display: none;
 }
 
 .form-head span{
@@ -1773,7 +1776,7 @@ footer > :first-child > :nth-child(3) {
     background: var(--dark-blue);
 }
 
-#footer-info { 
+.footer-segment { 
     font-size: clamp(0.75rem, 1lvw, 0.875rem);
     color: var(--grey4);
     padding: 10px;
@@ -1781,14 +1784,22 @@ footer > :first-child > :nth-child(3) {
     height: 100%;
 }
 
-#footer-info > div { 
+.footer-segment > div { 
     margin: 5px;
     padding: 5px;
     text-align: center; 
 }
 
-#footer-info > div > div {
+.footer-segment > div > div {
     width: 25lvw;
+}
+
+/** PRIVACY POLICY **/
+
+#privacy-policy-display {
+    display: fixed;
+    width: 80%;
+    height: 100%;
 }
 
 

@@ -304,20 +304,12 @@ const contactUsClick = () => {
         mainForm.style.display = "flex";
         outerBck.style.display = "block";
         outerBck.style.opacity = "0.6";
+        formSetup();
     }
 }
 
-document.body.querySelectorAll(".form-btn").forEach((btn) => 
-    btn.addEventListener("click", contactUsClick)
-)
+const formSetup = () => {
 
-getStartedBtn.addEventListener("click", () => {
-    mainForm.selection.value = footerSubject.value;
-    contactUsClick()
-}
-);
-
-formSubject.addEventListener("click", () => {
     if (formSubject.value === "Arrange a Viewing"){
         viewing.forEach((e) => e.classList.remove("hide"));
         maintenanceRequest.forEach((e) => e.classList.add("hide"));
@@ -343,7 +335,18 @@ formSubject.addEventListener("click", () => {
         maintenanceRequired.forEach((e) => e.attributes.required = "");
     };
 }
+
+document.body.querySelectorAll(".form-btn").forEach((btn) => 
+    btn.addEventListener("click", contactUsClick)
+)
+
+getStartedBtn.addEventListener("click", () => {
+    mainForm.selection.value = footerSubject.value;
+    contactUsClick()
+}
 );
+
+formSubject.addEventListener("change", formSetup);
 
 
 const headerClick = () => {
@@ -402,6 +405,17 @@ const footerBoxes = {
 }
 
 dropDownBtnAdd(footerBoxes);*/
+
+const privacyDisplay = document.getElementById("privacy-display")
+
+const privacyPolicyClick = () => {
+    privacyDisplay.classList.toggle("hide");
+}
+
+document.body.querySelectorAll(".privacy-policy").forEach((btn) => 
+    btn.addEventListener("click", privacyPolicyClick)
+)
+
 
 
 if (location.pathname === "/lettings.html" || location.pathname === "/lettings"){
