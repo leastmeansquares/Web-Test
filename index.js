@@ -368,6 +368,7 @@ const cancelClick = () => {
     mainForm.style.display = "";
     outerBck.style.display = "";
     headerDisplay.style.display = "";
+    privacyDisplay.classList.add("hide");
 }
 
 

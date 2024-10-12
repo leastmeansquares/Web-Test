@@ -1497,7 +1497,7 @@ button:hover.grey-style, .pressed.grey-style  {
 }
 
 
-#main-form, #privacy-display { 
+#main-form, #privacy-display > div { 
     height: 90lvh;
     width: max(80lvw, min(100lvw, 400px));
     position: fixed;
@@ -1524,7 +1524,11 @@ button:hover.grey-style, .pressed.grey-style  {
     font-weight: 700;
 }
 
-#main-form label span {
+#main-form label .privacy-policy {
+    font-weight: 500;
+}
+
+#main-form label span:not(.privacy-policy) {
     font-size: clamp(1rem, 2lvw, 1.5rem);
     padding-bottom: 3%;
     font-weight: 700;
@@ -1796,10 +1800,12 @@ footer > :first-child > :nth-child(3) {
 
 /** PRIVACY POLICY **/
 
-#privacy-policy-display {
+#privacy-display > div {
     display: fixed;
-    width: 80%;
-    height: 100%;
+}
+
+#privacy-display span {
+    font-weight: 600px;
 }
 
 
