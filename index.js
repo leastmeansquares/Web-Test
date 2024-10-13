@@ -293,6 +293,10 @@ const viewingRequired = document.body.querySelectorAll(".viewing-required");
 const maintenanceRequired = document.body.querySelectorAll(".maintenance-required");
 const messageLabel = document.getElementById("message-label");
 const message = document.getElementById("message");
+const addressFirstLine = document.getElementById("address");
+const addressPostcode = document.getElementById("postcode");
+const addressLabel = document.getElementById("address-label");
+const postcodeLabel = document.getElementById("postcode-label");
 
 const contactUsClick = () => {
 
@@ -304,6 +308,7 @@ const contactUsClick = () => {
         mainForm.style.display = "flex";
         outerBck.style.display = "block";
         outerBck.style.opacity = "0.6";
+        document.removeEventListener("scroll", cancelClick);
         formSetup();
     }
 }
@@ -315,6 +320,10 @@ const formSetup = () => {
         maintenanceRequest.forEach((e) => e.classList.add("hide"));
         messageLabel.innerText = "Please state any relevant information below which may influence any decision to let the property"
         message.attributes.required = "";
+        addressFirstLine.attributes.required = "required";
+        addressPostcode.attributes.required = "required";
+        addressLabel.innerText = "First Line of Address"
+        postcodeLabel.innerText = "Postcode"
         viewingRequired.forEach((e) => e.attributes.required = "required");
         maintenanceRequired.forEach((e) => e.attributes.required = "");
     }
@@ -323,6 +332,10 @@ const formSetup = () => {
         maintenanceRequest.forEach((e) => e.classList.remove("hide"));
         messageLabel.innerText = "What is the maintenance issue / enquiry?"
         message.attributes.required = "required";
+        addressFirstLine.attributes.required = "";
+        addressPostcode.attributes.required = "";
+        addressLabel.innerText = "First Line of Address (Optional)"
+        postcodeLabel.innerText = "Postcode (Optional)"
         viewingRequired.forEach((e) => e.attributes.required = "");
         maintenanceRequired.forEach((e) => e.attributes.required = "required");
     }
@@ -331,6 +344,10 @@ const formSetup = () => {
         maintenanceRequest.forEach((e) => e.classList.add("hide"));
         messageLabel.innerText = "Message"
         message.attributes.required = "required";
+        addressFirstLine.attributes.required = "";
+        addressPostcode.attributes.required = "";
+        addressLabel.innerText = "First Line of Address (Optional)"
+        postcodeLabel.innerText = "Postcode (Optional)"
         viewingRequired.forEach((e) => e.attributes.required = "");
         maintenanceRequired.forEach((e) => e.attributes.required = "");
     };
