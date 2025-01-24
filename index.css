@@ -1799,7 +1799,8 @@ footer > :first-child > :nth-child(3) {
 }
 
 #footer-logos img {
-    max-width: 15dvw;
+    max-width: 10dvw;
+    max-height: 15dvw;
 }
 
 /** PRIVACY POLICY **/
